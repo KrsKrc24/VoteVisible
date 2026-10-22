@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { allBills, getBillById } from "@/data/bills";
@@ -21,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   };
 }
 
-export default async function BillDetailPage({ params }: { params: Promise<{ id: string }> }) {
+async function BillDetailContent({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const bill = getBillById(id);
   if (!bill) notFound();
@@ -116,5 +117,13 @@ export default async function BillDetailPage({ params }: { params: Promise<{ id:
         </div>
       )}
     </div>
+  );
+}
+
+export default function BillDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  return (
+    <Suspense fallback={null}>
+      <BillDetailContent params={params} />
+    </Suspense>
   );
 }

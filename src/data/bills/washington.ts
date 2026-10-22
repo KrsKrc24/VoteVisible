@@ -8,10 +8,18 @@ export const washingtonBills: Bill[] = [
     year: 2026,
     title: "340B Prescription Drug Discount Program",
     summary:
-      "Strengthens state oversight of the 340B program so discounted drug pricing intended for safety-net clinics and hospitals actually reaches patients.",
+      "Prevents drug manufacturers from blocking eligible Washington healthcare providers and their contract pharmacies from obtaining medications through the federal 340B discount program, except where federal law prohibits access. Manufacturers also cannot demand extra claims or purchasing data as a condition of access unless federal law requires it.\n\nThe law adds reporting on program purchases, payments, and savings, along with enforcement options. It supports participating clinics, hospitals, and pharmacies; it does not give every patient an automatic discount on every prescription.",
     status: "enacted",
-    statusLabel: "Reported as enacted",
+    statusLabel: "Signed into law, Chapter 227, Laws of 2026",
     topics: ["drug-pricing"],
+    sources: [
+      {
+        title: "Washington official source: SB 5981",
+        url: "https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Session%20Laws/Senate/5981-S2.SL.htm",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
+    statusDate: "2026-03-25",
   },
   {
     id: "wa-hb-2613",
@@ -68,10 +76,18 @@ export const washingtonBills: Bill[] = [
     year: 2026,
     title: "Albuterol in Schools",
     summary:
-      "Allows schools to stock albuterol inhalers so students having breathing emergencies can get immediate treatment.",
+      "Beginning with the 2027-28 school year, allows Washington school districts and private schools to keep a shared supply of prescribed albuterol for students experiencing respiratory symptoms. A standing order must accompany the prescription.\n\nA school nurse or designated trained staff member may administer it when the student has a prescription on file. If no prescription is on file, only a school nurse may administer it. Parents or guardians must be notified immediately. The law authorizes this school supply; it does not require every school to stock it.",
     status: "enacted",
-    statusLabel: "Reported as enacted",
+    statusLabel: "Signed into law, Chapter 197, Laws of 2026",
     topics: ["youth-school-health", "emergency-care"],
+    sources: [
+      {
+        title: "Washington official source: HB 2360",
+        url: "https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Session%20Laws/House/2360-S.SL.htm",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
+    statusDate: "2026-03-24",
   },
   {
     id: "wa-sb-5240",
@@ -360,7 +376,8 @@ export const washingtonBills: Bill[] = [
     summary:
       "Would create a state board to oversee healthcare costs and affordability; passed the Senate but did not complete the legislative process.",
     status: "partial-progress",
-    statusLabel: "Passed the Senate but did not complete the legislative process",
+    statusLabel:
+      "Passed the Senate but did not complete the legislative process",
     statusDate: "2026-02",
     topics: ["insurance-coverage", "consumer-protection"],
   },
@@ -411,7 +428,8 @@ export const washingtonBills: Bill[] = [
     summary:
       "Would require insurance coverage for treatment of PANDAS/PANS, pediatric autoimmune conditions; passed the House but did not complete the process.",
     status: "partial-progress",
-    statusLabel: "Passed the House but did not complete the legislative process",
+    statusLabel:
+      "Passed the House but did not complete the legislative process",
     statusDate: "2026-02",
     topics: ["insurance-coverage", "youth-school-health"],
   },

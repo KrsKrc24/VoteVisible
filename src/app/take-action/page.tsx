@@ -80,7 +80,7 @@ export default function TakeActionPage() {
         Take Action
       </span>
       <h1 className="mt-2 text-3xl font-bold text-navy-900 sm:text-4xl">
-        Your representatives want to hear from you
+        Contact your state representatives
       </h1>
       <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-600">
         State legislators pay close attention to messages from constituents,

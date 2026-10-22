@@ -15,13 +15,13 @@ Open http://localhost:3000. For a production build, run `npm run build`, then `n
 
 ## Features
 
-- 488 bill summaries across 12 states and 18 topic categories, with counts derived from the dataset.
+- 487 bill summaries across 12 states and 18 topic categories, with counts derived from the dataset.
 - Search by bill number, title, summary, topic, or state; combined filters, sorting, pagination, and shareable filter URLs.
 - Personal issue finder and keyboard-accessible state atlas with per-state counts.
 - Saved bills stored on your device, without an account.
 - Bill-specific language reader with searchable language choices, loading states, retry, and immediate return to English.
 - Representative resource links and a message builder that copies a draft for you to review and send yourself. Personal input is not submitted or saved by VoteVisible.
-- Original logo, custom animated civic graphics, visible keyboard focus, accessible modal search, responsive layouts, and reduced-motion support.
+- Original logo, an editorial home page featuring actual bill records, visible keyboard focus, accessible modal search, responsive layouts, and reduced-motion support.
 
 ## Translation design
 

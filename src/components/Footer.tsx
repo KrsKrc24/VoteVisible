@@ -1,20 +1,35 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const TEAM = ["Shritan Pothini", "Akshaj Mamidi", "Arjun Harshe", "Prady Mandalapu", "Alexander Mammar"];
+const TEAM = [
+  "Shritan Pothini",
+  "Akshaj Mamidi",
+  "Arjun Harshe",
+  "Prady Mandalapu",
+  "Alexander Mammar",
+];
 
 export default function Footer() {
   return (
-    <footer className="notranslate border-t border-white/10 bg-navy-950 text-slate-400" translate="no">
+    <footer
+      className="notranslate border-t border-white/10 bg-navy-950 text-slate-400"
+      translate="no"
+    >
       <div className="mx-auto max-w-6xl px-5 py-12 sm:px-8">
         <div className="grid gap-10 sm:grid-cols-3">
           <div>
             <div className="inline-flex w-fit items-center rounded-lg bg-white px-2 py-1">
-              <Image src="/logo.png" alt="VoteVisible" width={130} height={30} className="h-6 w-auto" />
+              <Image
+                src="/logo.png"
+                alt="VoteVisible"
+                width={130}
+                height={30}
+                className="h-6 w-auto"
+              />
             </div>
             <p className="mt-3 max-w-xs text-sm leading-6">
-              Translating state healthcare legislation into plain language so
-              people of every background can see the real impact on their communities.
+              A student-run guide to state healthcare legislation. Read
+              summaries, check sources, and contact your representatives.
             </p>
           </div>
 
@@ -23,9 +38,21 @@ export default function Footer() {
               Explore
             </h3>
             <ul className="mt-3 space-y-2 text-sm">
-              <li><Link href="/bills" className="hover:text-blue-300">Bills Explorer</Link></li>
-              <li><Link href="/take-action" className="hover:text-blue-300">Take Action</Link></li>
-              <li><Link href="/about" className="hover:text-blue-300">About the Team</Link></li>
+              <li>
+                <Link href="/bills" className="hover:text-blue-300">
+                  Bills Explorer
+                </Link>
+              </li>
+              <li>
+                <Link href="/take-action" className="hover:text-blue-300">
+                  Take Action
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="hover:text-blue-300">
+                  About the Team
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -42,9 +69,10 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 border-t border-white/10 pt-6 text-xs text-slate-500">
-          VoteVisible is an independent civic-tech project based in Issaquah, Washington.
-          Bill data is condensed for readability, so always verify details with your state
-          legislature&apos;s official records before taking action.
+          VoteVisible is an independent civic-tech project based in Issaquah,
+          Washington. Bill data is condensed for readability, so always verify
+          details with your state legislature&apos;s official records before
+          taking action.
         </div>
       </div>
     </footer>

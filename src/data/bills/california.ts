@@ -7,7 +7,8 @@ export const californiaBills: Bill[] = [
     billNumber: "SB 27",
     year: 2025,
     title: "CARE Court Program Expansion",
-    summary: "Expands the CARE Court program that connects people with severe mental illness to court-ordered treatment plans.",
+    summary:
+      "Expands the CARE Court program that connects people with severe mental illness to court-ordered treatment plans.",
     status: "enacted",
     statusLabel: "Signed, Chapter 528",
     topics: ["mental-health"],
@@ -18,7 +19,8 @@ export const californiaBills: Bill[] = [
     billNumber: "AB 688",
     year: 2025,
     title: "Telehealth for All Act Medi-Cal Report",
-    summary: "Requires a report on telehealth access under Medi-Cal to inform future policy.",
+    summary:
+      "Requires a report on telehealth access under Medi-Cal to inform future policy.",
     status: "enacted",
     statusLabel: "Signed, Chapter 437",
     topics: ["telehealth", "insurance-coverage"],
@@ -29,7 +31,8 @@ export const californiaBills: Bill[] = [
     billNumber: "SB 439",
     year: 2025,
     title: "Health Benefit Review Program Extension",
-    summary: "Extends the state's Health Benefit Review Program, which evaluates proposed insurance mandates.",
+    summary:
+      "Extends the state's Health Benefit Review Program, which evaluates proposed insurance mandates.",
     status: "enacted",
     statusLabel: "Signed, Chapter 318",
     topics: ["insurance-coverage"],
@@ -40,7 +43,8 @@ export const californiaBills: Bill[] = [
     billNumber: "AB 348",
     year: 2025,
     title: "Full-Service Partnerships Eligibility Expansion",
-    summary: "Expands eligibility for Full-Service Partnership mental health programs.",
+    summary:
+      "Expands eligibility for Full-Service Partnership mental health programs.",
     status: "enacted",
     statusLabel: "Signed, Chapter 688",
     topics: ["mental-health"],
@@ -51,7 +55,8 @@ export const californiaBills: Bill[] = [
     billNumber: "SB 660",
     year: 2025,
     title: "Health Data Exchange Framework Oversight",
-    summary: "Strengthens oversight of the state's health data exchange framework.",
+    summary:
+      "Strengthens oversight of the state's health data exchange framework.",
     status: "enacted",
     statusLabel: "Signed, Chapter 325",
     topics: ["patient-rights-privacy"],
@@ -62,7 +67,8 @@ export const californiaBills: Bill[] = [
     billNumber: "AB 870",
     year: 2025,
     title: "Small County California Children's Services Administration",
-    summary: "Adjusts administration of California Children's Services for small counties.",
+    summary:
+      "Adjusts administration of California Children's Services for small counties.",
     status: "enacted",
     statusLabel: "Signed, Chapter 167",
     topics: ["youth-school-health", "rural-health"],
@@ -73,7 +79,8 @@ export const californiaBills: Bill[] = [
     billNumber: "AB 45",
     year: 2025,
     title: "Reproductive Health Privacy Protections",
-    summary: "Strengthens privacy protections for people seeking reproductive health care.",
+    summary:
+      "Strengthens privacy protections for people seeking reproductive health care.",
     status: "enacted",
     statusLabel: "Signed, Chapter 134",
     topics: ["reproductive-health", "patient-rights-privacy"],
@@ -84,7 +91,8 @@ export const californiaBills: Bill[] = [
     billNumber: "AB 82",
     year: 2025,
     title: "Privacy & Safety for Gender-Affirming & Reproductive Healthcare",
-    summary: "Strengthens privacy and safety protections for patients and providers of gender-affirming and reproductive healthcare.",
+    summary:
+      "Strengthens privacy and safety protections for patients and providers of gender-affirming and reproductive healthcare.",
     status: "enacted",
     statusLabel: "Signed, Chapter 679",
     topics: ["lgbtq-health", "reproductive-health", "patient-rights-privacy"],
@@ -106,7 +114,8 @@ export const californiaBills: Bill[] = [
     billNumber: "AB 424",
     year: 2025,
     title: "Addiction Treatment Facility Complaint Process",
-    summary: "Creates a clearer complaint process for addiction treatment facilities.",
+    summary:
+      "Creates a clearer complaint process for addiction treatment facilities.",
     status: "enacted",
     statusLabel: "Signed, Chapter 261",
     topics: ["substance-use", "hospital-oversight"],
@@ -117,7 +126,8 @@ export const californiaBills: Bill[] = [
     billNumber: "AB 492",
     year: 2025,
     title: "Notify City of New Addiction Treatment Facility License",
-    summary: "Requires cities to be notified when a new addiction treatment facility is licensed nearby.",
+    summary:
+      "Requires cities to be notified when a new addiction treatment facility is licensed nearby.",
     status: "enacted",
     statusLabel: "Signed, Chapter 368",
     topics: ["substance-use", "hospital-oversight"],
@@ -128,10 +138,18 @@ export const californiaBills: Bill[] = [
     billNumber: "AB 1037",
     year: 2025,
     title: "Substance Use Disorder Treatment Access Rules",
-    summary: "Updates access rules for substance use disorder treatment.",
+    summary:
+      "Changes several California rules on substance-use prevention, overdose response, and treatment. Licensed alcohol or drug recovery facilities cannot deny admission solely because a person is not sober, and admission agreements cannot require abstinence as a condition of entering or continuing care.\n\nThe bill also expands overdose-prevention protections and requires a combined application for treatment-facility licensing and authorization to provide incidental medical services. Its provisions address both access to treatment and how programs are administered.",
     status: "enacted",
     statusLabel: "Signed, Chapter 569",
     topics: ["substance-use"],
+    sources: [
+      {
+        title: "California official source: AB 1037",
+        url: "https://www.dhcs.ca.gov/formsandpubs/publications/Documents/DHCS-Legislative-Summary-2025.pdf",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "ca-ab-1356",
@@ -139,10 +157,18 @@ export const californiaBills: Bill[] = [
     billNumber: "AB 1356",
     year: 2025,
     title: "John's Law: Facility Death Reporting Requirements",
-    summary: "Strengthens death reporting requirements for care facilities.",
+    summary:
+      "Requires licensed alcohol and drug recovery or treatment facilities to send California's Department of Health Care Services additional information about a client's death within 30 days of the initial incident when that information was not available initially.\n\nIf the department identifies licensing violations while investigating a resident's death, it must issue a written deficiency notice explaining what the facility must do and when it must respond. Known as John's Law, the measure focuses on reporting and regulatory follow-up after a death.",
     status: "enacted",
     statusLabel: "Signed, Chapter 189",
     topics: ["hospital-oversight", "patient-rights-privacy"],
+    sources: [
+      {
+        title: "California official source: AB 1356",
+        url: "https://www.dhcs.ca.gov/formsandpubs/publications/Documents/DHCS-Legislative-Summary-2025.pdf",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "ca-sb-83",
@@ -150,7 +176,8 @@ export const californiaBills: Bill[] = [
     billNumber: "SB 83",
     year: 2025,
     title: "Publish Addiction Treatment Facility Violations",
-    summary: "Requires public publication of violations found at addiction treatment facilities.",
+    summary:
+      "Requires public publication of violations found at addiction treatment facilities.",
     status: "enacted",
     statusLabel: "Signed, Chapter 402",
     topics: ["substance-use", "consumer-protection"],
@@ -161,7 +188,8 @@ export const californiaBills: Bill[] = [
     billNumber: "SB 862",
     year: 2025,
     title: "Rename Behavioral Health Services Oversight Commission",
-    summary: "Renames and clarifies the role of the Behavioral Health Services Oversight Commission.",
+    summary:
+      "Renames and clarifies the role of the Behavioral Health Services Oversight Commission.",
     status: "enacted",
     statusLabel: "Signed, Chapter 243",
     topics: ["mental-health"],
@@ -172,7 +200,8 @@ export const californiaBills: Bill[] = [
     billNumber: "AB 224",
     year: 2025,
     title: "Essential Health Benefits: Hearing Aids & Infertility",
-    summary: "Adds hearing aids and infertility treatment to required essential health benefits.",
+    summary:
+      "Adds hearing aids and infertility treatment to required essential health benefits.",
     status: "enacted",
     statusLabel: "Signed, Chapter 680",
     topics: ["insurance-coverage", "disability-access", "reproductive-health"],
@@ -183,7 +212,8 @@ export const californiaBills: Bill[] = [
     billNumber: "AB 260",
     year: 2025,
     title: "Medication Abortion Coverage Protections",
-    summary: "Protects insurance coverage for medication abortion, including mifepristone.",
+    summary:
+      "Protects insurance coverage for medication abortion, including mifepristone.",
     status: "enacted",
     statusLabel: "Signed, Chapter 136",
     topics: ["reproductive-health", "insurance-coverage"],
@@ -194,7 +224,8 @@ export const californiaBills: Bill[] = [
     billNumber: "SB 81",
     year: 2025,
     title: "Patient Immigration Status Privacy Protections",
-    summary: "Protects patient immigration status information from being shared without consent.",
+    summary:
+      "Protects patient immigration status information from being shared without consent.",
     status: "enacted",
     statusLabel: "Signed, effective",
     statusDate: "2025-09-20",
@@ -206,7 +237,8 @@ export const californiaBills: Bill[] = [
     billNumber: "SB 41",
     year: 2025,
     title: "Pharmacy Benefit Manager Regulation",
-    summary: "Regulates pharmacy benefit managers to curb practices that drive up drug costs.",
+    summary:
+      "Regulates pharmacy benefit managers to curb practices that drive up drug costs.",
     status: "enacted",
     statusLabel: "Signed",
     statusDate: "2025-10-11",
@@ -218,7 +250,8 @@ export const californiaBills: Bill[] = [
     billNumber: "SB 351",
     year: 2025,
     title: "Prevent Corporate Interference in Medical Decisions",
-    summary: "Prohibits corporate owners from interfering in clinical decisions made by physicians.",
+    summary:
+      "Prohibits corporate owners from interfering in clinical decisions made by physicians.",
     status: "enacted",
     statusLabel: "Signed",
     statusDate: "2025-10",
@@ -230,7 +263,8 @@ export const californiaBills: Bill[] = [
     billNumber: "AB 951",
     year: 2025,
     title: "Behavioral Health Insurance Coverage",
-    summary: "Strengthens required insurance coverage for behavioral health services.",
+    summary:
+      "Strengthens required insurance coverage for behavioral health services.",
     status: "enacted",
     statusLabel: "Signed",
     statusDate: "2025-07-30",
@@ -242,7 +276,8 @@ export const californiaBills: Bill[] = [
     billNumber: "AB 1312",
     year: 2025,
     title: "Hospital Pricing Transparency",
-    summary: "Requires hospitals to be more transparent about pricing for common procedures.",
+    summary:
+      "Requires hospitals to be more transparent about pricing for common procedures.",
     status: "enacted",
     statusLabel: "Signed",
     statusDate: "2025-10-07",
@@ -254,7 +289,8 @@ export const californiaBills: Bill[] = [
     billNumber: "AB 55",
     year: 2025,
     title: "Alternative Birth Center Licensing & Medi-Cal Reimbursement",
-    summary: "Creates licensing for alternative birth centers and allows Medi-Cal reimbursement.",
+    summary:
+      "Creates licensing for alternative birth centers and allows Medi-Cal reimbursement.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["maternal-health", "insurance-coverage"],
@@ -265,10 +301,18 @@ export const californiaBills: Bill[] = [
     billNumber: "AB 836",
     year: 2025,
     title: "Midwifery Workforce Training Act",
-    summary: "Funds training programs to grow the midwifery workforce.",
+    summary:
+      "Requires California's Department of Health Care Access and Information to administer funding for a statewide study of midwifery education, but only when the legislature appropriates money for that purpose.\n\nThe study must examine education capacity, financing, student barriers, clinical training sites, and options serving rural and urban communities. An outside consultant conducts it, and the department must report the findings publicly. The appropriation requirement is important: the study depends on a separate decision to provide funding.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["maternal-health", "workforce"],
+    sources: [
+      {
+        title: "California official source: AB 836",
+        url: "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB836",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "ca-sb-236",
@@ -298,7 +342,8 @@ export const californiaBills: Bill[] = [
     billNumber: "SB 646",
     year: 2025,
     title: "Prenatal Multivitamin Requirements",
-    summary: "Sets requirements related to prenatal multivitamin access or standards.",
+    summary:
+      "Sets requirements related to prenatal multivitamin access or standards.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["maternal-health"],
@@ -309,7 +354,8 @@ export const californiaBills: Bill[] = [
     billNumber: "SB 669",
     year: 2025,
     title: "Rural Hospital Standby Perinatal Services",
-    summary: "Supports standby perinatal services at rural hospitals to maintain birth access.",
+    summary:
+      "Supports standby perinatal services at rural hospitals to maintain birth access.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["rural-health", "maternal-health"],
@@ -320,10 +366,18 @@ export const californiaBills: Bill[] = [
     billNumber: "SB 754",
     year: 2025,
     title: "Menstrual Product Chemical Safety",
-    summary: "Addresses chemical safety standards for menstrual products.",
+    summary:
+      "Requires manufacturers of disposable tampons and pads to monitor and report concentrations of potentially hazardous chemicals, including lead, arsenic, and cadmium, to California's Department of Toxic Substances Control. Reporting begins December 31, 2026.\n\nThe department may verify and publish results. This creates a reporting system for chemicals in these products. The reports can then be checked and made public through the department.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["public-health", "consumer-protection"],
+    sources: [
+      {
+        title: "California official source: SB 754",
+        url: "https://sd26.senate.ca.gov/news/california-legislature-passes-sb-754-monitoring-lead-levels-tampons-and-pads",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "ca-sb-40",
@@ -331,11 +385,19 @@ export const californiaBills: Bill[] = [
     billNumber: "SB 40",
     year: 2025,
     title: "Insulin Copay Cap",
-    summary: "Caps insulin copays at $35 per month to keep diabetes care affordable.",
+    summary:
+      "Limits patient cost-sharing for a 30-day supply of covered prescription insulin to $35 under the affected health plans. The limit includes copays, coinsurance, deductibles, and other cost-sharing.\n\nThe law also requires coverage of at least one insulin in the specified types, forms, and concentrations, and bars step therapy before access to at least one insulin drug type. It regulates covered insurance benefits, rather than setting a universal cash price for every insulin product or making all diabetes care free.",
     status: "enacted",
     statusLabel: "Signed into law, effective",
     statusDate: "2026-01-01",
     topics: ["drug-pricing", "insurance-coverage"],
+    sources: [
+      {
+        title: "California official source: SB 40",
+        url: "https://sfa.senate.ca.gov/system/files/2025-12/digest_2025.pdf",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "ca-sb-62",
@@ -343,7 +405,8 @@ export const californiaBills: Bill[] = [
     billNumber: "SB 62",
     year: 2025,
     title: "Essential Health Benefits Update",
-    summary: "Updates the list of required essential health benefits for insurance plans.",
+    summary:
+      "Updates the list of required essential health benefits for insurance plans.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["insurance-coverage"],
@@ -376,7 +439,8 @@ export const californiaBills: Bill[] = [
     billNumber: "AB 1487",
     year: 2025,
     title: "Two-Spirit/Transgender/GNC/Intersex Wellness Equity Fund",
-    summary: "Creates a wellness equity fund for Two-Spirit, transgender, gender-nonconforming, and intersex communities.",
+    summary:
+      "Creates a wellness equity fund for Two-Spirit, transgender, gender-nonconforming, and intersex communities.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["lgbtq-health", "public-health"],
@@ -387,7 +451,8 @@ export const californiaBills: Bill[] = [
     billNumber: "AB 849",
     year: 2025,
     title: "Medical Chaperone Requirements",
-    summary: "Sets requirements for medical chaperones during sensitive examinations.",
+    summary:
+      "Sets requirements for medical chaperones during sensitive examinations.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["patient-rights-privacy"],
@@ -398,7 +463,8 @@ export const californiaBills: Bill[] = [
     billNumber: "AB 1172",
     year: 2025,
     title: "Adult Day Program Emergency Antiseizure Nasal Medication",
-    summary: "Allows adult day programs to stock emergency antiseizure nasal medication.",
+    summary:
+      "Allows adult day programs to stock emergency antiseizure nasal medication.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["emergency-care", "disability-access"],
@@ -409,7 +475,8 @@ export const californiaBills: Bill[] = [
     billNumber: "AB 460",
     year: 2025,
     title: "Radiologic Technologist Venipuncture Authority",
-    summary: "Authorizes radiologic technologists to perform venipuncture as part of imaging procedures.",
+    summary:
+      "Authorizes radiologic technologists to perform venipuncture as part of imaging procedures.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["workforce"],
@@ -420,7 +487,8 @@ export const californiaBills: Bill[] = [
     billNumber: "SB 568",
     year: 2025,
     title: "School & Childcare Epinephrine Delivery Systems",
-    summary: "Expands epinephrine delivery system access in schools and childcare settings.",
+    summary:
+      "Expands epinephrine delivery system access in schools and childcare settings.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["youth-school-health", "emergency-care"],
@@ -453,7 +521,8 @@ export const californiaBills: Bill[] = [
     billNumber: "AB 489",
     year: 2025,
     title: "Prohibit Deceptive AI Healthcare Provider Titles",
-    summary: "Prohibits AI tools or companies from using deceptive healthcare provider titles.",
+    summary:
+      "Prohibits AI tools or companies from using deceptive healthcare provider titles.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["patient-rights-privacy", "consumer-protection"],
@@ -463,11 +532,20 @@ export const californiaBills: Bill[] = [
     state: "California",
     billNumber: "AB 50",
     year: 2025,
-    title: "Health Policy Update",
-    summary: "A health-related policy update; specific details need verification against the official record.",
-    status: "pending-verification",
-    statusLabel: "Needs verification",
-    topics: ["public-health"],
+    title: "Pharmacists Furnishing Over-the-Counter Contraceptives",
+    summary:
+      "Allows pharmacists to furnish up to a 12-month supply of over-the-counter contraceptives without following the standardized protocols used for prescription-only hormonal contraception.\n\nThe change is intended to make this pharmacy route available to people using Medi-Cal as well as private coverage. It concerns how a pharmacist furnishes and bills for eligible over-the-counter contraception. The measure took effect on September 26, 2025.",
+    status: "enacted",
+    statusLabel: "Signed into law, Chapter 135, Statutes of 2025",
+    topics: ["reproductive-health", "insurance-coverage"],
+    sources: [
+      {
+        title: "California official source: AB 50",
+        url: "https://bonta.asmdc.org/press-releases/20250926-assemblymember-mia-bonta-champions-equitable-access-over-counter-birth",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
+    statusDate: "2025-09-26",
   },
   {
     id: "ca-ab-712",
@@ -475,7 +553,8 @@ export const californiaBills: Bill[] = [
     billNumber: "AB 712",
     year: 2025,
     title: "Health Policy Update",
-    summary: "A health-related policy update; specific details need verification against the official record.",
+    summary:
+      "A health-related policy update; specific details need verification against the official record.",
     status: "pending-verification",
     statusLabel: "Needs verification",
     topics: ["public-health"],
@@ -485,22 +564,40 @@ export const californiaBills: Bill[] = [
     state: "California",
     billNumber: "AB 116",
     year: 2025,
-    title: "Health Omnibus Trailer Bill",
-    summary: "A budget trailer bill covering multiple health program changes; details need verification.",
-    status: "pending-verification",
-    statusLabel: "Needs verification",
-    topics: ["insurance-coverage"],
+    title: "Health Budget: Pharmacy Benefit Managers and Fertility Coverage",
+    summary:
+      "Implements a range of health-budget changes. Among them, requires pharmacy benefit managers contracted with affected health plans and insurers to obtain a Department of Managed Health Care license from January 1, 2027, and report drug-pricing information.\n\nIt also moved the start date for large-group plans to cover, and small-group plans to offer, infertility diagnosis and treatment from July 1, 2025, to January 1, 2026. The linked agency summary describes these provisions; the full omnibus law covers additional subjects.",
+    status: "enacted",
+    statusLabel:
+      "Signed into law; described in the DMHC 2025 legislative summary",
+    topics: ["insurance-coverage", "drug-pricing", "reproductive-health"],
+    sources: [
+      {
+        title: "California official source: AB 116",
+        url: "https://www.dmhc.ca.gov/Resources/Newsroom/Newsletters/2025YIRNewsletter.aspx",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "ca-ab-144",
     state: "California",
     billNumber: "AB 144",
     year: 2025,
-    title: "Health Policy Update",
-    summary: "A health-related policy update; specific details need verification against the official record.",
-    status: "pending-verification",
-    statusLabel: "Needs verification",
-    topics: ["public-health"],
+    title: "Preventive Care and Immunization Coverage",
+    summary:
+      "Among its health provisions, requires California health plans to continue covering preventive care and vaccines recommended by federal authorities as of January 1, 2025. It allows the California Department of Public Health to modify or expand those recommendations.\n\nThe Department of Managed Health Care's implementation guidance explains that covered immunizations include COVID-19, RSV, and flu vaccines without patient cost-sharing or prior authorization for its licensed plans.",
+    status: "enacted",
+    statusLabel:
+      "Signed into law; described in the DMHC 2025 legislative summary",
+    topics: ["public-health", "insurance-coverage"],
+    sources: [
+      {
+        title: "California official source: AB 144",
+        url: "https://www.dmhc.ca.gov/Resources/Newsroom/Newsletters/2025YIRNewsletter.aspx",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "ca-sb-160",
@@ -508,7 +605,8 @@ export const californiaBills: Bill[] = [
     billNumber: "SB 160",
     year: 2025,
     title: "Health Policy Update",
-    summary: "A health-related policy update; specific details need verification against the official record.",
+    summary:
+      "A health-related policy update; specific details need verification against the official record.",
     status: "pending-verification",
     statusLabel: "Needs verification",
     topics: ["public-health"],
@@ -519,7 +617,8 @@ export const californiaBills: Bill[] = [
     billNumber: "AB 1521",
     year: 2025,
     title: "Health Policy Update",
-    summary: "A health-related policy update; specific details need verification against the official record.",
+    summary:
+      "A health-related policy update; specific details need verification against the official record.",
     status: "pending-verification",
     statusLabel: "Needs verification",
     topics: ["public-health"],
@@ -530,7 +629,8 @@ export const californiaBills: Bill[] = [
     billNumber: "SB 338",
     year: 2025,
     title: "Virtual Health Hub for Rural Communities Pilot",
-    summary: "Pilots a virtual health hub to improve care access for rural communities.",
+    summary:
+      "Pilots a virtual health hub to improve care access for rural communities.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["rural-health", "telehealth"],
@@ -541,7 +641,8 @@ export const californiaBills: Bill[] = [
     billNumber: "SB 246",
     year: 2025,
     title: "Medi-Cal Graduate Medical Education Payments",
-    summary: "Adjusts Medi-Cal payments that support graduate medical education programs.",
+    summary:
+      "Adjusts Medi-Cal payments that support graduate medical education programs.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["workforce", "insurance-coverage"],
@@ -552,7 +653,8 @@ export const californiaBills: Bill[] = [
     billNumber: "SB 250",
     year: 2025,
     title: "Medi-Cal Provider Directory for Skilled Nursing Facilities",
-    summary: "Improves Medi-Cal provider directory accuracy for skilled nursing facilities.",
+    summary:
+      "Improves Medi-Cal provider directory accuracy for skilled nursing facilities.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["hospital-oversight", "consumer-protection"],
@@ -563,7 +665,8 @@ export const californiaBills: Bill[] = [
     billNumber: "AB 543",
     year: 2025,
     title: "Medi-Cal Program Changes",
-    summary: "Makes changes to Medi-Cal program administration; details need verification.",
+    summary:
+      "Makes changes to Medi-Cal program administration; details need verification.",
     status: "pending-verification",
     statusLabel: "Needs verification",
     topics: ["insurance-coverage"],
@@ -574,7 +677,8 @@ export const californiaBills: Bill[] = [
     billNumber: "AB 1043",
     year: 2025,
     title: "Health Policy Update",
-    summary: "A health-related policy update; specific details need verification against the official record.",
+    summary:
+      "A health-related policy update; specific details need verification against the official record.",
     status: "pending-verification",
     statusLabel: "Needs verification",
     topics: ["public-health"],

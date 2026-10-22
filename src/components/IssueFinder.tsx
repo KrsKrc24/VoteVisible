@@ -54,19 +54,17 @@ export default function IssueFinder({
   const href = `/bills?topic=${topic}${state ? `&state=${encodeURIComponent(state)}` : ""}`;
   return (
     <div
-      className="notranslate issue-finder rounded-[2rem] border border-blue-100 bg-white p-6 shadow-[0_20px_80px_-40px_#244f9c55] sm:p-9"
+      className="notranslate issue-finder border-t-2 border-blue-700 bg-transparent pt-7"
       translate="no"
     >
       <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:gap-14">
         <div>
-          <span className="eyebrow">YOUR LIFE. YOUR ISSUES.</span>
-          <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
-            What matters <br />
-            to you?
+          <span className="section-label">Browse by topic</span>
+          <h2 className="editorial-title mt-4 text-3xl sm:text-4xl">
+            Which issue are you following?
           </h2>
           <p className="mt-4 max-w-sm text-sm leading-7 text-slate-500">
-            Start with something you care about. We’ll connect it to the
-            healthcare bills in our collection.
+            Choose a topic and a state to see matching bills.
           </p>
           <div
             className="mt-6 flex flex-wrap gap-2"
@@ -105,7 +103,7 @@ export default function IssueFinder({
         <div className="rounded-2xl bg-blue-50/70 p-5 sm:p-6">
           <div className="flex items-start justify-between gap-3 border-b border-blue-100 pb-4">
             <div>
-              <p className="text-xs text-slate-500">Your starting point</p>
+              <p className="text-xs text-slate-500">Matching records</p>
               <h3 className="mt-1 font-semibold">{TOPIC_META[topic].label}</h3>
             </div>
             <span
@@ -144,7 +142,7 @@ export default function IssueFinder({
             href={href}
             className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-blue-700"
           >
-            Explore these bills <ArrowRight size={16} />
+            See all matching bills <ArrowRight size={16} />
           </Link>
         </div>
       </div>

@@ -108,6 +108,38 @@ async function BillDetailContent({
         </div>
       </dl>
 
+      {bill.sources && bill.sources.length > 0 && (
+        <section
+          aria-label="Sources for this summary"
+          className="mt-8 border-y border-slate-200 py-6"
+        >
+          <h2 className="text-sm font-semibold text-navy-900">
+            Sources for this summary
+          </h2>
+          <ul className="mt-3 space-y-2">
+            {bill.sources.map((source) => (
+              <li key={source.url}>
+                <a
+                  href={source.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-blue-700 underline underline-offset-4"
+                >
+                  {source.title}{" "}
+                  <span className="text-xs">(opens in a new tab)</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+          {bill.summaryReviewedOn && (
+            <p className="mt-3 text-xs text-slate-500">
+              Summary source reviewed {bill.summaryReviewedOn}. Check the
+              official record for later changes.
+            </p>
+          )}
+        </section>
+      )}
+
       <div className="mt-6">
         <h2 className="text-xs font-semibold uppercase tracking-wide text-slate-500">
           Topics

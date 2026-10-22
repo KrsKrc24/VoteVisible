@@ -31,16 +31,19 @@ export interface Bill {
   statusLabel: string;
   statusDate?: string;
   topics: string[];
+  sources?: { title: string; url: string }[];
+  summaryReviewedOn?: string;
 }
 
-export const STATUS_META: Record<BillStatus, { label: string; color: string }> = {
-  enacted: { label: "Enacted", color: "emerald" },
-  "partial-progress": { label: "Partial Progress", color: "amber" },
-  "did-not-pass": { label: "Did Not Pass", color: "rose" },
-  introduced: { label: "Introduced", color: "sky" },
-  vetoed: { label: "Vetoed", color: "orange" },
-  "pending-verification": { label: "Pending Verification", color: "slate" },
-};
+export const STATUS_META: Record<BillStatus, { label: string; color: string }> =
+  {
+    enacted: { label: "Enacted", color: "emerald" },
+    "partial-progress": { label: "Partial Progress", color: "amber" },
+    "did-not-pass": { label: "Did Not Pass", color: "rose" },
+    introduced: { label: "Introduced", color: "sky" },
+    vetoed: { label: "Vetoed", color: "orange" },
+    "pending-verification": { label: "Pending Verification", color: "slate" },
+  };
 
 export const TOPIC_META: Record<string, { label: string }> = {
   "reproductive-health": { label: "Reproductive Health" },

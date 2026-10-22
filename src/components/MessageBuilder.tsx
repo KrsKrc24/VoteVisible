@@ -41,7 +41,9 @@ export default function MessageBuilder({ bills }: { bills: BillOption[] }) {
     >
       <div>
         <MessageSquare size={25} className="mb-5 text-blue-600" />
-        <h3 className="text-xl font-semibold">Put it in your own words.</h3>
+        <h3 className="text-xl font-semibold">
+          Draft a message to your representative.
+        </h3>
         <p className="mt-2 text-xs leading-6 text-slate-500">
           Your details stay in this page. Nothing is submitted or sent.
         </p>

@@ -22,6 +22,14 @@ for(const b of allBills) {
   assert(b.title?.trim() && b.summary?.trim(),`Missing title/summary: ${b.id}`);
   assert(b.topics.length > 0 && new Set(b.topics).size === b.topics.length,`Missing/duplicate topics: ${b.id}`);
   for(const topic of b.topics) assert(TOPIC_META[topic],`Invalid topic ${topic}: ${b.id}`);
+  if(b.summaryReviewedOn) {
+    assert(b.sources?.length, `Reviewed summary is missing its source: ${b.id}`);
+    assert(/^\d{4}-\d{2}-\d{2}$/.test(b.summaryReviewedOn), `Invalid review date: ${b.id}`);
+    for(const source of b.sources) {
+      assert.equal(new URL(source.url).protocol, 'https:', `Source must use HTTPS: ${b.id}`);
+      assert(source.title?.trim(), `Source needs a descriptive label: ${b.id}`);
+    }
+  }
   if(b.statusDate) assert(/^\d{4}-\d{2}(?:-\d{2})?$/.test(b.statusDate) && !Number.isNaN(Date.parse(b.statusDate)),`Invalid date: ${b.id}`);
   if(/^Vetoed by/i.test(b.statusLabel)) assert.equal(b.status,'vetoed',`Contradictory veto category: ${b.id}`);
 }
@@ -31,3 +39,6 @@ assert.equal(Object.keys(STATUS_META).reduce((n,s)=>n+filterBills(allBills,{stat
 assert.equal(filterBills(allBills,{query:'wAsHiNgToN'}).length,billsByState.Washington.length);
 assert.equal(filterBills(allBills,{state:'Arizona',topic:'drug-pricing'}).length,allBills.filter(b=>b.state==='Arizona' && b.topics.includes('drug-pricing')).length);
 console.log(`Data checks passed: ${allBills.length} unique bills, ${Object.keys(billsByState).length} states, ${Object.keys(TOPIC_META).length} topic definitions. Counts and status labels are consistent. Legislative accuracy requires review against official sources.`);
+
+const reviewed = allBills.filter(b => b.summaryReviewedOn);
+console.log(`Source-linked summaries: ${reviewed.length}; shortest reviewed summary: ${Math.min(...reviewed.map(b => b.summary.split(/\s+/).length))} words.`);

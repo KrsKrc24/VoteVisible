@@ -103,14 +103,16 @@ export default function BillReader({
       <h1 className="mt-3 text-3xl font-bold leading-tight text-navy-900 sm:text-4xl">
         {title}
       </h1>
-      <p className="mt-5 text-lg leading-8 text-slate-700">{summary}</p>
-      <div className="mt-8 rounded-2xl border border-blue-200 bg-blue-50/70 p-4 sm:p-6">
+      <p className="mt-5 whitespace-pre-line text-lg leading-8 text-slate-700">
+        {summary}
+      </p>
+      <div className="mt-8 rounded-lg border border-blue-200 bg-blue-50/70 p-4 sm:p-6">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <Globe2 className="h-6 w-6 text-blue-600" />
             <div>
               <h2 className="font-semibold text-navy-900">
-                Make it make sense. In your language.
+                Read this summary in another language.
               </h2>
               <p className="mt-1 text-xs leading-5 text-slate-600">
                 The English original stays above for reference.

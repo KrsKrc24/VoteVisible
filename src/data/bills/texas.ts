@@ -7,7 +7,8 @@ export const texasBills: Bill[] = [
     billNumber: "HB 18",
     year: 2025,
     title: "Rural Health Stabilization and Innovation Act",
-    summary: "Funds programs to stabilize and modernize rural hospitals and clinics across Texas.",
+    summary:
+      "Funds programs to stabilize and modernize rural hospitals and clinics across Texas.",
     status: "enacted",
     statusLabel: "Effective",
     statusDate: "2025-06-20",
@@ -19,7 +20,8 @@ export const texasBills: Bill[] = [
     billNumber: "HB 26",
     year: 2025,
     title: "Medicaid Nutrition Counseling Pilot Program",
-    summary: "Creates a pilot program offering nutrition counseling to Medicaid recipients.",
+    summary:
+      "Creates a pilot program offering nutrition counseling to Medicaid recipients.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["insurance-coverage", "public-health"],
@@ -30,7 +32,8 @@ export const texasBills: Bill[] = [
     billNumber: "HB 35",
     year: 2025,
     title: "Peer-Support Network for Firefighters & EMS",
-    summary: "Establishes a peer-support network for firefighters and EMS personnel.",
+    summary:
+      "Establishes a peer-support network for firefighters and EMS personnel.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["mental-health", "workforce"],
@@ -41,7 +44,8 @@ export const texasBills: Bill[] = [
     billNumber: "HB 46",
     year: 2025,
     title: "Expand Compassionate Use Program Conditions",
-    summary: "Expands the list of conditions eligible for Texas's low-THC Compassionate Use Program.",
+    summary:
+      "Expands the list of conditions eligible for Texas's low-THC Compassionate Use Program.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["drug-pricing", "patient-rights-privacy"],
@@ -52,7 +56,8 @@ export const texasBills: Bill[] = [
     billNumber: "HB 114",
     year: 2025,
     title: "Veterans Mental Health Programs to TVC",
-    summary: "Transfers veterans mental health programs to the Texas Veterans Commission.",
+    summary:
+      "Transfers veterans mental health programs to the Texas Veterans Commission.",
     status: "enacted",
     statusLabel: "Effective",
     statusDate: "2025-09-01",
@@ -63,22 +68,38 @@ export const texasBills: Bill[] = [
     state: "Texas",
     billNumber: "HB 142",
     year: 2025,
-    title: "Health Policy Update",
-    summary: "A health-related policy update; specific details need verification against the official record.",
+    title: "Medicaid Claims Audits and Overpayment Recovery",
+    summary:
+      "Revises how the Texas Health and Human Services Commission's inspector general reviews Medicaid payments. The enrolled text allows recovery of an overpayment from either a provider or a managed-care organization. A recovery audit contractor needs approval for a cost-effective review and generally must wait at least a year after the claim was received.\n\nIt also calls for an appeals process and restricts duplicate recovery efforts when a managed-care organization is already auditing a claim. Implementation may depend on funding or federal authorization.",
     status: "pending-verification",
     statusLabel: "Needs verification",
-    topics: ["public-health"],
+    topics: ["insurance-coverage", "hospital-oversight"],
+    sources: [
+      {
+        title: "Texas official source: HB 142",
+        url: "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB00142F.htm",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "tx-hb-163",
     state: "Texas",
     billNumber: "HB 163",
     year: 2025,
-    title: "Health Policy Update",
-    summary: "A health-related policy update; specific details need verification against the official record.",
+    title: "Epinephrine Policies for Businesses and Public Entities",
+    summary:
+      "Allows Texas entities, including government bodies, to adopt policies for maintaining, administering, and disposing of epinephrine delivery systems. The enrolled text broadens the wording beyond auto-injectors.\n\nAn entity that is already required by another law to adopt an epinephrine policy remains governed by that separate requirement. The provision is permission to establish a policy, rather than a requirement that every business or public office keep an epinephrine supply.",
     status: "pending-verification",
     statusLabel: "Needs verification",
-    topics: ["public-health"],
+    topics: ["emergency-care", "public-health"],
+    sources: [
+      {
+        title: "Texas official source: HB 163",
+        url: "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB00163F.htm",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "tx-hb-201",
@@ -86,7 +107,8 @@ export const texasBills: Bill[] = [
     billNumber: "HB 201",
     year: 2025,
     title: "Chemical Dependency Exam & Court-Ordered Treatment Duration",
-    summary: "Sets duration rules for court-ordered chemical dependency exams and treatment.",
+    summary:
+      "Sets duration rules for court-ordered chemical dependency exams and treatment.",
     status: "enacted",
     statusLabel: "Effective",
     statusDate: "2025-09-01",
@@ -98,7 +120,8 @@ export const texasBills: Bill[] = [
     billNumber: "HB 216",
     year: 2025,
     title: "Itemized Medical Bill Delivery Rules",
-    summary: "Requires providers to deliver itemized medical bills so patients can review charges.",
+    summary:
+      "Requires providers to deliver itemized medical bills so patients can review charges.",
     status: "enacted",
     statusLabel: "Effective",
     statusDate: "2025-09-01",
@@ -110,43 +133,75 @@ export const texasBills: Bill[] = [
     billNumber: "HB 334",
     year: 2025,
     title: "County Employee Family Leave Pool",
-    summary: "Creates a shared family leave pool for county employees.",
+    summary:
+      "Allows counties to create a shared family-leave pool into which employees can donate unused leave. Eligible employees could use the pool to care for themselves or a seriously ill family member, or to bond with a child after birth, adoption, or foster placement.\n\nThe decision to establish a program belongs to the county. The bill does not automatically give every Texas worker paid family leave, and it is directed at county employees rather than employees of all private businesses.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["workforce"],
+    sources: [
+      {
+        title: "Texas official source: HB 334",
+        url: "https://capitol.texas.gov/tlodocs/89R/analysis/pdf/HB00334E.pdf",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "tx-hb-388",
     state: "Texas",
     billNumber: "HB 388",
     year: 2025,
-    title: "Health Policy Update",
-    summary: "A health-related policy update; specific details need verification against the official record.",
+    title: "A Standard Form for Coordinating Health Insurance Benefits",
+    summary:
+      "Requires a uniform questionnaire for coordinating health insurance benefits. Coordination matters when more than one health plan may be responsible for paying a person's medical claim.\n\nThe insurance commissioner must develop the form with stakeholders. Affected insurers whose plans coordinate benefits must use it and make it available to providers as appropriate. The enrolled text applies the questionnaire changes from February 1, 2026, and lists both private and specified public health programs within its scope.",
     status: "pending-verification",
     statusLabel: "Needs verification",
-    topics: ["public-health"],
+    topics: ["insurance-coverage", "consumer-protection"],
+    sources: [
+      {
+        title: "Texas official source: HB 388",
+        url: "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB00388F.htm",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "tx-hb-426",
     state: "Texas",
     billNumber: "HB 426",
     year: 2025,
-    title: "Health Policy Update",
-    summary: "A health-related policy update; specific details need verification against the official record.",
+    title: "Medicaid and CHIP Coverage for Cranial Remolding Devices",
+    summary:
+      "Requires full coverage of qualifying cranial remolding devices through Medicaid and the Children's Health Insurance Program. These are custom-fitted devices used to address particular skull conditions in children.\n\nThe enrolled text covers craniosynostosis and sets additional requirements for plagiocephaly or brachycephaly, including age, an unsuccessful course of conservative treatment, and clinical measurements. Those criteria matter: coverage is tied to the diagnoses and conditions specified in the bill, not every request for a helmet.",
     status: "pending-verification",
     statusLabel: "Needs verification",
-    topics: ["public-health"],
+    topics: ["insurance-coverage", "youth-school-health", "disability-access"],
+    sources: [
+      {
+        title: "Texas official source: HB 426",
+        url: "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB00426F.htm",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "tx-hb-451",
     state: "Texas",
     billNumber: "HB 451",
     year: 2025,
-    title: "Health Policy Update",
-    summary: "A health-related policy update; specific details need verification against the official record.",
+    title: "Screening Children for Risk of Sexual Exploitation",
+    summary:
+      "Adds screening for commercial sexual exploitation to specified child-welfare and juvenile-probation assessments. For a child entering state conservatorship, the screening is part of the assessment required within 45 days when age-based guidance supports it or concerns already exist.\n\nJuvenile probation risk assessments must also include screening using a validated, evidence-informed tool selected by the state's Child Sex Trafficking Prevention Unit. The enrolled bill makes the family-services department's required implementation conditional on a specific appropriation.",
     status: "pending-verification",
     statusLabel: "Needs verification",
-    topics: ["public-health"],
+    topics: ["youth-school-health", "public-health"],
+    sources: [
+      {
+        title: "Texas official source: HB 451",
+        url: "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB00451F.htm",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "tx-hb-541",
@@ -154,7 +209,8 @@ export const texasBills: Bill[] = [
     billNumber: "HB 541",
     year: 2025,
     title: "Expand Direct Primary Care Framework",
-    summary: "Expands the legal framework for direct primary care arrangements between patients and doctors.",
+    summary:
+      "Expands the legal framework for direct primary care arrangements between patients and doctors.",
     status: "enacted",
     statusLabel: "Effective",
     statusDate: "2025-06-20",
@@ -166,7 +222,8 @@ export const texasBills: Bill[] = [
     billNumber: "HB 549",
     year: 2025,
     title: "School Airway-Clearance Devices & Respiratory Medications",
-    summary: "Allows schools to stock airway-clearance devices and respiratory medications for students.",
+    summary:
+      "Allows schools to stock airway-clearance devices and respiratory medications for students.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["youth-school-health", "emergency-care"],
@@ -177,7 +234,8 @@ export const texasBills: Bill[] = [
     billNumber: "HB 713",
     year: 2025,
     title: "Maternal Mortality Review Committee Reporting Exception",
-    summary: "Creates a reporting exception for the Maternal Mortality Review Committee.",
+    summary:
+      "Creates a reporting exception for the Maternal Mortality Review Committee.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["maternal-health"],
@@ -200,7 +258,8 @@ export const texasBills: Bill[] = [
     billNumber: "HB 742",
     year: 2025,
     title: "Human Trafficking Prevention Training for Healthcare Facilities",
-    summary: "Requires human trafficking prevention training for staff at healthcare facilities.",
+    summary:
+      "Requires human trafficking prevention training for staff at healthcare facilities.",
     status: "enacted",
     statusLabel: "Effective",
     statusDate: "2025-09-01",
@@ -212,7 +271,8 @@ export const texasBills: Bill[] = [
     billNumber: "HB 754",
     year: 2025,
     title: "Human Trafficking Training for Medical Assistants",
-    summary: "Requires human trafficking awareness training for medical assistants.",
+    summary:
+      "Requires human trafficking awareness training for medical assistants.",
     status: "enacted",
     statusLabel: "Effective",
     statusDate: "2025-09-01",
@@ -224,7 +284,8 @@ export const texasBills: Bill[] = [
     billNumber: "HB 879",
     year: 2025,
     title: "Veteran Healthcare License Transition",
-    summary: "Eases license transition for veterans entering civilian healthcare jobs.",
+    summary:
+      "Eases license transition for veterans entering civilian healthcare jobs.",
     status: "enacted",
     statusLabel: "Effective",
     statusDate: "2025-09-01",
@@ -235,12 +296,20 @@ export const texasBills: Bill[] = [
     state: "Texas",
     billNumber: "HB 1052",
     year: 2025,
-    title: "Telehealth Insurance Coverage Requirement",
-    summary: "Requires insurance coverage for telehealth visits.",
+    title: "Telehealth Coverage When a Patient or Provider Is Outside Texas",
+    summary:
+      "Requires affected health plans to cover an otherwise-covered telemedicine, teledentistry, or telehealth service even when the patient or provider is temporarily outside Texas. The patient must primarily reside in Texas, and the provider must be authorized to practice there and maintain a physical Texas office.\n\nThe coverage rule applies to plans issued, delivered, or renewed on or after January 1, 2026. It is not a blanket requirement to pay for any remote visit with any out-of-state clinician.",
     status: "enacted",
     statusLabel: "Effective",
     statusDate: "2025-09-01",
     topics: ["telehealth", "insurance-coverage"],
+    sources: [
+      {
+        title: "Texas official source: HB 1052",
+        url: "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB01052F.HTM",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "tx-hb-1639",
@@ -260,11 +329,19 @@ export const texasBills: Bill[] = [
     billNumber: "HB 1700",
     year: 2025,
     title: "Telehealth Recordkeeping Requirements",
-    summary: "Sets recordkeeping requirements for telehealth visits.",
+    summary:
+      "Requires agencies that regulate healthcare professionals to standardize the format and retention of patient-consent records for telemedicine, teledentistry, and telehealth. The records concern consent to treatment, data collection, and data sharing.\n\nThe rules must address the documentation appropriate to each service and include audio-only consent documentation consistent with the applicable standard of care. The bill concerns consent records, not a requirement that every remote appointment be recorded as a video. It took effect September 1, 2025.",
     status: "enacted",
     statusLabel: "Effective",
     statusDate: "2025-09-01",
     topics: ["telehealth", "patient-rights-privacy"],
+    sources: [
+      {
+        title: "Texas official source: HB 1700",
+        url: "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB01700F.HTM",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "tx-hb-3000",
@@ -272,10 +349,18 @@ export const texasBills: Bill[] = [
     billNumber: "HB 3000",
     year: 2025,
     title: "Rural Ambulance Service Grant Program",
-    summary: "Funds grants to support ambulance services in rural areas.",
+    summary:
+      "Creates a comptroller-administered grant program to help qualified rural counties buy ambulances for eligible providers. Counties with fewer than 10,000 residents may receive up to $500,000; those with 10,000 to 68,750 residents may receive up to $350,000.\n\nThe money is restricted to purchasing ambulances and necessary accessories or modifications. Counties apply on a provider's behalf, and awards depend on appropriated funding and program rules. This is equipment funding, not a guarantee that an individual ambulance ride will be free.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["rural-health", "emergency-care"],
+    sources: [
+      {
+        title: "Texas official source: HB 3000",
+        url: "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB03000F.HTM",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "tx-hb-3062",
@@ -283,7 +368,8 @@ export const texasBills: Bill[] = [
     billNumber: "HB 3062",
     year: 2025,
     title: "Fentanyl & Drug Poisoning Awareness Education for College Students",
-    summary: "Requires fentanyl and drug poisoning awareness education for college students.",
+    summary:
+      "Requires fentanyl and drug poisoning awareness education for college students.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["substance-use", "youth-school-health"],
@@ -294,7 +380,8 @@ export const texasBills: Bill[] = [
     billNumber: "HB 3801",
     year: 2025,
     title: "Health Professions Workforce Coordinating Council",
-    summary: "Creates a council to coordinate health professions workforce planning.",
+    summary:
+      "Creates a council to coordinate health professions workforce planning.",
     status: "enacted",
     statusLabel: "Effective",
     statusDate: "2025-09-01",
@@ -306,7 +393,8 @@ export const texasBills: Bill[] = [
     billNumber: "HB 3812",
     year: 2025,
     title: "Insurance Preauthorization Exemption Rules",
-    summary: "Exempts certain providers from insurance preauthorization requirements based on track record.",
+    summary:
+      "Exempts certain providers from insurance preauthorization requirements based on track record.",
     status: "enacted",
     statusLabel: "Effective",
     statusDate: "2025-09-01",
@@ -318,7 +406,8 @@ export const texasBills: Bill[] = [
     billNumber: "HB 4076",
     year: 2025,
     title: "Organ Transplant Vaccination Status Protections",
-    summary: "Prohibits denying organ transplants based solely on vaccination status.",
+    summary:
+      "Prohibits denying organ transplants based solely on vaccination status.",
     status: "enacted",
     statusLabel: "Effective",
     statusDate: "2025-09-01",
@@ -330,7 +419,8 @@ export const texasBills: Bill[] = [
     billNumber: "SB 25",
     year: 2025,
     title: "Health and Nutrition Standards",
-    summary: "Sets updated health and nutrition standards; some provisions may need additional verification.",
+    summary:
+      "Sets updated health and nutrition standards; some provisions may need additional verification.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["public-health", "youth-school-health"],
@@ -341,7 +431,8 @@ export const texasBills: Bill[] = [
     billNumber: "SB 31",
     year: 2025,
     title: "Life of the Mother Act",
-    summary: "Clarifies abortion care exceptions for life-threatening conditions to protect maternal health.",
+    summary:
+      "Clarifies abortion care exceptions for life-threatening conditions to protect maternal health.",
     status: "enacted",
     statusLabel: "Effective",
     statusDate: "2025-06-20",
@@ -353,7 +444,8 @@ export const texasBills: Bill[] = [
     billNumber: "SB 53",
     year: 2025,
     title: "Mental Health Code Notice & Filing Procedures",
-    summary: "Updates notice and filing procedures under the state's mental health code.",
+    summary:
+      "Updates notice and filing procedures under the state's mental health code.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["mental-health"],
@@ -364,7 +456,8 @@ export const texasBills: Bill[] = [
     billNumber: "SB 269",
     year: 2025,
     title: "Vaccine & Drug Adverse Event Reporting Requirement",
-    summary: "Strengthens requirements for reporting adverse events linked to vaccines and drugs.",
+    summary:
+      "Strengthens requirements for reporting adverse events linked to vaccines and drugs.",
     status: "enacted",
     statusLabel: "Effective",
     statusDate: "2025-09-01",
@@ -376,7 +469,8 @@ export const texasBills: Bill[] = [
     billNumber: "SB 331",
     year: 2025,
     title: "Healthcare Cost-Disclosure Expansion",
-    summary: "Expands cost-disclosure requirements to more types of healthcare facilities.",
+    summary:
+      "Expands cost-disclosure requirements to more types of healthcare facilities.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["consumer-protection", "insurance-coverage"],
@@ -387,7 +481,8 @@ export const texasBills: Bill[] = [
     billNumber: "SB 646",
     year: 2025,
     title: "Mental Health Professional Loan Repayment for Schools",
-    summary: "Creates a loan repayment program for mental health professionals who work in schools.",
+    summary:
+      "Creates a loan repayment program for mental health professionals who work in schools.",
     status: "enacted",
     statusLabel: "Effective",
     statusDate: "2025-09-01",
@@ -399,11 +494,19 @@ export const texasBills: Bill[] = [
     billNumber: "SB 748",
     year: 2025,
     title: "Laser Hair Removal Regulation",
-    summary: "Regulates who can perform laser hair removal procedures.",
+    summary:
+      "Corrects the scope of the Texas Department of Licensing and Regulation's authority so it applies to the laser hair removal subchapter, rather than the broader chapter dealing with radiation sources.\n\nIt also repeals two provisions governing the design of facility warning signs and the warning-sign information included in licensing applications. This is a regulatory and paperwork change, not a new blanket rule deciding which medical professionals may perform every laser procedure. It took effect September 1, 2025.",
     status: "enacted",
     statusLabel: "Effective",
     statusDate: "2025-09-01",
     topics: ["consumer-protection"],
+    sources: [
+      {
+        title: "Texas official source: SB 748",
+        url: "https://capitol.texas.gov/tlodocs/89R/analysis/html/SB00748H.htm",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "tx-sb-896",
@@ -411,7 +514,8 @@ export const texasBills: Bill[] = [
     billNumber: "SB 896",
     year: 2025,
     title: "Newborn Enrollment Period in Health Plans",
-    summary: "Sets the enrollment period for adding newborns to health insurance plans.",
+    summary:
+      "Sets the enrollment period for adding newborns to health insurance plans.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["insurance-coverage", "maternal-health"],
@@ -422,7 +526,8 @@ export const texasBills: Bill[] = [
     billNumber: "SB 897",
     year: 2025,
     title: "Veteran Community Mental Health Program Grants",
-    summary: "Funds grants for community mental health programs serving veterans.",
+    summary:
+      "Funds grants for community mental health programs serving veterans.",
     status: "enacted",
     statusLabel: "Effective",
     statusDate: "2025-09-01",
@@ -434,7 +539,8 @@ export const texasBills: Bill[] = [
     billNumber: "SB 904",
     year: 2025,
     title: "Hearing Instrument Fitter & Dispenser Licensing",
-    summary: "Updates licensing requirements for hearing instrument fitters and dispensers.",
+    summary:
+      "Updates licensing requirements for hearing instrument fitters and dispensers.",
     status: "enacted",
     statusLabel: "Effective",
     statusDate: "2025-09-01",
@@ -446,7 +552,8 @@ export const texasBills: Bill[] = [
     billNumber: "SB 905",
     year: 2025,
     title: "Speech-Language Pathologist & Audiologist Licensing",
-    summary: "Updates licensing requirements for speech-language pathologists and audiologists.",
+    summary:
+      "Updates licensing requirements for speech-language pathologists and audiologists.",
     status: "enacted",
     statusLabel: "Effective",
     statusDate: "2025-09-01",
@@ -458,7 +565,8 @@ export const texasBills: Bill[] = [
     billNumber: "SB 912",
     year: 2025,
     title: "Continuing Education Compliance Tracking System",
-    summary: "Creates a system to track healthcare provider continuing education compliance.",
+    summary:
+      "Creates a system to track healthcare provider continuing education compliance.",
     status: "enacted",
     statusLabel: "Filed without the governor's signature",
     statusDate: "2025-09-01",
@@ -482,7 +590,8 @@ export const texasBills: Bill[] = [
     billNumber: "SB 920",
     year: 2025,
     title: "School Medication Administration Liability Protections",
-    summary: "Protects school staff from liability when properly administering student medications.",
+    summary:
+      "Protects school staff from liability when properly administering student medications.",
     status: "enacted",
     statusLabel: "Effective",
     statusDate: "2025-09-01",
@@ -494,7 +603,8 @@ export const texasBills: Bill[] = [
     billNumber: "SB 926",
     year: 2025,
     title: "Insurer Financial Incentives for Provider Tiering",
-    summary: "Regulates financial incentives insurers use to steer patients toward preferred provider tiers.",
+    summary:
+      "Regulates financial incentives insurers use to steer patients toward preferred provider tiers.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["insurance-coverage", "consumer-protection"],
@@ -505,7 +615,8 @@ export const texasBills: Bill[] = [
     billNumber: "SB 984",
     year: 2025,
     title: "Investigational Treatment Access for Life-Threatening Illness",
-    summary: "Expands access to investigational treatments for patients with life-threatening illnesses.",
+    summary:
+      "Expands access to investigational treatments for patients with life-threatening illnesses.",
     status: "enacted",
     statusLabel: "Effective",
     statusDate: "2025-09-01",
@@ -517,7 +628,8 @@ export const texasBills: Bill[] = [
     billNumber: "SB 1151",
     year: 2025,
     title: "Third-Party Administrator Audit Requirement Changes",
-    summary: "Updates audit requirements for third-party health plan administrators.",
+    summary:
+      "Updates audit requirements for third-party health plan administrators.",
     status: "enacted",
     statusLabel: "Effective",
     statusDate: "2025-09-01",
@@ -529,7 +641,8 @@ export const texasBills: Bill[] = [
     billNumber: "SB 1164",
     year: 2025,
     title: "Emergency Detention & Court-Ordered Mental Health Procedures",
-    summary: "Updates procedures for emergency detention and court-ordered mental health treatment.",
+    summary:
+      "Updates procedures for emergency detention and court-ordered mental health treatment.",
     status: "enacted",
     statusLabel: "Effective",
     statusDate: "2025-09-01",
@@ -540,12 +653,20 @@ export const texasBills: Bill[] = [
     state: "Texas",
     billNumber: "SB 1188",
     year: 2025,
-    title: "Electronic Health Records Requirements",
-    summary: "Updates requirements for electronic health records systems.",
+    title: "Electronic Health Record Storage, Access, and Data Rules",
+    summary:
+      "Sets requirements for covered electronic health records, including storing patient information in the United States or its territories and restricting access to people who need it for their work. It bars recording credit scores and voter-registration status in these records.\n\nThe law also addresses parental access to minors' records, disclosure and review of diagnostic AI use, and a separate field for sex recorded at birth, with limited grounds for changing that field. Certain care providers are excluded from the chapter. The storage requirement applies from January 1, 2026, including to older records.",
     status: "enacted",
     statusLabel: "Effective",
     statusDate: "2025-09-01",
-    topics: ["patient-rights-privacy"],
+    topics: ["patient-rights-privacy", "lgbtq-health", "hospital-oversight"],
+    sources: [
+      {
+        title: "Texas official source: SB 1188",
+        url: "https://capitol.texas.gov/tlodocs/89R/billtext/html/SB01188F.htm",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "tx-sb-1236",
@@ -553,7 +674,8 @@ export const texasBills: Bill[] = [
     billNumber: "SB 1236",
     year: 2025,
     title: "Pharmacy Benefit Network Contract Transparency",
-    summary: "Requires greater transparency in pharmacy benefit network contracts.",
+    summary:
+      "Requires greater transparency in pharmacy benefit network contracts.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["drug-pricing", "consumer-protection"],
@@ -564,7 +686,8 @@ export const texasBills: Bill[] = [
     billNumber: "SB 1266",
     year: 2025,
     title: "Medicaid Provider Enrollment & Credentialing Support",
-    summary: "Streamlines Medicaid provider enrollment and credentialing support.",
+    summary:
+      "Streamlines Medicaid provider enrollment and credentialing support.",
     status: "enacted",
     statusLabel: "Effective",
     statusDate: "2025-09-01",
@@ -576,7 +699,8 @@ export const texasBills: Bill[] = [
     billNumber: "SB 1307",
     year: 2025,
     title: "Consumer Health Insurance Reference Guide",
-    summary: "Creates a consumer reference guide to help residents compare health insurance options.",
+    summary:
+      "Creates a consumer reference guide to help residents compare health insurance options.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["insurance-coverage", "consumer-protection"],

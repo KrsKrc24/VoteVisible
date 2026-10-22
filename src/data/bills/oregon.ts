@@ -20,10 +20,18 @@ export const oregonBills: Bill[] = [
     billNumber: "HB 2024",
     year: 2025,
     title: "Behavioral Health Workforce Grants",
-    summary: "Funds grants to grow Oregon's behavioral health workforce.",
+    summary:
+      "Directs the Oregon Health Authority to award grants that help eligible behavioral health employers recruit and retain staff. Grant recipients must report how they use the money.\n\nThe law also requires safety training in covered behavioral health workplaces and provides reinstatement with back pay for employees subjected to unlawful retaliation. These provisions apply to covered mental health and substance-use treatment workplaces.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["mental-health", "workforce"],
+    sources: [
+      {
+        title: "Oregon official source: HB 2024",
+        url: "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB2024",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "or-hb-2059",
@@ -43,10 +51,18 @@ export const oregonBills: Bill[] = [
     billNumber: "HB 2292",
     year: 2025,
     title: "HIV Treatment Affordability",
-    summary: "Requires insurance coverage that makes HIV treatment more affordable.",
+    summary:
+      "Requires affected health benefit plans and Medicaid managed-care plans to cover additional HIV treatment without patient cost-sharing. It also bars prior authorization for the treatment covered by the provision.\n\nThe practical change concerns both what a patient pays and whether an insurer can require approval before providing that covered care. The treatment covered by this provision must be available without a copay or other patient cost-sharing and without waiting for the plan's advance approval.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["insurance-coverage", "public-health"],
+    sources: [
+      {
+        title: "Oregon official source: HB 2292",
+        url: "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB2292",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "or-hb-2385",
@@ -91,10 +107,18 @@ export const oregonBills: Bill[] = [
     billNumber: "HB 2942",
     year: 2025,
     title: "Pharmacy HIV Service Reimbursement",
-    summary: "Allows pharmacies to be reimbursed for providing HIV-related services.",
+    summary:
+      "Requires the Oregon Health Authority and coordinated care organizations to reimburse pharmacies and pharmacists for certain HIV-related services in the same manner as other healthcare providers.\n\nThis changes how providers are paid when qualifying services are delivered through a pharmacy. The payment requirement is limited to the HIV-related services covered by the statute. The enrolled bill became Chapter 206 of Oregon's 2025 laws.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["public-health", "insurance-coverage"],
+    sources: [
+      {
+        title: "Oregon official source: HB 2942",
+        url: "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB2942",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "or-hb-3242",
@@ -126,7 +150,8 @@ export const oregonBills: Bill[] = [
     billNumber: "HB 3294",
     year: 2025,
     title: "Hospital Nurse Staffing Requirements",
-    summary: "Sets minimum nurse staffing ratios in hospitals to protect patient safety.",
+    summary:
+      "Sets minimum nurse staffing ratios in hospitals to protect patient safety.",
     status: "pending-verification",
     statusLabel: "Passed the Legislature: Check the official record",
     topics: ["hospital-oversight", "workforce"],
@@ -137,10 +162,18 @@ export const oregonBills: Bill[] = [
     billNumber: "HB 3321",
     year: 2025,
     title: "Youth Substance Use Prevention Strategy",
-    summary: "Funds a statewide strategy to prevent substance use among youth.",
+    summary:
+      "Directs the Alcohol and Drug Policy Commission to develop a statewide strategy aimed at preventing young people from starting substance use. The work must consider the full range of youth services, including prevention, early intervention, and treatment.\n\nThe commission must work with Oregon Health & Science University to support youth treatment and early-intervention providers through education and technical assistance. The law also requires findings and recommendations to be reported to the legislature by September 15, 2026.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["substance-use", "youth-school-health"],
+    sources: [
+      {
+        title: "Oregon official source: HB 3321",
+        url: "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB3321",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "or-hb-3761",
@@ -148,7 +181,8 @@ export const oregonBills: Bill[] = [
     billNumber: "HB 3761",
     year: 2025,
     title: "Art Therapy Licensing & Medicaid Reimbursement",
-    summary: "Creates licensing for art therapists and allows Medicaid reimbursement for their services.",
+    summary:
+      "Creates licensing for art therapists and allows Medicaid reimbursement for their services.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["mental-health", "workforce"],
@@ -159,7 +193,8 @@ export const oregonBills: Bill[] = [
     billNumber: "SB 537",
     year: 2025,
     title: "Workplace Violence Prevention in Healthcare",
-    summary: "Requires healthcare employers to implement workplace violence prevention plans.",
+    summary:
+      "Requires healthcare employers to implement workplace violence prevention plans.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["workforce", "hospital-oversight"],
@@ -182,7 +217,8 @@ export const oregonBills: Bill[] = [
     billNumber: "SB 692",
     year: 2025,
     title: "Maternal Healthcare & Doula Coverage",
-    summary: "Expands insurance coverage for doula services and maternal healthcare.",
+    summary:
+      "Expands insurance coverage for doula services and maternal healthcare.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["maternal-health", "insurance-coverage"],
@@ -193,10 +229,18 @@ export const oregonBills: Bill[] = [
     billNumber: "SB 699",
     year: 2025,
     title: "Prosthetic & Orthotic Device Insurance Coverage",
-    summary: "Requires insurance coverage for prosthetic and orthotic devices.",
+    summary:
+      "Expands insurance requirements for prosthetic and orthotic devices, which include artificial limbs and supports such as braces. The change concerns which devices and patients must be covered under the affected health plans.\n\nThe law includes an important exception: Oregon's Public Employees' Benefit Board and Oregon Educators Benefit Board are exempt from the expansion unless they notify the state that they will provide it. People enrolled in those public employee plans should check their board's coverage decision.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["disability-access", "insurance-coverage"],
+    sources: [
+      {
+        title: "Oregon official source: SB 699",
+        url: "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/SB699",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "or-sb-834",
@@ -216,7 +260,8 @@ export const oregonBills: Bill[] = [
     billNumber: "SB 1137",
     year: 2025,
     title: "Autologous Breast Reconstruction Insurance",
-    summary: "Requires insurance coverage for autologous breast reconstruction after mastectomy.",
+    summary:
+      "Requires insurance coverage for autologous breast reconstruction after mastectomy.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["insurance-coverage"],
@@ -226,11 +271,19 @@ export const oregonBills: Bill[] = [
     state: "Oregon",
     billNumber: "SB 228",
     year: 2025,
-    title: "Residential Care Facility Resident Rights",
-    summary: "Strengthens the rights of residents in residential care facilities.",
+    title: "Family Councils in Residential Care Facilities",
+    summary:
+      "Gives residents of residential care facilities the right to organize and take part in resident groups, including independent family councils. These councils let residents, relatives, and legal representatives raise concerns together.\n\nFacilities cannot deliberately interfere with an independent family council or discriminate or retaliate against residents because they or their family members participate. Protection covers participation by the resident, a family member, or a legal representative.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["patient-rights-privacy", "hospital-oversight"],
+    sources: [
+      {
+        title: "Oregon official source: SB 228",
+        url: "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/SB228",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "or-hb-2057",
@@ -238,21 +291,37 @@ export const oregonBills: Bill[] = [
     billNumber: "HB 2057",
     year: 2025,
     title: "340B Pharmacy Reimbursement Claim Rules",
-    summary: "Sets rules for how pharmacies submit 340B reimbursement claims.",
+    summary:
+      "Would prevent insurers and pharmacy benefit managers from requiring a prescription reimbursement claim to carry a special marker identifying a drug as purchased through the federal 340B discount program.\n\n340B is a federal program through which eligible providers buy certain outpatient drugs at discounted prices; this bill addresses how those purchases are identified during pharmacy billing. The official record lists it in a House committee and does not show a chapter number, so the proposed restriction should not be treated as an established benefit.",
     status: "introduced",
     statusLabel: "Introduced: Final status needs verification",
     topics: ["drug-pricing"],
+    sources: [
+      {
+        title: "Oregon official source: HB 2057",
+        url: "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB2057",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "or-hb-2222",
     state: "Oregon",
     billNumber: "HB 2222",
     year: 2025,
-    title: "Mobile Integrated Healthcare Providers Registry",
-    summary: "Creates a registry for mobile integrated healthcare providers.",
+    title: "Medicaid Enrollment for Mobile Healthcare Providers",
+    summary:
+      "Proposes rules for mobile integrated healthcare providers to enroll in Oregon's Medicaid program. The amended version directs the Oregon Health Authority to set enrollment criteria and help providers and their employers apply.\n\nAn earlier version called for a provider registry, but the amended summary replaces that approach with Medicaid enrollment criteria. The linked record places the bill in the Joint Committee on Ways and Means; it should not be read as an enacted guarantee of payment for every mobile service.",
     status: "introduced",
     statusLabel: "Introduced: Final status needs verification",
     topics: ["emergency-care", "rural-health"],
+    sources: [
+      {
+        title: "Oregon official source: HB 2222",
+        url: "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB2222",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "or-sb-22",
@@ -260,10 +329,18 @@ export const oregonBills: Bill[] = [
     billNumber: "SB 22",
     year: 2025,
     title: "Healthcare Affordability Study",
-    summary: "Directs a study of healthcare affordability across the state.",
+    summary:
+      "Proposes a Department of Consumer and Business Services study of healthcare affordability. The department would report its findings to legislative healthcare committees by September 15, 2026, and the study provision would expire on January 2, 2027.\n\nThis is a proposal to gather information for lawmakers. It does not itself cap premiums, reduce a medical bill, or create a new coverage entitlement. The linked legislative record lists it in the Senate healthcare committee without a chapter number.",
     status: "pending-verification",
     statusLabel: "Needs verification",
     topics: ["insurance-coverage", "consumer-protection"],
+    sources: [
+      {
+        title: "Oregon official source: SB 22",
+        url: "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/SB22",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "or-sb-23",
@@ -271,21 +348,37 @@ export const oregonBills: Bill[] = [
     billNumber: "SB 23",
     year: 2025,
     title: "Behavioral Health Services Study",
-    summary: "Directs a study of behavioral health service availability.",
+    summary:
+      "Proposes an Oregon Health Authority study of behavioral health, with findings due to legislative health committees by September 15, 2026. The study provision would expire on January 2, 2027.\n\nThe proposal concerns research and reporting, rather than a direct promise of additional counseling appointments, new facilities, or insurance coverage. The official record lists the bill in the Senate healthcare committee and does not show a chapter number.",
     status: "pending-verification",
     statusLabel: "Needs verification",
     topics: ["mental-health"],
+    sources: [
+      {
+        title: "Oregon official source: SB 23",
+        url: "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/SB23",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "or-sb-230",
     state: "Oregon",
     billNumber: "SB 230",
     year: 2025,
-    title: "Veterans Dental Care Access",
-    summary: "Expands dental care access for veterans.",
+    title: "Veterans Dental Program: 60-Day Intake Screenings",
+    summary:
+      "Requires providers in Oregon's Veterans Dental Program to complete an intake screening within 60 days after an enrolled veteran contacts them. The 60-day deadline is for the initial screening; later treatment may follow a different schedule.\n\nThe program serves eligible Oregon veterans who do not qualify for medical assistance and have income at or below 400% of the federal poverty guidelines. Its covered dental services do not require copays, deductibles, or other cost-sharing.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["insurance-coverage"],
+    sources: [
+      {
+        title: "Oregon official source: SB 230",
+        url: "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/SB230",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "or-sb-289",
@@ -293,7 +386,8 @@ export const oregonBills: Bill[] = [
     billNumber: "SB 289",
     year: 2025,
     title: "Prescription Drug Affordability Board Reporting",
-    summary: "Updates the reporting schedule for the state's prescription drug affordability board.",
+    summary:
+      "Updates the reporting schedule for the state's prescription drug affordability board.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["drug-pricing"],
@@ -304,7 +398,8 @@ export const oregonBills: Bill[] = [
     billNumber: "SB 295",
     year: 2025,
     title: "Permanent Pharmacist COVID Testing & Treatment Authority",
-    summary: "Makes permanent the authority for pharmacists to test and treat for COVID-19.",
+    summary:
+      "Makes permanent the authority for pharmacists to test and treat for COVID-19.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["workforce", "public-health"],
@@ -314,11 +409,19 @@ export const oregonBills: Bill[] = [
     state: "Oregon",
     billNumber: "SB 296",
     year: 2025,
-    title: "Long-Term Care Eligibility Decision Speed",
-    summary: "Studies ways to speed up long-term care eligibility decisions.",
+    title: "Hospital Discharge and Long-Term Care Access",
+    summary:
+      "Directs Oregon agencies to examine delays that keep patients in hospitals when they could receive care elsewhere. The work includes speeding up eligibility decisions for long-term services, reviewing facility rules for complex medical or behavioral health needs, and studying medical respite options.\n\nIt also directs the Oregon Health Authority to establish a post-hospital skilled nursing benefit of up to 100 days for medical-assistance recipients and seek any federal approval needed. That instruction is not a guarantee that every discharged patient qualifies.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["disability-access"],
+    sources: [
+      {
+        title: "Oregon official source: SB 296",
+        url: "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/SB296",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "or-sb-536",
@@ -326,7 +429,8 @@ export const oregonBills: Bill[] = [
     billNumber: "SB 536",
     year: 2025,
     title: "Physician Associates & NPs as Medical Examiners",
-    summary: "Allows physician associates and nurse practitioners to serve as medical examiners.",
+    summary:
+      "Allows physician associates and nurse practitioners to serve as medical examiners.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["workforce"],
@@ -337,7 +441,8 @@ export const oregonBills: Bill[] = [
     billNumber: "SB 550",
     year: 2025,
     title: "Wheelchair & Mobility Device Repair Access",
-    summary: "Improves access to timely repair of wheelchairs and other mobility devices.",
+    summary:
+      "Improves access to timely repair of wheelchairs and other mobility devices.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["disability-access"],
@@ -348,10 +453,18 @@ export const oregonBills: Bill[] = [
     billNumber: "SB 598",
     year: 2025,
     title: "Nonopioid Medication Insurance Parity",
-    summary: "Requires insurance parity for nonopioid pain medications.",
+    summary:
+      "Requires prescription-drug coverage to include at least one clinically appropriate, FDA-approved nonopioid pain medicine as an alternative for each covered opioid. An insurer cannot put stricter approval, step-therapy, or patient cost-sharing requirements on that alternative than on the opioid.\n\nThe comparison includes prior authorization, requirements to try another drug first, deductibles, and copays. The rule applies to a clinically appropriate alternative, so it leaves a role for the prescriber to decide which treatment fits the patient.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["substance-use", "insurance-coverage"],
+    sources: [
+      {
+        title: "Oregon official source: SB 598",
+        url: "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/SB598",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "or-sb-605",
@@ -359,10 +472,18 @@ export const oregonBills: Bill[] = [
     billNumber: "SB 605",
     year: 2025,
     title: "Medical Debt Credit Reporting Prohibition",
-    summary: "Prohibits medical debt from being reported to credit agencies.",
+    summary:
+      "Stops medical providers from reporting a patient's medical debt, including its existence or amount, to a credit-reporting agency. Credit-reporting agencies also cannot include an item they know, or should know, is medical debt in a consumer report.\n\nThe law makes violations enforceable under Oregon's Unlawful Trade Practices Act. A patient can still owe the medical bill. The protection concerns credit reporting, not debt cancellation.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["medical-debt", "consumer-protection"],
+    sources: [
+      {
+        title: "Oregon official source: SB 605",
+        url: "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/SB605",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "or-sb-729",
@@ -370,7 +491,8 @@ export const oregonBills: Bill[] = [
     billNumber: "SB 729",
     year: 2025,
     title: "Mental Health Services Nondenial for Disabilities",
-    summary: "Prohibits denying mental health services to people based on disability.",
+    summary:
+      "Prohibits denying mental health services to people based on disability.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["mental-health", "disability-access"],
@@ -381,7 +503,8 @@ export const oregonBills: Bill[] = [
     billNumber: "SB 739",
     year: 2025,
     title: "Residential Care Facility Complaint Investigations",
-    summary: "Strengthens investigation of complaints at residential care facilities.",
+    summary:
+      "Strengthens investigation of complaints at residential care facilities.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["hospital-oversight", "patient-rights-privacy"],
@@ -392,10 +515,18 @@ export const oregonBills: Bill[] = [
     billNumber: "SB 822",
     year: 2025,
     title: "Network Adequacy for Large Employer Plans",
-    summary: "Sets network adequacy standards for large employer health plans.",
+    summary:
+      "Extends provider-network adequacy requirements to health benefit plans offered to large employers. These rules concern whether a plan has an adequate network of healthcare providers for its members.\n\nThe Department of Consumer and Business Services must set specified standards. Health and dental plans may count telemedicine providers toward those standards only as permitted by the department's rules. Whether a remote provider can count toward a plan's network therefore depends on those state rules.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["insurance-coverage"],
+    sources: [
+      {
+        title: "Oregon official source: SB 822",
+        url: "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/SB822",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "or-sb-824",
@@ -403,21 +534,11 @@ export const oregonBills: Bill[] = [
     billNumber: "SB 824",
     year: 2025,
     title: "Health Insurer State Reporting & Confidentiality",
-    summary: "Sets reporting and confidentiality rules for health insurers reporting to the state.",
+    summary:
+      "Sets reporting and confidentiality rules for health insurers reporting to the state.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["insurance-coverage", "patient-rights-privacy"],
-  },
-  {
-    id: "or-sb-832",
-    state: "Oregon",
-    billNumber: "SB 832",
-    year: 2025,
-    title: "Civil Penalties for Disease Control Violations",
-    summary: "Establishes civil penalties for violations of disease control rules.",
-    status: "enacted",
-    statusLabel: "Signed into law",
-    topics: ["public-health"],
   },
   {
     id: "or-sb-837",
@@ -425,7 +546,8 @@ export const oregonBills: Bill[] = [
     billNumber: "SB 837",
     year: 2025,
     title: "Emergency Healthcare Provider Volunteer Registry",
-    summary: "Creates a registry of healthcare volunteers who can respond during emergencies.",
+    summary:
+      "Creates a registry of healthcare volunteers who can respond during emergencies.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["emergency-care", "workforce"],
@@ -436,10 +558,18 @@ export const oregonBills: Bill[] = [
     billNumber: "SB 841",
     year: 2025,
     title: "Tribal Disease Reporting Agreements",
-    summary: "Authorizes disease reporting agreements with tribal governments.",
+    summary:
+      "Allows the Oregon Health Authority to make agreements with federally recognized Oregon tribes and tribal epidemiology centers to receive reports of reportable diseases and investigate cases.\n\nThe agreements also address access to and use of certain tribal public health data. Participating tribal public health teams would be able to receive disease notifications and investigate cases under the terms of their agreements with the state.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["public-health"],
+    sources: [
+      {
+        title: "Oregon official source: SB 841",
+        url: "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/SB841",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "or-sb-846",
@@ -447,7 +577,8 @@ export const oregonBills: Bill[] = [
     billNumber: "SB 846",
     year: 2025,
     title: "Coordinated Care Organization Pediatric Monitoring",
-    summary: "Strengthens monitoring of coordinated care organizations with a focus on pediatric care.",
+    summary:
+      "Strengthens monitoring of coordinated care organizations with a focus on pediatric care.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["youth-school-health", "hospital-oversight"],
@@ -458,7 +589,8 @@ export const oregonBills: Bill[] = [
     billNumber: "SB 945",
     year: 2025,
     title: "Medicaid Eligibility for Foster Care Youth Under 26",
-    summary: "Extends Medicaid eligibility for former foster care youth up to age 26.",
+    summary:
+      "Extends Medicaid eligibility for former foster care youth up to age 26.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["youth-school-health", "insurance-coverage"],
@@ -469,7 +601,8 @@ export const oregonBills: Bill[] = [
     billNumber: "SB 951",
     year: 2025,
     title: "Restrict MSO Ownership of Medical Practices",
-    summary: "Restricts management services organizations from controlling medical practice decisions.",
+    summary:
+      "Restricts management services organizations from controlling medical practice decisions.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["hospital-oversight", "consumer-protection"],
@@ -480,7 +613,8 @@ export const oregonBills: Bill[] = [
     billNumber: "SB 1161",
     year: 2025,
     title: "Organ Transport Vehicle Licensing",
-    summary: "Creates licensing requirements for vehicles used to transport organs for transplant.",
+    summary:
+      "Creates licensing requirements for vehicles used to transport organs for transplant.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["emergency-care"],
@@ -491,10 +625,18 @@ export const oregonBills: Bill[] = [
     billNumber: "SB 1168",
     year: 2025,
     title: "Prohibit Per-Visit Pay for Home Health & Hospice Staff",
-    summary: "Prohibits paying home health and hospice workers on a per-visit basis.",
+    summary:
+      "Prohibits paying covered home health and home hospice staff on a per-visit basis. That payment model ties compensation to the number of visits completed, rather than simply the time spent working.\n\nEmployers covered by the law must use a compensation arrangement other than per-visit pay for those staff. The measure concerns employment terms in home health and hospice care. The official record identifies the enacted measure as Chapter 546 of the 2025 laws.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["workforce"],
+    sources: [
+      {
+        title: "Oregon official source: SB 1168",
+        url: "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/SB1168",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "or-hb-2013",
@@ -502,7 +644,8 @@ export const oregonBills: Bill[] = [
     billNumber: "HB 2013",
     year: 2025,
     title: "Substance Use Disorder Outpatient Facility Insurance Recognition",
-    summary: "Requires insurers to recognize substance use disorder outpatient facilities for coverage purposes.",
+    summary:
+      "Requires insurers to recognize substance use disorder outpatient facilities for coverage purposes.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["substance-use", "insurance-coverage"],
@@ -513,10 +656,18 @@ export const oregonBills: Bill[] = [
     billNumber: "HB 2015",
     year: 2025,
     title: "Residential Treatment Facility Rules Study",
-    summary: "Directs a study of rules governing residential treatment facilities.",
+    summary:
+      "Requires the Oregon Health Authority to study and adopt rules for residential mental health treatment facilities and homes, including secure settings. The authority must report findings and recommendations to the legislature.\n\nThe law addresses how these settings are regulated and studied, and includes a January 2, 2027 sunset. Its scope includes both secure and nonsecure residential treatment, so the rulemaking can affect several types of mental health care setting.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["hospital-oversight", "mental-health"],
+    sources: [
+      {
+        title: "Oregon official source: HB 2015",
+        url: "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB2015",
+      },
+    ],
+    summaryReviewedOn: "2026-10-22",
   },
   {
     id: "or-hb-2208",
@@ -524,7 +675,8 @@ export const oregonBills: Bill[] = [
     billNumber: "HB 2208",
     year: 2025,
     title: "Coordinated Care Organization Community Health Collaboration",
-    summary: "Requires coordinated care organizations to collaborate with community health partners.",
+    summary:
+      "Requires coordinated care organizations to collaborate with community health partners.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["public-health", "insurance-coverage"],
@@ -535,7 +687,8 @@ export const oregonBills: Bill[] = [
     billNumber: "HB 3211",
     year: 2025,
     title: "Nonopioid Directive Form",
-    summary: "Creates a form patients can use to direct providers not to administer opioids.",
+    summary:
+      "Creates a form patients can use to direct providers not to administer opioids.",
     status: "enacted",
     statusLabel: "Signed into law",
     topics: ["substance-use", "patient-rights-privacy"],

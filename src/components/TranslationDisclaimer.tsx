@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { TriangleAlert } from "lucide-react";
 import { LANGUAGES, type LanguageCode } from "@/data/languages";
-import { getStoredLanguage, resetToEnglish } from "@/lib/translation";
+import { LANGUAGE_CHANGE_EVENT, getStoredLanguage, resetToEnglish } from "@/lib/translation";
 
 export default function TranslationDisclaimer() {
   const [lang, setLang] = useState<LanguageCode>("en");
@@ -11,6 +11,12 @@ export default function TranslationDisclaimer() {
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time sync from storage/cookie on mount
     setLang(getStoredLanguage());
+
+    function onLanguageChange(e: Event) {
+      setLang((e as CustomEvent<LanguageCode>).detail);
+    }
+    window.addEventListener(LANGUAGE_CHANGE_EVENT, onLanguageChange);
+    return () => window.removeEventListener(LANGUAGE_CHANGE_EVENT, onLanguageChange);
   }, []);
 
   if (lang === "en") return null;

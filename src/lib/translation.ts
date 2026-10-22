@@ -2,6 +2,15 @@ import { LANGUAGES, type LanguageCode } from "@/data/languages";
 
 export const LANGUAGE_STORAGE_KEY = "votevisible-lang";
 
+// Fired whenever the active language changes in place (no page reload), so
+// components like TranslationDisclaimer that only read storage on mount can
+// stay in sync instead of being stuck showing the language active at mount.
+export const LANGUAGE_CHANGE_EVENT = "votevisible-language-change";
+
+export function notifyLanguageChange(code: LanguageCode) {
+  window.dispatchEvent(new CustomEvent<LanguageCode>(LANGUAGE_CHANGE_EVENT, { detail: code }));
+}
+
 export function getStoredLanguage(): LanguageCode {
   if (typeof window === "undefined") return "en";
   const stored = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);

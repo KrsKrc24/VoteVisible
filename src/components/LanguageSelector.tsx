@@ -7,6 +7,7 @@ import {
   LANGUAGE_STORAGE_KEY,
   clearTranslateCookies,
   getStoredLanguage,
+  notifyLanguageChange,
   reloadPage,
   resetToEnglish,
 } from "@/lib/translation";
@@ -82,6 +83,7 @@ export default function LanguageSelector() {
       setCurrent(code);
       setPending(null);
       applyingRef.current = false;
+      notifyLanguageChange(code);
     } else {
       // Widget never became ready; fall back to a full navigation so
       // Google re-initializes and applies the cookie on load.

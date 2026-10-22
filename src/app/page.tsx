@@ -7,17 +7,21 @@ import ScrollReveal from "@/components/ScrollReveal";
 import InteractiveMap from "@/components/InteractiveMap";
 import TopicCloud from "@/components/TopicCloud";
 import StatusChart from "@/components/StatusChart";
+import FloatingOrbs from "@/components/FloatingOrbs";
+import BillTicker from "@/components/BillTicker";
+import WhyItMatters from "@/components/WhyItMatters";
+import ProgressRing from "@/components/ProgressRing";
 
 export default function Home() {
   const stats = getBillStats();
   const featured = allBills.filter((b) => b.status === "enacted").slice(0, 6);
+  const enactedPct = stats.total > 0 ? (stats.enacted / stats.total) * 100 : 0;
 
   return (
     <div>
       <section className="relative overflow-hidden bg-navy-950">
         <div className="bg-grid absolute inset-0 opacity-40" />
-        <div className="absolute -top-24 right-0 h-96 w-96 rounded-full bg-blue-500/20 blur-3xl" />
-        <div className="absolute -bottom-24 left-0 h-96 w-96 rounded-full bg-blue-300/10 blur-3xl" />
+        <FloatingOrbs />
 
         <div className="relative mx-auto max-w-6xl px-5 py-24 sm:px-8 sm:py-32">
           <span className="inline-flex items-center rounded-full border border-blue-400/30 bg-blue-400/10 px-3 py-1 text-xs font-semibold text-blue-300">
@@ -57,6 +61,8 @@ export default function Home() {
         </div>
       </section>
 
+      <BillTicker bills={featured} />
+
       <section className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
         <div className="grid gap-10 sm:grid-cols-3">
           <ScrollReveal>
@@ -84,6 +90,31 @@ export default function Home() {
               representatives who can act on it.
             </p>
           </ScrollReveal>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden bg-navy-950 py-20">
+        <FloatingOrbs />
+        <div className="relative mx-auto max-w-6xl px-5 sm:px-8">
+          <ScrollReveal className="flex flex-col items-start gap-8 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <span className="text-xs font-semibold uppercase tracking-wide text-blue-300">
+                Why this matters
+              </span>
+              <h2 className="mt-2 max-w-xl text-2xl font-bold text-white sm:text-3xl">
+                The resources you rely on are decided by laws like these
+              </h2>
+              <p className="mt-2 max-w-xl text-sm text-slate-300">
+                These aren&apos;t abstract policy debates &mdash; they&apos;re the
+                hospitals, counselors, and prescriptions people depend on every day.
+              </p>
+            </div>
+            <ProgressRing pct={enactedPct} label="of tracked bills have been signed into law" />
+          </ScrollReveal>
+
+          <div className="mt-10">
+            <WhyItMatters bills={allBills} />
+          </div>
         </div>
       </section>
 

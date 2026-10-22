@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import CommandPalette from "./CommandPalette";
+import Logo from "./Logo";
 
 const LINKS = [
   { href: "/bills", label: "Bills" },
@@ -17,9 +18,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-navy-950/95 backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
         <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M3 3l9 18 9-18-9 6-9-6z" fill="currentColor" className="text-blue-400" />
-          </svg>
+          <Logo />
           <span className="text-lg font-semibold tracking-tight text-white">
             Vote<span className="text-blue-400">Visible</span>
           </span>

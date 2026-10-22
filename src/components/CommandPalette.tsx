@@ -75,27 +75,49 @@ export default function CommandPalette() {
               transition={{ duration: 0.18 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <input
-                autoFocus
-                value={query}
-                onChange={(e) => {
-                  setQuery(e.target.value);
-                  setActiveIndex(0);
-                }}
-                onKeyDown={(e) => {
-                  if (e.key === "ArrowDown") {
-                    e.preventDefault();
-                    setActiveIndex((i) => Math.min(i + 1, results.length - 1));
-                  } else if (e.key === "ArrowUp") {
-                    e.preventDefault();
-                    setActiveIndex((i) => Math.max(i - 1, 0));
-                  } else if (e.key === "Enter" && results[activeIndex]) {
-                    go(results[activeIndex].id);
-                  }
-                }}
-                placeholder="Search by bill number, title, or state..."
-                className="w-full border-b border-slate-200 px-5 py-4 text-sm text-navy-900 outline-none placeholder:text-slate-400"
-              />
+              <div className="flex items-center gap-2 border-b border-slate-200 pr-3">
+                <input
+                  autoFocus
+                  value={query}
+                  onChange={(e) => {
+                    setQuery(e.target.value);
+                    setActiveIndex(0);
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "ArrowDown") {
+                      e.preventDefault();
+                      setActiveIndex((i) => Math.min(i + 1, results.length - 1));
+                    } else if (e.key === "ArrowUp") {
+                      e.preventDefault();
+                      setActiveIndex((i) => Math.max(i - 1, 0));
+                    } else if (e.key === "Enter" && results[activeIndex]) {
+                      go(results[activeIndex].id);
+                    }
+                  }}
+                  placeholder="Search by bill number, title, or state..."
+                  className="w-full px-5 py-4 text-sm text-navy-900 outline-none placeholder:text-slate-400"
+                />
+                <button
+                  type="button"
+                  onClick={close}
+                  aria-label="Close search"
+                  className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-4 w-4"
+                  >
+                    <path d="M18 6 6 18" />
+                    <path d="m6 6 12 12" />
+                  </svg>
+                </button>
+              </div>
               <div className="max-h-80 overflow-y-auto py-2">
                 {results.length === 0 && (
                   <p className="px-5 py-6 text-center text-sm text-slate-400">No bills match.</p>

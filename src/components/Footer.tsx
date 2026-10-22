@@ -14,7 +14,7 @@ export default function Footer() {
             </div>
             <p className="mt-3 max-w-xs text-sm leading-6">
               Translating state healthcare legislation into plain language so
-              young people can see the real impact on their communities.
+              people of every background can see the real impact on their communities.
             </p>
           </div>
 

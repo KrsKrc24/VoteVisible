@@ -10,9 +10,10 @@ import { nevadaBills } from "./nevada";
 import { arizonaBills } from "./arizona";
 import { georgiaBills } from "./georgia";
 import { northCarolinaBills } from "./northCarolina";
-import { Bill, BillStatus, USState } from "./types";
+import { Bill, USState } from "./types";
 
 export * from "./types";
+export { filterBills, type BillFilters } from "./filters";
 
 export const allBills: Bill[] = [
   ...washingtonBills,
@@ -46,32 +47,6 @@ export const billsByState: Record<USState, Bill[]> = {
 
 export function getBillById(id: string): Bill | undefined {
   return allBills.find((bill) => bill.id === id);
-}
-
-export interface BillFilters {
-  state?: USState;
-  status?: BillStatus;
-  topic?: string;
-  query?: string;
-}
-
-export function filterBills(bills: Bill[], filters: BillFilters): Bill[] {
-  const query = filters.query?.trim().toLowerCase();
-
-  return bills.filter((bill) => {
-    if (filters.state && bill.state !== filters.state) return false;
-    if (filters.status && bill.status !== filters.status) return false;
-    if (filters.topic && !bill.topics.includes(filters.topic)) return false;
-    if (
-      query &&
-      !bill.title.toLowerCase().includes(query) &&
-      !bill.summary.toLowerCase().includes(query) &&
-      !bill.billNumber.toLowerCase().includes(query)
-    ) {
-      return false;
-    }
-    return true;
-  });
 }
 
 export function getBillStats() {

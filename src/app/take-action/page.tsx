@@ -1,8 +1,11 @@
 import Link from "next/link";
+import MessageBuilder from "@/components/MessageBuilder";
+import { allBills } from "@/data/bills";
 
 export const metadata = {
   title: "Take Action | VoteVisible",
-  description: "Find your representatives and learn how to speak up about healthcare legislation in your state.",
+  description:
+    "Find your representatives and learn how to speak up about healthcare legislation in your state.",
 };
 
 const STATE_RESOURCES = [
@@ -14,7 +17,8 @@ const STATE_RESOURCES = [
   {
     state: "Oregon",
     legislature: "https://www.oregonlegislature.gov",
-    findDistrict: "https://geo.maps.arcgis.com/apps/instant/lookup/index.html?appid=fd070b56c975456ea2a25f7e3f4289d1",
+    findDistrict:
+      "https://geo.maps.arcgis.com/apps/instant/lookup/index.html?appid=fd070b56c975456ea2a25f7e3f4289d1",
   },
   {
     state: "California",
@@ -44,7 +48,8 @@ const STATE_RESOURCES = [
   {
     state: "Illinois",
     legislature: "https://ilga.gov",
-    findDistrict: "https://elections.il.gov/ElectionOperations/DistrictLocator/AddressFinder.aspx",
+    findDistrict:
+      "https://elections.il.gov/ElectionOperations/DistrictLocator/AddressFinder.aspx",
   },
   {
     state: "Nevada",
@@ -79,19 +84,24 @@ export default function TakeActionPage() {
       </h1>
       <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-600">
         State legislators pay close attention to messages from constituents,
-        especially young people, who vote less often but are directly
-        affected by healthcare decisions. Here&apos;s how to make your voice count.
+        especially young people, who vote less often but are directly affected
+        by healthcare decisions. Here&apos;s how to make your voice count.
       </p>
 
       <div className="mt-10">
-        <h2 className="text-lg font-semibold text-navy-900">1. Find your representatives</h2>
+        <h2 className="text-lg font-semibold text-navy-900">
+          1. Find your representatives
+        </h2>
         <p className="mt-2 text-sm leading-6 text-slate-600">
           Use your state legislature&apos;s district finder to look up who
           represents you based on your home address.
         </p>
         <div className="mt-5 grid gap-4 sm:grid-cols-2">
           {STATE_RESOURCES.map((resource) => (
-            <div key={resource.state} className="rounded-2xl border border-slate-200 bg-white p-5">
+            <div
+              key={resource.state}
+              className="rounded-2xl border border-slate-200 bg-white p-5"
+            >
               <h3 className="font-semibold text-navy-900">{resource.state}</h3>
               <div className="mt-3 flex flex-col gap-2 text-sm">
                 <a
@@ -117,38 +127,39 @@ export default function TakeActionPage() {
       </div>
 
       <div className="mt-12">
-        <h2 className="text-lg font-semibold text-navy-900">2. Pick a bill that affects you</h2>
+        <h2 className="text-lg font-semibold text-navy-900">
+          2. Pick a bill that affects you
+        </h2>
         <p className="mt-2 text-sm leading-6 text-slate-600">
           Browse the{" "}
-          <Link href="/bills" className="font-medium text-blue-700 hover:text-blue-800">
+          <Link
+            href="/bills"
+            className="font-medium text-blue-700 hover:text-blue-800"
+          >
             Bills Explorer
           </Link>{" "}
-          to find legislation tied to the resources you care about,
-          including mental health, maternal care, rural hospitals, and drug pricing.
+          to find legislation tied to the resources you care about, including
+          mental health, maternal care, rural hospitals, and drug pricing.
         </p>
       </div>
 
       <div className="mt-12">
-        <h2 className="text-lg font-semibold text-navy-900">3. Send a clear, personal message</h2>
+        <h2 className="text-lg font-semibold text-navy-900">
+          3. Send a clear, personal message
+        </h2>
         <p className="mt-2 text-sm leading-6 text-slate-600">
           Short, specific, and personal messages are more effective than form
-          letters. Here&apos;s a template to start from:
+          letters. Build a personal message below, review it, and copy it into
+          your representative’s contact form.
         </p>
-        <div className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-6 text-sm leading-7 text-slate-700">
-          <p>Subject: Please support/oppose [Bill Number]: [Bill Title]</p>
-          <p className="mt-3">Dear [Representative Name],</p>
-          <p className="mt-3">
-            My name is [Your Name] and I&apos;m a constituent in [City/District].
-            I&apos;m writing about [Bill Number], which would [one sentence on
-            what the bill does]. This matters to me because [a sentence about
-            how it affects you, your school, or your community].
-          </p>
-          <p className="mt-3">
-            I hope you&apos;ll [support/oppose] this bill. Thank you for
-            representing our district.
-          </p>
-          <p className="mt-3">Sincerely, [Your Name]</p>
-        </div>
+        <MessageBuilder
+          bills={allBills.map(({ id, billNumber, state, title }) => ({
+            id,
+            billNumber,
+            state,
+            title,
+          }))}
+        />
       </div>
 
       <div className="mt-12 rounded-2xl bg-navy-900 p-6 text-center">

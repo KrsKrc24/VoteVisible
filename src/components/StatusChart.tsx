@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
-import { Bill, BillStatus, STATUS_META } from "@/data/bills/types";
+import { BillStatus, STATUS_META } from "@/data/bills/types";
 
 const BAR_COLORS: Record<BillStatus, string> = {
   enacted: "bg-emerald-500",
@@ -13,20 +13,25 @@ const BAR_COLORS: Record<BillStatus, string> = {
   "pending-verification": "bg-slate-400",
 };
 
-export default function StatusChart({ bills }: { bills: Bill[] }) {
-  const statuses = Object.keys(STATUS_META) as BillStatus[];
-  const total = bills.length;
-  const counts = statuses.map((status) => ({
-    status,
-    count: bills.filter((b) => b.status === status).length,
-  }));
+export default function StatusChart({
+  counts,
+  total,
+}: {
+  counts: { status: BillStatus; count: number }[];
+  total: number;
+}) {
+  const reduceMotion = useReducedMotion();
 
   return (
     <div className="flex flex-col gap-4">
       {counts.map(({ status, count }, i) => {
         const pct = total > 0 ? (count / total) * 100 : 0;
         return (
-          <Link key={status} href={`/bills?status=${status}`} className="group block">
+          <Link
+            key={status}
+            href={`/bills?status=${status}`}
+            className="group block"
+          >
             <div className="flex items-center justify-between text-sm">
               <span className="font-medium text-navy-900 group-hover:text-blue-700">
                 {STATUS_META[status].label}
@@ -39,7 +44,11 @@ export default function StatusChart({ bills }: { bills: Bill[] }) {
                 initial={{ width: 0 }}
                 whileInView={{ width: `${pct}%` }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: i * 0.08, ease: "easeOut" }}
+                transition={{
+                  duration: reduceMotion ? 0 : 0.8,
+                  delay: reduceMotion ? 0 : i * 0.08,
+                  ease: "easeOut",
+                }}
               />
             </div>
           </Link>

@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "check:data": "node scripts/check-data.mjs",
+    "check:translation": "node scripts/check-translation.mjs",
+    "check": "npm run check:data && npm run check:translation && npm run lint && tsc --noEmit"
   },
   "dependencies": {
     "framer-motion": "^14.5.0",

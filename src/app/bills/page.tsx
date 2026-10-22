@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { allBills } from "@/data/bills";
+import { allBills, billsByState } from "@/data/bills";
 import BillsExplorer from "@/components/BillsExplorer";
 
 export const metadata = {
@@ -11,15 +11,25 @@ export const metadata = {
 async function BillsExplorerWithTopic({
   searchParams,
 }: {
-  searchParams: Promise<{ topic?: string; state?: string; status?: string }>;
+  searchParams: Promise<{
+    topic?: string;
+    state?: string;
+    status?: string;
+    q?: string;
+    sort?: string;
+    saved?: string;
+  }>;
 }) {
-  const { topic, state, status } = await searchParams;
+  const { topic, state, status, q, sort, saved } = await searchParams;
   return (
     <BillsExplorer
       bills={allBills}
       initialTopic={topic ?? ""}
       initialState={state ?? ""}
       initialStatus={status ?? ""}
+      initialQuery={typeof q === "string" ? q : ""}
+      initialSort={typeof sort === "string" ? sort : ""}
+      initialSavedOnly={saved === "1"}
     />
   );
 }
@@ -27,7 +37,14 @@ async function BillsExplorerWithTopic({
 export default function BillsPage({
   searchParams,
 }: {
-  searchParams: Promise<{ topic?: string; state?: string; status?: string }>;
+  searchParams: Promise<{
+    topic?: string;
+    state?: string;
+    status?: string;
+    q?: string;
+    sort?: string;
+    saved?: string;
+  }>;
 }) {
   return (
     <div className="mx-auto max-w-6xl px-5 py-12 sm:px-8">
@@ -38,14 +55,24 @@ export default function BillsPage({
         Healthcare legislation, state by state
       </h1>
       <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600">
-        Search {allBills.length} bills from Washington, Oregon, California, Texas,
-        New York, Pennsylvania, Florida, Illinois, Nevada, Arizona, Georgia, and
-        North Carolina. Filter by state, status, or topic to find the laws that
-        affect the resources you care about.
+        Explore {allBills.length} healthcare bills across{" "}
+        {Object.keys(billsByState).length} states. Search, filter, and save the
+        issues that matter to you. Open any bill for a plain-language summary
+        and language reader.
       </p>
 
       <div className="mt-8">
-        <Suspense fallback={<BillsExplorer bills={allBills} />}>
+        <Suspense
+          fallback={
+            <div
+              role="status"
+              aria-busy="true"
+              className="rounded-2xl border border-blue-100 bg-white p-8 text-sm text-slate-500"
+            >
+              Loading bill filters...
+            </div>
+          }
+        >
           <BillsExplorerWithTopic searchParams={searchParams} />
         </Suspense>
       </div>

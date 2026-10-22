@@ -1,233 +1,344 @@
 import Link from "next/link";
-import { allBills, getBillStats, billsByState, Bill } from "@/data/bills";
-import StatCard from "@/components/StatCard";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  BookOpen,
+  Globe2,
+  MessageSquare,
+  HeartPulse,
+  Languages,
+  MoveDown,
+} from "lucide-react";
+import {
+  allBills,
+  getBillStats,
+  billsByState,
+  TOPIC_META,
+  STATUS_META,
+  BillStatus,
+} from "@/data/bills";
+import { LANGUAGES } from "@/data/languages";
 import BillCard from "@/components/BillCard";
-import AnimatedCounter from "@/components/AnimatedCounter";
 import ScrollReveal from "@/components/ScrollReveal";
 import InteractiveMap from "@/components/InteractiveMap";
-import TopicCloud from "@/components/TopicCloud";
 import StatusChart from "@/components/StatusChart";
-import FloatingOrbs from "@/components/FloatingOrbs";
-import BillTicker from "@/components/BillTicker";
-import WhyItMatters from "@/components/WhyItMatters";
-import ProgressRing from "@/components/ProgressRing";
+import CivicGraphic from "@/components/CivicGraphic";
+import IssueFinder from "@/components/IssueFinder";
 
 export default function Home() {
   const stats = getBillStats();
-  const enactedByState = Object.values(billsByState).map((bills) =>
-    bills.filter((b) => b.status === "enacted")
-  );
-  const maxEnactedPerState = Math.max(...enactedByState.map((b) => b.length));
-  const featured: Bill[] = [];
-  for (let i = 0; i < maxEnactedPerState && featured.length < 8; i++) {
-    for (const stateBills of enactedByState) {
-      if (stateBills[i]) featured.push(stateBills[i]);
-    }
-  }
-  const enactedPct = stats.total > 0 ? (stats.enacted / stats.total) * 100 : 0;
+  const featured = Object.values(billsByState)
+    .flatMap((bills) => bills.find((b) => b.status === "enacted") ?? [])
+    .slice(0, 6);
   const stateCount = Object.keys(stats.byState).length;
-
+  const steps = [
+    {
+      icon: BookOpen,
+      num: "01",
+      title: "Understand the bill.",
+      text: "Skip the legal jargon. Read a short summary, check its recorded status, and see the issues it touches.",
+    },
+    {
+      icon: Languages,
+      num: "02",
+      title: "Read it your way.",
+      text: "Choose a language on any bill page. Machine translation helps you get started; the English summary stays your reference.",
+    },
+    {
+      icon: MessageSquare,
+      num: "03",
+      title: "Make yourself heard.",
+      text: "Find your state representatives and use our message guide to tell them why an issue matters to you.",
+    },
+  ];
   return (
     <div>
-      <section className="relative overflow-hidden bg-navy-950">
-        <div className="bg-grid absolute inset-0 opacity-40" />
-        <FloatingOrbs />
-
-        <div className="relative mx-auto max-w-6xl px-5 py-24 sm:px-8 sm:py-32">
-          <h1 className="max-w-3xl text-4xl font-bold leading-tight tracking-tight text-white sm:text-6xl">
-            See how your state&apos;s laws affect the healthcare you depend on.
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-            Young people across Washington, Oregon, California, Texas, New York,
-            Pennsylvania, Florida, Illinois, Nevada, Arizona, Georgia, and
-            North Carolina have no easy way to understand
-            how healthcare legislation affects the hospitals, clinics, and
-            mental health resources they rely on.
-            VoteVisible translates real bills into plain language, in the
-            language you&apos;re most comfortable reading, and gives you a
-            direct line to the people who voted on them.
-          </p>
-          <p className="mt-4 max-w-2xl text-sm leading-7 text-blue-200">
-            Built for every background: read any bill in over 130 languages,
-            including Spanish, Arabic, Hindi, Telugu, and Chinese, with one click.
-          </p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <Link
-              href="/bills"
-              className="rounded-full bg-blue-500 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-400"
-            >
-              Explore the bills
-            </Link>
-            <Link
-              href="/take-action"
-              className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-blue-400 hover:text-blue-300"
-            >
-              Contact your representatives
-            </Link>
+      <section className="hero-section relative overflow-hidden">
+        <div className="hero-grid" aria-hidden="true" />
+        <div className="relative mx-auto grid max-w-6xl items-center gap-8 px-5 pb-12 pt-14 sm:px-8 sm:pt-20 md:grid-cols-[1.05fr_1fr] md:gap-0 lg:pb-16">
+          <div className="relative z-10">
+            <span className="eyebrow inline-flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full bg-blue-600" />
+              CIVIC KNOWLEDGE. EVERYDAY POWER.
+            </span>
+            <h1 className="mt-6 max-w-xl text-[clamp(3.1rem,6.2vw,5.1rem)] font-semibold leading-[1.04] tracking-[-0.065em]">
+              Big decisions.
+              <br />
+              Real lives.
+              <br />
+              <span className="text-blue-600">Your voice.</span>
+            </h1>
+            <p className="mt-6 max-w-md text-base leading-8 text-slate-600">
+              Healthcare laws shape the care you get, the costs you pay, and the
+              places you turn to for help. Let’s make them easier to understand.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/bills" className="button-primary">
+                Explore the bills <ArrowUpRight size={18} />
+              </Link>
+              <a href="#find-your-issue" className="button-secondary">
+                Find my starting point <ArrowRight size={16} />
+              </a>
+            </div>
+            <p className="mt-6 flex items-center gap-2 text-xs text-slate-500">
+              <Globe2 size={14} /> Student-built. Free to explore. For every
+              background.
+            </p>
           </div>
-
-          <div className="mt-16 grid grid-cols-2 gap-4 sm:grid-cols-4">
-            <StatCard value={<AnimatedCounter value={stats.total} />} label="Bills tracked" />
-            <StatCard value={<AnimatedCounter value={stats.enacted} />} label="Signed into law" />
-            <StatCard value={<AnimatedCounter value={stateCount} />} label="States covered" />
-            <StatCard value={<AnimatedCounter value={18} />} label="Health topics" />
-          </div>
+          <CivicGraphic />
         </div>
-      </section>
-
-      <BillTicker bills={featured} />
-
-      <section className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
-        <div className="grid gap-10 sm:grid-cols-3">
-          <ScrollReveal>
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100 text-blue-700 font-bold">1</div>
-            <h3 className="mt-4 text-lg font-semibold text-navy-900">Real bills, plain language</h3>
-            <p className="mt-2 text-sm leading-6 text-slate-600">
-              Every entry is drawn from real state legislation, condensed
-              into a sentence or two anyone can understand, with status and
-              topic tags so you can find what matters to you.
-            </p>
-          </ScrollReveal>
-          <ScrollReveal delay={0.1}>
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100 text-blue-700 font-bold">2</div>
-            <h3 className="mt-4 text-lg font-semibold text-navy-900">Search &amp; filter by state or topic</h3>
-            <p className="mt-2 text-sm leading-6 text-slate-600">
-              Filter by state, status, or topic, from reproductive health
-              and mental health to drug pricing and rural hospital access.
-            </p>
-          </ScrollReveal>
-          <ScrollReveal delay={0.2}>
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100 text-blue-700 font-bold">3</div>
-            <h3 className="mt-4 text-lg font-semibold text-navy-900">Take direct action</h3>
-            <p className="mt-2 text-sm leading-6 text-slate-600">
-              Once you know what a bill does, we help you find and message the
-              representatives who can act on it.
-            </p>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      <section className="relative overflow-hidden bg-navy-950 py-20">
-        <FloatingOrbs />
         <div className="relative mx-auto max-w-6xl px-5 sm:px-8">
-          <ScrollReveal className="flex flex-col items-start gap-8 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <span className="text-xs font-semibold uppercase tracking-wide text-blue-300">
-                Why this matters
-              </span>
-              <h2 className="mt-2 max-w-xl text-2xl font-bold text-white sm:text-3xl">
-                The resources you rely on are decided by laws like these
-              </h2>
-              <p className="mt-2 max-w-xl text-sm text-slate-300">
-                These aren&apos;t abstract policy debates, they&apos;re the
-                hospitals, counselors, and prescriptions people depend on every day.
-              </p>
-            </div>
-            <ProgressRing pct={enactedPct} label="of tracked bills have been signed into law" />
-          </ScrollReveal>
-
-          <div className="mt-10">
-            <WhyItMatters bills={allBills} />
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-navy-950 py-20">
-        <div className="mx-auto max-w-6xl px-5 sm:px-8">
-          <ScrollReveal>
-            <span className="text-xs font-semibold uppercase tracking-wide text-blue-300">
-              Explore by state
-            </span>
-            <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
-              Click a state to see what&apos;s moving
-            </h2>
-            <p className="mt-2 max-w-xl text-sm text-slate-300">
-              Washington, Oregon, California, Texas, New York, Pennsylvania,
-              Florida, Illinois, Nevada, Arizona, Georgia, and North Carolina
-              are highlighted, click one to jump straight into its bills.
-            </p>
-          </ScrollReveal>
-          <ScrollReveal delay={0.1} className="mt-8 rounded-3xl border border-white/10 bg-white/[0.03] p-4 sm:p-8">
-            <InteractiveMap billCounts={stats.byState} />
-          </ScrollReveal>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
-        <div className="grid gap-12 sm:grid-cols-2">
-          <ScrollReveal>
-            <span className="text-xs font-semibold uppercase tracking-wide text-blue-600">
-              Browse by topic
-            </span>
-            <h2 className="mt-2 text-2xl font-bold text-navy-900 sm:text-3xl">
-              Find the issues that affect you
-            </h2>
-            <div className="mt-6">
-              <TopicCloud bills={allBills} />
-            </div>
-          </ScrollReveal>
-          <ScrollReveal delay={0.1}>
-            <span className="text-xs font-semibold uppercase tracking-wide text-blue-600">
-              Where bills stand
-            </span>
-            <h2 className="mt-2 text-2xl font-bold text-navy-900 sm:text-3xl">
-              Status at a glance
-            </h2>
-            <div className="mt-6">
-              <StatusChart bills={allBills} />
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      <section className="bg-slate-50 py-20">
-        <div className="mx-auto max-w-6xl px-5 sm:px-8">
-          <ScrollReveal className="flex items-end justify-between gap-4">
-            <div>
-              <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">
-                Recently signed into law
-              </h2>
-              <p className="mt-2 text-sm text-slate-600">
-                A sample of healthcare bills that have already become law.
-              </p>
-            </div>
-            <Link href="/bills" className="hidden shrink-0 text-sm font-semibold text-blue-700 hover:text-blue-800 sm:block">
-              View all bills &rarr;
-            </Link>
-          </ScrollReveal>
-
-          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {featured.map((bill, i) => (
-              <ScrollReveal key={bill.id} delay={Math.min(i * 0.05, 0.3)}>
-                <BillCard bill={bill} />
-              </ScrollReveal>
+          <div className="grid grid-cols-2 divide-x divide-blue-100 border-t border-blue-100 py-7 sm:grid-cols-4">
+            {[
+              [stats.total, "Bills in the collection"],
+              [stateCount, "States to explore"],
+              [Object.keys(TOPIC_META).length, "Healthcare topics"],
+              [LANGUAGES.length, "Language choices"],
+            ].map(([value, label]) => (
+              <div key={label} className="px-3 py-3 first:pl-0 sm:px-7">
+                <div className="text-3xl font-semibold tracking-tight text-navy-900 tabular-nums">
+                  {value}
+                </div>
+                <p className="mt-1 text-[11px] text-slate-500 sm:text-xs">
+                  {label}
+                </p>
+              </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="mt-8 sm:hidden">
-            <Link href="/bills" className="text-sm font-semibold text-blue-700 hover:text-blue-800">
-              View all bills &rarr;
+      <section
+        id="find-your-issue"
+        className="scroll-mt-24 mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24"
+      >
+        <ScrollReveal>
+          <IssueFinder
+            bills={allBills.map(
+              ({ id, state, billNumber, title, status, topics }) => ({
+                id,
+                state,
+                billNumber,
+                title,
+                status,
+                topics,
+              }),
+            )}
+          />
+        </ScrollReveal>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-5 pb-20 sm:px-8 sm:pb-28">
+        <div className="mb-10 flex items-center gap-4">
+          <span className="eyebrow">FROM CONFUSING TO CLEAR</span>
+          <div className="h-px flex-1 bg-slate-200" />
+          <MoveDown size={16} className="text-blue-600" />
+        </div>
+        <div className="grid gap-8 sm:grid-cols-3">
+          {steps.map(({ icon: Icon, num, title, text }, i) => (
+            <ScrollReveal key={num} delay={i * 0.08}>
+              <div className="flex items-center justify-between">
+                <Icon size={26} strokeWidth={1.5} className="text-blue-600" />
+                <span className="font-mono text-xs text-slate-400">
+                  {num} /
+                </span>
+              </div>
+              <h2 className="mt-6 text-xl font-semibold tracking-tight">
+                {title}
+              </h2>
+              <p className="mt-3 text-sm leading-7 text-slate-500">{text}</p>
+            </ScrollReveal>
+          ))}
+        </div>
+      </section>
+
+      <section className="overflow-hidden bg-navy-900 text-white">
+        <div className="mx-auto grid max-w-6xl gap-12 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[.85fr_1.15fr] lg:items-center">
+          <ScrollReveal>
+            <span className="eyebrow !text-blue-300">WHY THIS MATTERS</span>
+            <h2 className="mt-5 text-4xl font-semibold leading-tight tracking-[-0.04em] sm:text-5xl">
+              Policy isn’t distant. <br />
+              <span className="text-blue-300">It’s personal.</span>
+            </h2>
+            <p className="mt-6 max-w-sm text-sm leading-8 text-slate-300">
+              A counselor at school. A prescription you can afford. A clinic
+              close to home. State legislation can shape all of them.
+            </p>
+            <Link
+              href="/about"
+              className="mt-7 inline-flex items-center gap-2 text-sm font-medium text-blue-200"
+            >
+              The reason we built VoteVisible <ArrowRight size={16} />
             </Link>
+          </ScrollReveal>
+          <div className="grid grid-cols-2 gap-3 sm:gap-4">
+            {[
+              {
+                title: "A place to turn",
+                topic: "mental-health",
+                caption: "Counselors, crisis care & treatment",
+                symbol: "✳",
+              },
+              {
+                title: "Care within reach",
+                topic: "rural-health",
+                caption: "Local hospitals & rural access",
+                symbol: "+",
+              },
+              {
+                title: "Room to breathe",
+                topic: "drug-pricing",
+                caption: "Prescriptions & affordability",
+                symbol: "↗",
+              },
+              {
+                title: "A healthier start",
+                topic: "maternal-health",
+                caption: "Pregnancy, birth & family care",
+                symbol: "♡",
+              },
+            ].map(({ title, topic, caption, symbol }, i) => (
+              <Link
+                key={topic}
+                href={`/bills?topic=${topic}`}
+                className={`impact-tile group ${i === 0 || i === 3 ? "bg-blue-600" : "bg-white/5"}`}
+              >
+                <span aria-hidden="true" className="impact-symbol">
+                  {symbol}
+                </span>
+                <div className="relative">
+                  <p className="text-base font-medium">{title}</p>
+                  <p className="mt-2 text-xs leading-5 text-blue-100/80">
+                    {caption}
+                  </p>
+                  <p className="mt-6 inline-flex items-center gap-2 text-xs font-medium">
+                    {allBills.filter((b) => b.topics.includes(topic)).length}{" "}
+                    bills in collection{" "}
+                    <ArrowUpRight
+                      size={13}
+                      className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1"
+                    />
+                  </p>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
-        <ScrollReveal className="rounded-3xl bg-navy-900 px-8 py-14 text-center sm:px-16">
-          <h2 className="text-2xl font-bold text-white sm:text-3xl">
-            Your health resources are decided by people you can email today.
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-slate-300">
-            Find your representatives, see what they&apos;ve voted on, and send
-            a message about the healthcare issues affecting your community.
+      <section
+        id="state-atlas"
+        className="scroll-mt-24 mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-24"
+      >
+        <div className="mb-9 flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <span className="eyebrow">THE STATE ATLAS</span>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+              Different states. Shared stakes.
+            </h2>
+          </div>
+          <p className="max-w-xs text-sm leading-7 text-slate-500">
+            Select a state to explore our collection and see where its tracked
+            bills stand.
           </p>
+        </div>
+        <InteractiveMap
+          billCounts={stats.byState}
+          billStats={Object.fromEntries(
+            Object.entries(billsByState).map(([state, bills]) => [
+              state,
+              {
+                enacted: bills.filter((b) => b.status === "enacted").length,
+                unverified: bills.filter(
+                  (b) => b.status === "pending-verification",
+                ).length,
+              },
+            ]),
+          )}
+        />
+      </section>
+
+      <section className="border-y border-slate-200 bg-white py-20">
+        <div className="mx-auto grid max-w-6xl gap-12 px-5 sm:px-8 lg:grid-cols-[.8fr_1.2fr]">
+          <div>
+            <span className="eyebrow">A CLEARER PICTURE</span>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+              Follow the status. <br />
+              Understand the stakes.
+            </h2>
+            <p className="mt-5 max-w-sm text-sm leading-7 text-slate-500">
+              These counts describe our tracked collection, not every bill in a
+              state. A proposal is not a law, and some records still need
+              verification.
+            </p>
+            <Link
+              href="/bills"
+              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-700"
+            >
+              Explore every status <ArrowRight size={16} />
+            </Link>
+          </div>
+          <StatusChart
+            total={stats.total}
+            counts={(Object.keys(STATUS_META) as BillStatus[]).map(
+              (status) => ({
+                status,
+                count: allBills.filter((b) => b.status === status).length,
+              }),
+            )}
+          />
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
+        <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <span className="eyebrow">IN THE COLLECTION</span>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+              A closer look at enacted bills.
+            </h2>
+          </div>
           <Link
-            href="/take-action"
-            className="mt-8 inline-flex rounded-full bg-blue-500 px-6 py-3 text-sm font-semibold text-white hover:bg-blue-400"
+            href="/bills?status=enacted"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-blue-700"
           >
-            Get started
+            View enacted bills <ArrowRight size={16} />
           </Link>
-        </ScrollReveal>
+        </div>
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {featured.map((bill) => (
+            <BillCard key={bill.id} bill={bill} />
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto mb-20 max-w-6xl px-5 sm:px-8">
+        <div className="action-banner relative overflow-hidden rounded-[2rem] bg-blue-600 p-8 text-white sm:p-14">
+          <HeartPulse
+            className="absolute -right-5 -top-10 h-72 w-72 rotate-12 text-white/10"
+            strokeWidth={0.5}
+            aria-hidden="true"
+          />
+          <div className="relative max-w-xl">
+            <span className="eyebrow !text-blue-100">
+              KNOWLEDGE IS A STARTING POINT
+            </span>
+            <h2 className="mt-5 text-3xl font-semibold tracking-tight sm:text-5xl">
+              Your voice belongs <br />
+              in the conversation.
+            </h2>
+            <p className="mt-5 text-sm leading-7 text-blue-100">
+              Find the people who represent you. Tell them what access to
+              healthcare means in your life.
+            </p>
+            <Link
+              href="/take-action"
+              className="mt-8 inline-flex items-center gap-3 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-blue-700 transition-transform hover:-translate-y-1"
+            >
+              Find your representatives <ArrowUpRight size={18} />
+            </Link>
+          </div>
+        </div>
       </section>
     </div>
   );

@@ -4,7 +4,7 @@ export interface LanguageOption {
   nativeLabel: string;
 }
 
-// The full set of languages supported by Google's Website Translator widget.
+// Reading-language choices. Availability and translation quality depend on Google.
 export const LANGUAGES: LanguageOption[] = [
   { code: "en", label: "English", nativeLabel: "English" },
   { code: "af", label: "Afrikaans", nativeLabel: "Afrikaans" },

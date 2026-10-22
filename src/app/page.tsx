@@ -16,6 +16,7 @@ export default function Home() {
   const stats = getBillStats();
   const featured = allBills.filter((b) => b.status === "enacted").slice(0, 6);
   const enactedPct = stats.total > 0 ? (stats.enacted / stats.total) * 100 : 0;
+  const stateCount = Object.keys(stats.byState).length;
 
   return (
     <div>
@@ -31,9 +32,10 @@ export default function Home() {
             See how your state&apos;s laws affect the healthcare you depend on.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-            Young people across Washington, Oregon, California, and Texas have no
-            easy way to understand how healthcare legislation affects the
-            hospitals, clinics, and mental health resources they rely on.
+            Young people across Washington, Oregon, California, Texas, New York,
+            Pennsylvania, Florida, and Illinois have no easy way to understand
+            how healthcare legislation affects the hospitals, clinics, and
+            mental health resources they rely on.
             VoteVisible translates real bills into plain language &mdash; and
             gives you a direct line to the people who voted on them.
           </p>
@@ -55,7 +57,7 @@ export default function Home() {
           <div className="mt-16 grid grid-cols-2 gap-4 sm:grid-cols-4">
             <StatCard value={<AnimatedCounter value={stats.total} />} label="Bills tracked" />
             <StatCard value={<AnimatedCounter value={stats.enacted} />} label="Signed into law" />
-            <StatCard value={<AnimatedCounter value={4} />} label="States covered" />
+            <StatCard value={<AnimatedCounter value={stateCount} />} label="States covered" />
             <StatCard value={<AnimatedCounter value={18} />} label="Health topics" />
           </div>
         </div>
@@ -128,8 +130,9 @@ export default function Home() {
               Click a state to see what&apos;s moving
             </h2>
             <p className="mt-2 max-w-xl text-sm text-slate-300">
-              Washington, Oregon, California, and Texas are highlighted &mdash;
-              click one to jump straight into its bills.
+              Washington, Oregon, California, Texas, New York, Pennsylvania,
+              Florida, and Illinois are highlighted &mdash; click one to jump
+              straight into its bills.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.1} className="mt-8 rounded-3xl border border-white/10 bg-white/[0.03] p-4 sm:p-8">

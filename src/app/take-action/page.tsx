@@ -26,6 +26,26 @@ const STATE_RESOURCES = [
     legislature: "https://capitol.texas.gov",
     findDistrict: "https://wrm.capitol.texas.gov/",
   },
+  {
+    state: "New York",
+    legislature: "https://www.nysenate.gov",
+    findDistrict: "https://www.nysenate.gov/find-my-senator",
+  },
+  {
+    state: "Pennsylvania",
+    legislature: "https://www.palegis.us",
+    findDistrict: "https://www.palegis.us/find-my-legislator",
+  },
+  {
+    state: "Florida",
+    legislature: "https://www.flsenate.gov",
+    findDistrict: "https://www.flsenate.gov/Senators/Find",
+  },
+  {
+    state: "Illinois",
+    legislature: "https://ilga.gov",
+    findDistrict: "https://elections.il.gov/ElectionOperations/DistrictLocator/AddressFinder.aspx",
+  },
 ];
 
 export default function TakeActionPage() {

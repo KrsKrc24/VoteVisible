@@ -2,6 +2,10 @@ import { washingtonBills } from "./washington";
 import { oregonBills } from "./oregon";
 import { californiaBills } from "./california";
 import { texasBills } from "./texas";
+import { newYorkBills } from "./newYork";
+import { pennsylvaniaBills } from "./pennsylvania";
+import { floridaBills } from "./florida";
+import { illinoisBills } from "./illinois";
 import { Bill, BillStatus, USState } from "./types";
 
 export * from "./types";
@@ -11,6 +15,10 @@ export const allBills: Bill[] = [
   ...oregonBills,
   ...californiaBills,
   ...texasBills,
+  ...newYorkBills,
+  ...pennsylvaniaBills,
+  ...floridaBills,
+  ...illinoisBills,
 ];
 
 export const billsByState: Record<USState, Bill[]> = {
@@ -18,6 +26,10 @@ export const billsByState: Record<USState, Bill[]> = {
   Oregon: oregonBills,
   California: californiaBills,
   Texas: texasBills,
+  "New York": newYorkBills,
+  Pennsylvania: pennsylvaniaBills,
+  Florida: floridaBills,
+  Illinois: illinoisBills,
 };
 
 export function getBillById(id: string): Bill | undefined {

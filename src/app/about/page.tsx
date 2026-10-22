@@ -40,7 +40,8 @@ export default function AboutPage() {
         <p className="mt-2 text-sm leading-6 text-slate-600">
           VoteVisible started as a local project tracking Washington State
           budget and healthcare decisions, and has since expanded to cover
-          healthcare legislation in Oregon, California, and Texas.
+          healthcare legislation in Oregon, California, Texas, New York,
+          Pennsylvania, Florida, and Illinois.
         </p>
       </div>
 

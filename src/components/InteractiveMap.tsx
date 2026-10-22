@@ -13,6 +13,10 @@ const TRACKED_STATES: Record<string, USState> = {
   Oregon: "Oregon",
   California: "California",
   Texas: "Texas",
+  "New York": "New York",
+  Pennsylvania: "Pennsylvania",
+  Florida: "Florida",
+  Illinois: "Illinois",
 };
 
 export default function InteractiveMap({

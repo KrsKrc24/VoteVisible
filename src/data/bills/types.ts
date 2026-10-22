@@ -5,7 +5,15 @@ export type BillStatus =
   | "introduced"
   | "pending-verification";
 
-export type USState = "Washington" | "Oregon" | "California" | "Texas";
+export type USState =
+  | "Washington"
+  | "Oregon"
+  | "California"
+  | "Texas"
+  | "New York"
+  | "Pennsylvania"
+  | "Florida"
+  | "Illinois";
 
 export interface Bill {
   id: string;

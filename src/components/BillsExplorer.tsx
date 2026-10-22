@@ -5,7 +5,16 @@ import { Bill, BillStatus, USState, STATUS_META, TOPIC_META } from "@/data/bills
 import { filterBills } from "@/data/bills";
 import BillCard from "./BillCard";
 
-const STATES: USState[] = ["Washington", "Oregon", "California", "Texas"];
+const STATES: USState[] = [
+  "Washington",
+  "Oregon",
+  "California",
+  "Texas",
+  "New York",
+  "Pennsylvania",
+  "Florida",
+  "Illinois",
+];
 const STATUSES = Object.keys(STATUS_META) as BillStatus[];
 const TOPICS = Object.keys(TOPIC_META);
 

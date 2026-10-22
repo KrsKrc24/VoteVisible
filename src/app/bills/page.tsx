@@ -4,7 +4,8 @@ import BillsExplorer from "@/components/BillsExplorer";
 
 export const metadata = {
   title: "Bills Explorer — VoteVisible",
-  description: "Search and filter healthcare legislation across Washington, Oregon, California, and Texas.",
+  description:
+    "Search and filter healthcare legislation across Washington, Oregon, California, Texas, New York, Pennsylvania, Florida, and Illinois.",
 };
 
 async function BillsExplorerWithTopic({
@@ -37,9 +38,9 @@ export default function BillsPage({
         Healthcare legislation, state by state
       </h1>
       <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600">
-        Search {allBills.length} bills from Washington, Oregon, California, and Texas.
-        Filter by state, status, or topic to find the laws that affect the
-        resources you care about.
+        Search {allBills.length} bills from Washington, Oregon, California, Texas,
+        New York, Pennsylvania, Florida, and Illinois. Filter by state, status,
+        or topic to find the laws that affect the resources you care about.
       </p>
 
       <div className="mt-8">

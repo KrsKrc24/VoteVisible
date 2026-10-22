@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { allBills, getBillStats } from "@/data/bills";
+import { allBills, getBillStats, billsByState, Bill } from "@/data/bills";
 import StatCard from "@/components/StatCard";
 import BillCard from "@/components/BillCard";
 import AnimatedCounter from "@/components/AnimatedCounter";
@@ -14,7 +14,16 @@ import ProgressRing from "@/components/ProgressRing";
 
 export default function Home() {
   const stats = getBillStats();
-  const featured = allBills.filter((b) => b.status === "enacted").slice(0, 6);
+  const enactedByState = Object.values(billsByState).map((bills) =>
+    bills.filter((b) => b.status === "enacted")
+  );
+  const maxEnactedPerState = Math.max(...enactedByState.map((b) => b.length));
+  const featured: Bill[] = [];
+  for (let i = 0; i < maxEnactedPerState && featured.length < 8; i++) {
+    for (const stateBills of enactedByState) {
+      if (stateBills[i]) featured.push(stateBills[i]);
+    }
+  }
   const enactedPct = stats.total > 0 ? (stats.enacted / stats.total) * 100 : 0;
   const stateCount = Object.keys(stats.byState).length;
 

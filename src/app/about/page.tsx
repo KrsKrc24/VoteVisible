@@ -37,9 +37,9 @@ export default function AboutPage() {
       <p className="mt-4 text-lg leading-8 text-slate-700">
         We built VoteVisible for people from every background, not just
         those fluent in legal English. Every bill page includes a one-click
-        language selector, so you can read any law in Spanish, Arabic,
-        Hindi, Telugu, Chinese, Vietnamese, Korean, Tagalog, Russian, or
-        English, whichever language makes the law make sense to you.
+        language selector covering over 130 languages, including Spanish,
+        Arabic, Hindi, Telugu, and Chinese, so you can read any law in
+        whichever language makes it make sense to you.
       </p>
 
       <div className="mt-12 rounded-2xl border border-slate-200 bg-white p-6">

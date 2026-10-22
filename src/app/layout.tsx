@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import GoogleTranslate from "@/components/GoogleTranslate";
+import TranslateNavGuard from "@/components/TranslateNavGuard";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,6 +30,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <GoogleTranslate />
+        <TranslateNavGuard />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

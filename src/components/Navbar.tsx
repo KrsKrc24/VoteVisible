@@ -15,7 +15,10 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-navy-950/95 backdrop-blur">
+    <header
+      className="notranslate sticky top-0 z-50 border-b border-white/10 bg-navy-950/95 backdrop-blur"
+      translate="no"
+    >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
         <Link href="/" className="flex items-center rounded-lg bg-white px-2.5 py-1.5" onClick={() => setOpen(false)}>
           <Image src="/logo.png" alt="VoteVisible" width={173} height={40} priority className="h-6 w-auto" />

@@ -5,7 +5,7 @@ const TEAM = ["Shritan Pothini", "Akshaj Mamidi", "Arjun Harshe", "Prady Mandala
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-navy-950 text-slate-400">
+    <footer className="notranslate border-t border-white/10 bg-navy-950 text-slate-400" translate="no">
       <div className="mx-auto max-w-6xl px-5 py-12 sm:px-8">
         <div className="grid gap-10 sm:grid-cols-3">
           <div>

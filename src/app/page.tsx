@@ -48,9 +48,8 @@ export default function Home() {
             direct line to the people who voted on them.
           </p>
           <p className="mt-4 max-w-2xl text-sm leading-7 text-blue-200">
-            Built for every background: read any bill in Spanish, Arabic,
-            Hindi, Telugu, Chinese, Vietnamese, Korean, Tagalog, Russian, or
-            English with one click.
+            Built for every background: read any bill in over 130 languages,
+            including Spanish, Arabic, Hindi, Telugu, and Chinese, with one click.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Link

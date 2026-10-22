@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "About — VoteVisible",
+  title: "About | VoteVisible",
   description: "VoteVisible is a civic-tech project based in Issaquah, Washington, translating healthcare legislation into plain language for young people.",
 };
 

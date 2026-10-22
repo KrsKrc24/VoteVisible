@@ -43,7 +43,7 @@ export default function Footer() {
 
         <div className="mt-10 border-t border-white/10 pt-6 text-xs text-slate-500">
           VoteVisible is an independent civic-tech project based in Issaquah, Washington.
-          Bill data is condensed for readability — always verify details with your state
+          Bill data is condensed for readability, so always verify details with your state
           legislature&apos;s official records before taking action.
         </div>
       </div>

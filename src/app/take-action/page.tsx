@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Take Action — VoteVisible",
+  title: "Take Action | VoteVisible",
   description: "Find your representatives and learn how to speak up about healthcare legislation in your state.",
 };
 

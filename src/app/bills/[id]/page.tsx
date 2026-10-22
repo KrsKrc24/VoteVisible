@@ -12,9 +12,9 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const bill = getBillById(id);
-  if (!bill) return { title: "Bill not found — VoteVisible" };
+  if (!bill) return { title: "Bill not found | VoteVisible" };
   return {
-    title: `${bill.billNumber} — ${bill.title} | VoteVisible`,
+    title: `${bill.billNumber}: ${bill.title} | VoteVisible`,
     description: bill.summary,
   };
 }

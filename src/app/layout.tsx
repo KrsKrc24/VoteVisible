@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "VoteVisible — Healthcare Legislation, Translated",
+  title: "VoteVisible: Healthcare Legislation, Translated",
   description:
     "VoteVisible translates state healthcare legislation into plain language and gives young people a direct way to contact their representatives about the laws shaping their communities.",
 };

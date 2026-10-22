@@ -3,7 +3,7 @@ import { allBills } from "@/data/bills";
 import BillsExplorer from "@/components/BillsExplorer";
 
 export const metadata = {
-  title: "Bills Explorer — VoteVisible",
+  title: "Bills Explorer | VoteVisible",
   description:
     "Search and filter healthcare legislation across Washington, Oregon, California, Texas, New York, Pennsylvania, Florida, Illinois, Nevada, Arizona, Georgia, and North Carolina.",
 };

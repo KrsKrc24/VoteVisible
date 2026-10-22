@@ -78,8 +78,8 @@ export default function TakeActionPage() {
         Your representatives want to hear from you
       </h1>
       <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-600">
-        State legislators pay close attention to messages from constituents
-        &mdash; especially young people, who vote less often but are directly
+        State legislators pay close attention to messages from constituents,
+        especially young people, who vote less often but are directly
         affected by healthcare decisions. Here&apos;s how to make your voice count.
       </p>
 
@@ -123,8 +123,8 @@ export default function TakeActionPage() {
           <Link href="/bills" className="font-medium text-blue-700 hover:text-blue-800">
             Bills Explorer
           </Link>{" "}
-          to find legislation tied to the resources you care about &mdash;
-          mental health, maternal care, rural hospitals, drug pricing, and more.
+          to find legislation tied to the resources you care about,
+          including mental health, maternal care, rural hospitals, and drug pricing.
         </p>
       </div>
 
@@ -135,7 +135,7 @@ export default function TakeActionPage() {
           letters. Here&apos;s a template to start from:
         </p>
         <div className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-6 text-sm leading-7 text-slate-700">
-          <p>Subject: Please support/oppose [Bill Number] &mdash; [Bill Title]</p>
+          <p>Subject: Please support/oppose [Bill Number]: [Bill Title]</p>
           <p className="mt-3">Dear [Representative Name],</p>
           <p className="mt-3">
             My name is [Your Name] and I&apos;m a constituent in [City/District].

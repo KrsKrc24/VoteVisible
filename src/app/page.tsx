@@ -43,8 +43,14 @@ export default function Home() {
             North Carolina have no easy way to understand
             how healthcare legislation affects the hospitals, clinics, and
             mental health resources they rely on.
-            VoteVisible translates real bills into plain language &mdash; and
-            gives you a direct line to the people who voted on them.
+            VoteVisible translates real bills into plain language, in the
+            language you&apos;re most comfortable reading, and gives you a
+            direct line to the people who voted on them.
+          </p>
+          <p className="mt-4 max-w-2xl text-sm leading-7 text-blue-200">
+            Built for every background: read any bill in Spanish, Arabic,
+            Hindi, Telugu, Chinese, Vietnamese, Korean, Tagalog, Russian, or
+            English with one click.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
@@ -78,7 +84,7 @@ export default function Home() {
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100 text-blue-700 font-bold">1</div>
             <h3 className="mt-4 text-lg font-semibold text-navy-900">Real bills, plain language</h3>
             <p className="mt-2 text-sm leading-6 text-slate-600">
-              Every entry is drawn from real state legislation &mdash; condensed
+              Every entry is drawn from real state legislation, condensed
               into a sentence or two anyone can understand, with status and
               topic tags so you can find what matters to you.
             </p>
@@ -87,7 +93,7 @@ export default function Home() {
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100 text-blue-700 font-bold">2</div>
             <h3 className="mt-4 text-lg font-semibold text-navy-900">Search &amp; filter by state or topic</h3>
             <p className="mt-2 text-sm leading-6 text-slate-600">
-              Filter by state, status, or topic &mdash; from reproductive health
+              Filter by state, status, or topic, from reproductive health
               and mental health to drug pricing and rural hospital access.
             </p>
           </ScrollReveal>
@@ -114,7 +120,7 @@ export default function Home() {
                 The resources you rely on are decided by laws like these
               </h2>
               <p className="mt-2 max-w-xl text-sm text-slate-300">
-                These aren&apos;t abstract policy debates &mdash; they&apos;re the
+                These aren&apos;t abstract policy debates, they&apos;re the
                 hospitals, counselors, and prescriptions people depend on every day.
               </p>
             </div>
@@ -139,7 +145,7 @@ export default function Home() {
             <p className="mt-2 max-w-xl text-sm text-slate-300">
               Washington, Oregon, California, Texas, New York, Pennsylvania,
               Florida, Illinois, Nevada, Arizona, Georgia, and North Carolina
-              are highlighted &mdash; click one to jump straight into its bills.
+              are highlighted, click one to jump straight into its bills.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.1} className="mt-8 rounded-3xl border border-white/10 bg-white/[0.03] p-4 sm:p-8">

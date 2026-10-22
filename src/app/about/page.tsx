@@ -23,8 +23,8 @@ export default function AboutPage() {
 
       <p className="mt-6 text-lg leading-8 text-slate-700">
         Young people across the country have no accessible way to understand
-        how state government decisions affect the resources they depend on
-        &mdash; hospitals, clinics, mental health services, and schools.
+        how state government decisions affect the resources they depend on,
+        including hospitals, clinics, mental health services, and schools.
         That gap leaves students powerless in civic processes that directly
         shape their health and well-being.
       </p>
@@ -33,6 +33,13 @@ export default function AboutPage() {
         healthcare legislation into plain language, shows which bills became
         law and which didn&apos;t, and gives students a direct way to contact
         their representatives about the issues that affect their communities.
+      </p>
+      <p className="mt-4 text-lg leading-8 text-slate-700">
+        We built VoteVisible for people from every background, not just
+        those fluent in legal English. Every bill page includes a one-click
+        language selector, so you can read any law in Spanish, Arabic,
+        Hindi, Telugu, Chinese, Vietnamese, Korean, Tagalog, Russian, or
+        English, whichever language makes the law make sense to you.
       </p>
 
       <div className="mt-12 rounded-2xl border border-slate-200 bg-white p-6">

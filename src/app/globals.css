@@ -53,3 +53,29 @@ body {
 .animate-marquee {
   animation: marquee 44s linear infinite;
 }
+
+/* Google Translate: keep the widget functional but visually invisible,
+   since we drive translation through our own LanguageSelector UI.
+   Google obfuscates its own class names, so we target the stable
+   "skiptranslate" marker it attaches to every injected iframe/banner. */
+iframe.skiptranslate,
+.goog-te-banner-frame,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.goog-tooltip,
+.goog-tooltip:hover {
+  display: none !important;
+}
+
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+#google_translate_element {
+  display: none !important;
+}

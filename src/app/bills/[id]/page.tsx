@@ -4,6 +4,7 @@ import { allBills, getBillById } from "@/data/bills";
 import { TOPIC_META } from "@/data/bills/types";
 import StatusBadge from "@/components/StatusBadge";
 import BillCard from "@/components/BillCard";
+import LanguageSelector from "@/components/LanguageSelector";
 
 export function generateStaticParams() {
   return allBills.map((bill) => ({ id: bill.id }));
@@ -30,9 +31,12 @@ export default async function BillDetailPage({ params }: { params: Promise<{ id:
 
   return (
     <div className="mx-auto max-w-4xl px-5 py-12 sm:px-8">
-      <Link href="/bills" className="text-sm font-medium text-blue-700 hover:text-blue-800">
-        &larr; Back to all bills
-      </Link>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <Link href="/bills" className="text-sm font-medium text-blue-700 hover:text-blue-800">
+          &larr; Back to all bills
+        </Link>
+        <LanguageSelector />
+      </div>
 
       <div className="mt-6 flex flex-wrap items-center gap-3">
         <span className="text-sm font-semibold uppercase tracking-wide text-blue-600">

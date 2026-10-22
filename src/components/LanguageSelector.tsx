@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Globe, Check, ChevronDown, Search } from "lucide-react";
+import { Globe, Check, ChevronDown, Loader2, Search } from "lucide-react";
 import { LANGUAGES, type LanguageCode } from "@/data/languages";
 import {
   LANGUAGE_STORAGE_KEY,
@@ -10,6 +10,7 @@ import {
   notifyLanguageChange,
   reloadPage,
   resetToEnglish,
+  waitForTranslationSettle,
 } from "@/lib/translation";
 
 function getCombo(): HTMLSelectElement | null {
@@ -47,6 +48,7 @@ async function applyLanguage(code: LanguageCode): Promise<boolean> {
 
   combo.value = code;
   combo.dispatchEvent(new Event("change", { bubbles: true }));
+  await waitForTranslationSettle();
   return true;
 }
 
@@ -117,10 +119,15 @@ export default function LanguageSelector() {
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50 px-3 py-1.5 text-xs font-semibold text-blue-700 transition-colors hover:bg-blue-100"
+        className="flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50 px-3 py-1.5 text-xs font-semibold text-blue-700 transition-colors hover:bg-blue-100 disabled:cursor-wait disabled:opacity-70"
+        disabled={pending !== null}
       >
-        <Globe className="h-3.5 w-3.5" />
-        <span>Read in {currentOption.nativeLabel}</span>
+        {pending !== null ? (
+          <Loader2 className="h-3.5 w-3.5 animate-spin" />
+        ) : (
+          <Globe className="h-3.5 w-3.5" />
+        )}
+        <span>{pending !== null ? "Translating…" : `Read in ${currentOption.nativeLabel}`}</span>
         <ChevronDown className="h-3.5 w-3.5" />
       </button>
 

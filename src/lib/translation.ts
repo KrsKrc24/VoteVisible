@@ -38,6 +38,35 @@ export function clearTranslateCookies() {
   }
 }
 
+// Google mutates the DOM asynchronously after the combo's change event fires,
+// with no completion callback. Resolving immediately after dispatching the
+// event made the UI (button label, disclaimer) claim a language was active
+// while the page still visibly showed the old one for hundreds of ms to a
+// few seconds, which read as the switch being broken or reverting. Instead,
+// watch for mutations to actually happen and quiet down before resolving.
+export function waitForTranslationSettle(timeoutMs = 4000, quietMs = 250): Promise<void> {
+  return new Promise((resolve) => {
+    const start = Date.now();
+    let mutated = false;
+    let lastMutation = start;
+    const observer = new MutationObserver(() => {
+      mutated = true;
+      lastMutation = Date.now();
+    });
+    observer.observe(document.body, { childList: true, subtree: true, characterData: true });
+    const interval = setInterval(() => {
+      const now = Date.now();
+      const settledQuiet = mutated && now - lastMutation >= quietMs;
+      const timedOut = now - start >= timeoutMs;
+      if (settledQuiet || timedOut) {
+        clearInterval(interval);
+        observer.disconnect();
+        resolve();
+      }
+    }, 80);
+  });
+}
+
 export function reloadPage() {
   window.location.href = window.location.pathname + window.location.search;
 }

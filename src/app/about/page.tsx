@@ -14,7 +14,7 @@ const TEAM = [
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-4xl px-5 py-12 sm:px-8">
-      <span className="text-xs font-semibold uppercase tracking-wide text-teal-600">
+      <span className="text-xs font-semibold uppercase tracking-wide text-blue-600">
         About
       </span>
       <h1 className="mt-2 text-3xl font-bold text-navy-900 sm:text-4xl">
@@ -48,7 +48,7 @@ export default function AboutPage() {
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
         {TEAM.map((member) => (
           <div key={member.name} className="rounded-2xl border border-slate-200 bg-white p-5">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-teal-400 to-gold-400 text-sm font-bold text-navy-950">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-blue-400 to-blue-700 text-sm font-bold text-white">
               {member.name.split(" ").map((n) => n[0]).join("")}
             </div>
             <h3 className="mt-3 font-semibold text-navy-900">{member.name}</h3>

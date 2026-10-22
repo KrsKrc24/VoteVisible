@@ -20,9 +20,9 @@ export default function Footer() {
               Explore
             </h3>
             <ul className="mt-3 space-y-2 text-sm">
-              <li><Link href="/bills" className="hover:text-teal-300">Bills Explorer</Link></li>
-              <li><Link href="/take-action" className="hover:text-teal-300">Take Action</Link></li>
-              <li><Link href="/about" className="hover:text-teal-300">About the Team</Link></li>
+              <li><Link href="/bills" className="hover:text-blue-300">Bills Explorer</Link></li>
+              <li><Link href="/take-action" className="hover:text-blue-300">Take Action</Link></li>
+              <li><Link href="/about" className="hover:text-blue-300">About the Team</Link></li>
             </ul>
           </div>
 

@@ -14,7 +14,7 @@ const STATE_RESOURCES = [
   {
     state: "Oregon",
     legislature: "https://www.oregonlegislature.gov",
-    findDistrict: "https://www.oregonlegislature.gov/FindYourLegislator/leg-districts.html",
+    findDistrict: "https://geo.maps.arcgis.com/apps/instant/lookup/index.html?appid=fd070b56c975456ea2a25f7e3f4289d1",
   },
   {
     state: "California",
@@ -24,14 +24,14 @@ const STATE_RESOURCES = [
   {
     state: "Texas",
     legislature: "https://capitol.texas.gov",
-    findDistrict: "https://fyi.capitol.texas.gov/",
+    findDistrict: "https://wrm.capitol.texas.gov/",
   },
 ];
 
 export default function TakeActionPage() {
   return (
     <div className="mx-auto max-w-4xl px-5 py-12 sm:px-8">
-      <span className="text-xs font-semibold uppercase tracking-wide text-teal-600">
+      <span className="text-xs font-semibold uppercase tracking-wide text-blue-600">
         Take Action
       </span>
       <h1 className="mt-2 text-3xl font-bold text-navy-900 sm:text-4xl">
@@ -58,7 +58,7 @@ export default function TakeActionPage() {
                   href={resource.findDistrict}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-medium text-teal-700 hover:text-teal-800"
+                  className="font-medium text-blue-700 hover:text-blue-800"
                 >
                   Find your district &rarr;
                 </a>
@@ -80,7 +80,7 @@ export default function TakeActionPage() {
         <h2 className="text-lg font-semibold text-navy-900">2. Pick a bill that affects you</h2>
         <p className="mt-2 text-sm leading-6 text-slate-600">
           Browse the{" "}
-          <Link href="/bills" className="font-medium text-teal-700 hover:text-teal-800">
+          <Link href="/bills" className="font-medium text-blue-700 hover:text-blue-800">
             Bills Explorer
           </Link>{" "}
           to find legislation tied to the resources you care about &mdash;
@@ -121,7 +121,7 @@ export default function TakeActionPage() {
         </p>
         <Link
           href="/bills"
-          className="mt-4 inline-flex rounded-full bg-gold-400 px-5 py-2.5 text-sm font-semibold text-navy-950 hover:bg-gold-300"
+          className="mt-4 inline-flex rounded-full bg-blue-500 px-5 py-2.5 text-sm font-semibold text-white hover:bg-blue-400"
         >
           Explore bills
         </Link>

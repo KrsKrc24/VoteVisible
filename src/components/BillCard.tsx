@@ -6,14 +6,14 @@ export default function BillCard({ bill }: { bill: Bill }) {
   return (
     <Link
       href={`/bills/${bill.id}`}
-      className="group flex flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-teal-300 hover:shadow-md"
+      className="group flex flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-md"
     >
       <div className="flex items-start justify-between gap-3">
         <div>
-          <span className="text-xs font-semibold uppercase tracking-wide text-teal-600">
+          <span className="text-xs font-semibold uppercase tracking-wide text-blue-600">
             {bill.state} &middot; {bill.billNumber}
           </span>
-          <h3 className="mt-1 text-base font-semibold text-navy-900 group-hover:text-teal-700">
+          <h3 className="mt-1 text-base font-semibold text-navy-900 group-hover:text-blue-700">
             {bill.title}
           </h3>
         </div>

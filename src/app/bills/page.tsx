@@ -10,20 +10,27 @@ export const metadata = {
 async function BillsExplorerWithTopic({
   searchParams,
 }: {
-  searchParams: Promise<{ topic?: string }>;
+  searchParams: Promise<{ topic?: string; state?: string; status?: string }>;
 }) {
-  const { topic } = await searchParams;
-  return <BillsExplorer bills={allBills} initialTopic={topic ?? ""} />;
+  const { topic, state, status } = await searchParams;
+  return (
+    <BillsExplorer
+      bills={allBills}
+      initialTopic={topic ?? ""}
+      initialState={state ?? ""}
+      initialStatus={status ?? ""}
+    />
+  );
 }
 
 export default function BillsPage({
   searchParams,
 }: {
-  searchParams: Promise<{ topic?: string }>;
+  searchParams: Promise<{ topic?: string; state?: string; status?: string }>;
 }) {
   return (
     <div className="mx-auto max-w-6xl px-5 py-12 sm:px-8">
-      <span className="text-xs font-semibold uppercase tracking-wide text-teal-600">
+      <span className="text-xs font-semibold uppercase tracking-wide text-blue-600">
         Bills Explorer
       </span>
       <h1 className="mt-2 text-3xl font-bold text-navy-900 sm:text-4xl">

@@ -30,12 +30,12 @@ export default async function BillDetailPage({ params }: { params: Promise<{ id:
 
   return (
     <div className="mx-auto max-w-4xl px-5 py-12 sm:px-8">
-      <Link href="/bills" className="text-sm font-medium text-teal-700 hover:text-teal-800">
+      <Link href="/bills" className="text-sm font-medium text-blue-700 hover:text-blue-800">
         &larr; Back to all bills
       </Link>
 
       <div className="mt-6 flex flex-wrap items-center gap-3">
-        <span className="text-sm font-semibold uppercase tracking-wide text-teal-600">
+        <span className="text-sm font-semibold uppercase tracking-wide text-blue-600">
           {bill.state} &middot; {bill.billNumber} &middot; {bill.year}
         </span>
         <StatusBadge status={bill.status} />
@@ -75,7 +75,7 @@ export default async function BillDetailPage({ params }: { params: Promise<{ id:
             <Link
               key={topic}
               href={`/bills?topic=${topic}`}
-              className="rounded-full bg-teal-100 px-3 py-1.5 text-xs font-semibold text-teal-700 hover:bg-teal-200"
+              className="rounded-full bg-blue-100 px-3 py-1.5 text-xs font-semibold text-blue-700 hover:bg-blue-200"
             >
               {TOPIC_META[topic]?.label ?? topic}
             </Link>
@@ -92,7 +92,7 @@ export default async function BillDetailPage({ params }: { params: Promise<{ id:
         </p>
         <Link
           href="/take-action"
-          className="mt-4 inline-flex rounded-full bg-gold-400 px-5 py-2.5 text-sm font-semibold text-navy-950 hover:bg-gold-300"
+          className="mt-4 inline-flex rounded-full bg-blue-500 px-5 py-2.5 text-sm font-semibold text-white hover:bg-blue-400"
         >
           Contact your representatives
         </Link>

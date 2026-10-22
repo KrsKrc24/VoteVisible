@@ -12,13 +12,17 @@ const TOPICS = Object.keys(TOPIC_META);
 export default function BillsExplorer({
   bills,
   initialTopic = "",
+  initialState = "",
+  initialStatus = "",
 }: {
   bills: Bill[];
   initialTopic?: string;
+  initialState?: string;
+  initialStatus?: string;
 }) {
   const [query, setQuery] = useState("");
-  const [state, setState] = useState<USState | "">("");
-  const [status, setStatus] = useState<BillStatus | "">("");
+  const [state, setState] = useState<USState | "">(initialState as USState | "");
+  const [status, setStatus] = useState<BillStatus | "">(initialStatus as BillStatus | "");
   const [topic, setTopic] = useState<string>(initialTopic);
 
   const results = useMemo(
@@ -40,13 +44,13 @@ export default function BillsExplorer({
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search by bill number, title, or keyword..."
-          className="flex-1 rounded-lg border border-slate-200 px-4 py-2.5 text-sm text-navy-900 placeholder:text-slate-400 focus:border-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-100"
+          className="flex-1 rounded-lg border border-slate-200 px-4 py-2.5 text-sm text-navy-900 placeholder:text-slate-400 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-100"
         />
         <div className="flex flex-wrap gap-3">
           <select
             value={state}
             onChange={(e) => setState(e.target.value as USState | "")}
-            className="rounded-lg border border-slate-200 px-3 py-2.5 text-sm text-navy-900 focus:border-teal-400 focus:outline-none"
+            className="rounded-lg border border-slate-200 px-3 py-2.5 text-sm text-navy-900 focus:border-blue-400 focus:outline-none"
           >
             <option value="">All states</option>
             {STATES.map((s) => (
@@ -57,7 +61,7 @@ export default function BillsExplorer({
           <select
             value={status}
             onChange={(e) => setStatus(e.target.value as BillStatus | "")}
-            className="rounded-lg border border-slate-200 px-3 py-2.5 text-sm text-navy-900 focus:border-teal-400 focus:outline-none"
+            className="rounded-lg border border-slate-200 px-3 py-2.5 text-sm text-navy-900 focus:border-blue-400 focus:outline-none"
           >
             <option value="">All statuses</option>
             {STATUSES.map((s) => (
@@ -68,7 +72,7 @@ export default function BillsExplorer({
           <select
             value={topic}
             onChange={(e) => setTopic(e.target.value)}
-            className="rounded-lg border border-slate-200 px-3 py-2.5 text-sm text-navy-900 focus:border-teal-400 focus:outline-none"
+            className="rounded-lg border border-slate-200 px-3 py-2.5 text-sm text-navy-900 focus:border-blue-400 focus:outline-none"
           >
             <option value="">All topics</option>
             {TOPICS.map((t) => (

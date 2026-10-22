@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import CommandPalette from "./CommandPalette";
 
 const LINKS = [
   { href: "/bills", label: "Bills" },
@@ -16,11 +17,11 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-navy-950/95 backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
         <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-teal-400 to-gold-400 text-sm font-bold text-navy-950">
-            VV
-          </span>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M3 3l9 18 9-18-9 6-9-6z" fill="currentColor" className="text-blue-400" />
+          </svg>
           <span className="text-lg font-semibold tracking-tight text-white">
-            VoteVisible
+            Vote<span className="text-blue-400">Visible</span>
           </span>
         </Link>
 
@@ -29,14 +30,15 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-slate-300 transition-colors hover:text-teal-300"
+              className="text-sm font-medium text-slate-300 transition-colors hover:text-blue-300"
             >
               {link.label}
             </Link>
           ))}
+          <CommandPalette />
           <Link
             href="/take-action"
-            className="rounded-full bg-gold-400 px-4 py-2 text-sm font-semibold text-navy-950 transition-colors hover:bg-gold-300"
+            className="rounded-full bg-blue-500 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-blue-400"
           >
             Contact Reps
           </Link>
@@ -64,7 +66,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-slate-300 hover:text-teal-300"
+                className="text-sm font-medium text-slate-300 hover:text-blue-300"
                 onClick={() => setOpen(false)}
               >
                 {link.label}
@@ -72,7 +74,7 @@ export default function Navbar() {
             ))}
             <Link
               href="/take-action"
-              className="rounded-full bg-gold-400 px-4 py-2 text-center text-sm font-semibold text-navy-950"
+              className="rounded-full bg-blue-500 px-4 py-2 text-center text-sm font-semibold text-white"
               onClick={() => setOpen(false)}
             >
               Contact Reps

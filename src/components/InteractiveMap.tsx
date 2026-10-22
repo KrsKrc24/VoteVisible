@@ -17,6 +17,10 @@ const TRACKED_STATES: Record<string, USState> = {
   Pennsylvania: "Pennsylvania",
   Florida: "Florida",
   Illinois: "Illinois",
+  Nevada: "Nevada",
+  Arizona: "Arizona",
+  Georgia: "Georgia",
+  "North Carolina": "North Carolina",
 };
 
 export default function InteractiveMap({

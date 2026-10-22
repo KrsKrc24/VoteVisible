@@ -41,7 +41,8 @@ export default function AboutPage() {
           VoteVisible started as a local project tracking Washington State
           budget and healthcare decisions, and has since expanded to cover
           healthcare legislation in Oregon, California, Texas, New York,
-          Pennsylvania, Florida, and Illinois.
+          Pennsylvania, Florida, Illinois, Nevada, Arizona, Georgia, and
+          North Carolina.
         </p>
       </div>
 

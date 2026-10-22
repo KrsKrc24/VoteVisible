@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import CommandPalette from "./CommandPalette";
-import Logo from "./Logo";
 
 const LINKS = [
   { href: "/bills", label: "Bills" },
@@ -17,11 +17,8 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-navy-950/95 backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
-        <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <Logo />
-          <span className="text-lg font-semibold tracking-tight text-white">
-            Vote<span className="text-blue-400">Visible</span>
-          </span>
+        <Link href="/" className="flex items-center rounded-lg bg-white px-2.5 py-1.5" onClick={() => setOpen(false)}>
+          <Image src="/logo.png" alt="VoteVisible" width={173} height={40} priority className="h-6 w-auto" />
         </Link>
 
         <div className="hidden items-center gap-8 sm:flex">

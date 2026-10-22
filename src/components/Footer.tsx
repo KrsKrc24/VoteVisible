@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Logo from "./Logo";
+import Image from "next/image";
 
 const TEAM = ["Shritan Pothini", "Akshaj Mamidi", "Arjun Harshe", "Prady Mandalapu", "Alexander Mammar"];
 
@@ -9,9 +9,8 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-5 py-12 sm:px-8">
         <div className="grid gap-10 sm:grid-cols-3">
           <div>
-            <div className="flex items-center gap-2">
-              <Logo size={24} />
-              <span className="text-lg font-semibold text-white">VoteVisible</span>
+            <div className="inline-flex w-fit items-center rounded-lg bg-white px-2 py-1">
+              <Image src="/logo.png" alt="VoteVisible" width={130} height={30} className="h-6 w-auto" />
             </div>
             <p className="mt-3 max-w-xs text-sm leading-6">
               Translating state healthcare legislation into plain language so

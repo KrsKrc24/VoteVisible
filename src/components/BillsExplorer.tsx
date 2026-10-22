@@ -14,6 +14,10 @@ const STATES: USState[] = [
   "Pennsylvania",
   "Florida",
   "Illinois",
+  "Nevada",
+  "Arizona",
+  "Georgia",
+  "North Carolina",
 ];
 const STATUSES = Object.keys(STATUS_META) as BillStatus[];
 const TOPICS = Object.keys(TOPIC_META);

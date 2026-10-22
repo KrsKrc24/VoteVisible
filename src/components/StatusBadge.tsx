@@ -5,6 +5,7 @@ const COLOR_CLASSES: Record<string, string> = {
   amber: "bg-amber-100 text-amber-800 ring-amber-600/20",
   rose: "bg-rose-100 text-rose-800 ring-rose-600/20",
   sky: "bg-sky-100 text-sky-800 ring-sky-600/20",
+  orange: "bg-orange-100 text-orange-800 ring-orange-600/20",
   slate: "bg-slate-100 text-slate-700 ring-slate-500/20",
 };
 

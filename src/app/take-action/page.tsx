@@ -46,6 +46,26 @@ const STATE_RESOURCES = [
     legislature: "https://ilga.gov",
     findDistrict: "https://elections.il.gov/ElectionOperations/DistrictLocator/AddressFinder.aspx",
   },
+  {
+    state: "Nevada",
+    legislature: "https://www.leg.state.nv.us/",
+    findDistrict: "https://www.leg.state.nv.us/whosmylegislator/",
+  },
+  {
+    state: "Arizona",
+    legislature: "https://www.azleg.gov/",
+    findDistrict: "https://www.azleg.gov/findmylegislator/",
+  },
+  {
+    state: "Georgia",
+    legislature: "https://www.legis.ga.gov/",
+    findDistrict: "https://www.legis.ga.gov/find-my-legislator",
+  },
+  {
+    state: "North Carolina",
+    legislature: "https://www.ncleg.gov/",
+    findDistrict: "https://www.ncleg.gov/findyourlegislators",
+  },
 ];
 
 export default function TakeActionPage() {

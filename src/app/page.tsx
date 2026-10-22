@@ -34,15 +34,13 @@ export default function Home() {
         <FloatingOrbs />
 
         <div className="relative mx-auto max-w-6xl px-5 py-24 sm:px-8 sm:py-32">
-          <span className="inline-flex items-center rounded-full border border-blue-400/30 bg-blue-400/10 px-3 py-1 text-xs font-semibold text-blue-300">
-            Healthcare legislation, translated
-          </span>
-          <h1 className="mt-6 max-w-3xl text-4xl font-bold leading-tight tracking-tight text-white sm:text-6xl">
+          <h1 className="max-w-3xl text-4xl font-bold leading-tight tracking-tight text-white sm:text-6xl">
             See how your state&apos;s laws affect the healthcare you depend on.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
             Young people across Washington, Oregon, California, Texas, New York,
-            Pennsylvania, Florida, and Illinois have no easy way to understand
+            Pennsylvania, Florida, Illinois, Nevada, Arizona, Georgia, and
+            North Carolina have no easy way to understand
             how healthcare legislation affects the hospitals, clinics, and
             mental health resources they rely on.
             VoteVisible translates real bills into plain language &mdash; and
@@ -140,8 +138,8 @@ export default function Home() {
             </h2>
             <p className="mt-2 max-w-xl text-sm text-slate-300">
               Washington, Oregon, California, Texas, New York, Pennsylvania,
-              Florida, and Illinois are highlighted &mdash; click one to jump
-              straight into its bills.
+              Florida, Illinois, Nevada, Arizona, Georgia, and North Carolina
+              are highlighted &mdash; click one to jump straight into its bills.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.1} className="mt-8 rounded-3xl border border-white/10 bg-white/[0.03] p-4 sm:p-8">

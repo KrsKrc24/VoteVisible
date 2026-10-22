@@ -9,6 +9,7 @@ const BAR_COLORS: Record<BillStatus, string> = {
   "partial-progress": "bg-amber-500",
   "did-not-pass": "bg-rose-500",
   introduced: "bg-sky-500",
+  vetoed: "bg-orange-500",
   "pending-verification": "bg-slate-400",
 };
 

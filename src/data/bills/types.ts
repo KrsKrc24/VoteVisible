@@ -3,6 +3,7 @@ export type BillStatus =
   | "partial-progress"
   | "did-not-pass"
   | "introduced"
+  | "vetoed"
   | "pending-verification";
 
 export type USState =
@@ -13,7 +14,11 @@ export type USState =
   | "New York"
   | "Pennsylvania"
   | "Florida"
-  | "Illinois";
+  | "Illinois"
+  | "Nevada"
+  | "Arizona"
+  | "Georgia"
+  | "North Carolina";
 
 export interface Bill {
   id: string;
@@ -33,6 +38,7 @@ export const STATUS_META: Record<BillStatus, { label: string; color: string }> =
   "partial-progress": { label: "Partial Progress", color: "amber" },
   "did-not-pass": { label: "Did Not Pass", color: "rose" },
   introduced: { label: "Introduced", color: "sky" },
+  vetoed: { label: "Vetoed", color: "orange" },
   "pending-verification": { label: "Pending Verification", color: "slate" },
 };
 

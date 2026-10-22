@@ -5,6 +5,7 @@ import { TOPIC_META } from "@/data/bills/types";
 import StatusBadge from "@/components/StatusBadge";
 import BillCard from "@/components/BillCard";
 import LanguageSelector from "@/components/LanguageSelector";
+import TranslationDisclaimer from "@/components/TranslationDisclaimer";
 
 export function generateStaticParams() {
   return allBills.map((bill) => ({ id: bill.id }));
@@ -37,6 +38,8 @@ export default async function BillDetailPage({ params }: { params: Promise<{ id:
         </Link>
         <LanguageSelector />
       </div>
+
+      <TranslationDisclaimer />
 
       <div className="mt-6 flex flex-wrap items-center gap-3">
         <span className="text-sm font-semibold uppercase tracking-wide text-blue-600">

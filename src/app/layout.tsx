@@ -20,6 +20,13 @@ export const metadata: Metadata = {
   title: "VoteVisible: Healthcare Legislation, Translated",
   description:
     "VoteVisible translates state healthcare legislation into plain language and gives young people a direct way to contact their representatives about the laws shaping their communities.",
+  other: {
+    // Disables the browser's own native translate prompt (Chrome, Edge, etc.)
+    // so translation only ever happens through our LanguageSelector widget.
+    // Two competing translation engines left our UI state out of sync with
+    // what was actually rendered on screen.
+    google: "notranslate",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -7,7 +7,7 @@ export const metadata = {
 const TEAM = [
   { name: "Shritan Pothini", role: "Team Lead" },
   { name: "Akshaj Mamidi", role: "Team Member" },
-  { name: "Arjun Harshe", role: "Team Member" },
+  { name: "Arjun Harshe", role: "Supreme Chancellor of the World" },
   { name: "Prady Mandalapu", role: "Team Member" },
   { name: "Alexander Mammar", role: "Team Member" },
 ];

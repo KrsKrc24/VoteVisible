@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
-import { Menu, X } from "lucide-react";
 import CommandPalette from "./CommandPalette";
 
 const LINKS = [
@@ -15,7 +14,7 @@ const LINKS = [
 
 const focusRing =
   "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600";
-const ctaStyle = `rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-700 ${focusRing}`;
+const ctaStyle = `rounded-none bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white  hover:bg-blue-700 ${focusRing}`;
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -45,16 +44,16 @@ export default function Navbar() {
   }
 
   function linkStyle(href: string) {
-    return `rounded-lg px-3 py-2 text-sm font-medium transition-colors ${focusRing} ${
+    return `rounded-none px-3 py-2 text-sm font-medium  ${focusRing} ${
       isActive(href)
-        ? "bg-blue-50 text-blue-700"
-        : "text-slate-600 hover:bg-slate-50 hover:text-blue-700"
+        ? "bg-surface text-blue-700"
+        : "text-slate-600 hover:bg-surface hover:text-blue-700"
     }`;
   }
 
   return (
     <header
-      className="notranslate sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl"
+      className="notranslate sticky top-0 z-50 border-b border-slate-200/80 bg-background "
       translate="no"
     >
       <nav
@@ -64,7 +63,7 @@ export default function Navbar() {
         <Link
           href="/"
           aria-label="VoteVisible home"
-          className={`shrink-0 rounded-sm ${focusRing}`}
+          className={`shrink-0 rounded-none ${focusRing}`}
           onClick={() => setMenuPathname(null)}
         >
           <Image
@@ -73,7 +72,7 @@ export default function Navbar() {
             width={173}
             height={40}
             preload
-            className="h-7 w-auto sm:h-8"
+            className="h-7 w-auto mix-blend-multiply sm:h-8"
           />
         </Link>
 
@@ -101,17 +100,13 @@ export default function Navbar() {
           <button
             ref={menuButtonRef}
             type="button"
-            className={`flex h-10 w-10 items-center justify-center rounded-lg text-slate-600 transition-colors hover:bg-slate-100 hover:text-blue-700 md:hidden ${focusRing}`}
+            className={`flex min-h-11 items-center px-2 text-sm justify-center rounded-none text-slate-600  hover:bg-surface hover:text-blue-700 md:hidden ${focusRing}`}
             onClick={() => setMenuPathname(open ? null : pathname)}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             aria-controls={menuId}
           >
-            {open ? (
-              <X size={22} aria-hidden="true" />
-            ) : (
-              <Menu size={22} aria-hidden="true" />
-            )}
+            {open ? "Close" : "Menu"}
           </button>
         </div>
       </nav>
@@ -119,7 +114,7 @@ export default function Navbar() {
       <div
         id={menuId}
         hidden={!open}
-        className="border-t border-slate-200 bg-white px-5 pb-5 md:hidden"
+        className="border-t border-slate-200 bg-paper px-5 pb-5 md:hidden"
       >
         <div className="mx-auto flex max-w-6xl flex-col gap-2 pt-4">
           {LINKS.map((link) => (

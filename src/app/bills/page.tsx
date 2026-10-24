@@ -1,3 +1,4 @@
+import LoadingPlaceholder from "@/components/LoadingPlaceholder";
 import { Suspense } from "react";
 import { allBills, billsByState } from "@/data/bills";
 import BillsExplorer from "@/components/BillsExplorer";
@@ -64,13 +65,7 @@ export default function BillsPage({
       <div className="mt-8">
         <Suspense
           fallback={
-            <div
-              role="status"
-              aria-busy="true"
-              className="rounded-2xl border border-blue-100 bg-white p-8 text-sm text-slate-500"
-            >
-              Loading bill filters...
-            </div>
+            <LoadingPlaceholder kind="filters" label="Loading bill filters" />
           }
         >
           <BillsExplorerWithTopic searchParams={searchParams} />

@@ -64,9 +64,9 @@ function writeUrlFilters(filters: ExplorerFilters, replace: boolean) {
   }
 }
 const controlClass =
-  "mt-1.5 min-h-11 w-full min-w-0 rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm text-navy-900 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100";
+  "mt-1.5 min-h-11 w-full min-w-0 rounded-none border border-slate-300 bg-paper px-3 py-2.5 text-sm text-navy-900 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100";
 const buttonClass =
-  "min-h-11 rounded-xl border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-navy-900 transition-colors hover:border-blue-400 hover:bg-blue-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 disabled:cursor-not-allowed disabled:opacity-40";
+  "min-h-11 rounded-none border border-slate-300 bg-paper px-4 py-2 text-sm font-semibold text-navy-900  hover:border-blue-400 hover:bg-surface focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 disabled:cursor-not-allowed disabled:opacity-40";
 
 export default function BillsExplorer({
   bills,
@@ -176,7 +176,7 @@ export default function BillsExplorer({
     <div className="notranslate" translate="no">
       <section
         aria-label="Find and filter bills"
-        className="rounded-2xl border border-blue-100 bg-white p-4 shadow-sm sm:p-6"
+        className="rounded-none border border-blue-100 bg-paper p-4  sm:p-6"
       >
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-4">
           <div>
@@ -296,7 +296,7 @@ export default function BillsExplorer({
           </label>
         </div>
 
-        <div className="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-xl bg-blue-50 px-3 py-2">
+        <div className="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-none bg-surface px-3 py-2">
           <label className="flex min-h-11 cursor-pointer items-center gap-3 text-sm font-medium text-navy-900">
             <input
               type="checkbox"
@@ -330,7 +330,7 @@ export default function BillsExplorer({
       </p>
 
       {results.length === 0 ? (
-        <div className="mt-6 rounded-2xl border border-dashed border-blue-200 bg-white px-5 py-12 text-center">
+        <div className="mt-6 rounded-none border border-dashed border-blue-200 bg-paper px-5 py-12 text-center">
           <h3 className="font-semibold text-navy-900">
             No bills match your filters
           </h3>
@@ -348,16 +348,16 @@ export default function BillsExplorer({
           </button>
         </div>
       ) : (
-        <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-6 space-y-5">
           {visible.map((bill) => (
             <div
               key={bill.id}
-              className="flex min-w-0 flex-col gap-2 rounded-2xl"
+              className="flex min-w-0 flex-col gap-2 rounded-none"
             >
               <div className="flex-1 [&>div]:h-full">
                 <BillCard bill={bill} />
               </div>
-              <div className="flex items-center justify-between gap-2 rounded-xl border border-blue-100 bg-white px-3 py-1">
+              <div className="flex items-center justify-between gap-2 rounded-none border border-blue-100 bg-paper px-3 py-1">
                 <span className="text-xs font-medium text-slate-500">
                   {bill.year} session
                 </span>

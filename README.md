@@ -21,7 +21,7 @@ Open http://localhost:3000. For a production build, run `npm run build`, then `n
 - Saved bills stored on your device, without an account.
 - Bill-specific language reader with searchable language choices, loading states, retry, and immediate return to English.
 - Representative resource links and a message builder that copies a draft for you to review and send yourself. Personal input is not submitted or saved by VoteVisible.
-- Original logo, an editorial home page featuring actual bill records, visible keyboard focus, accessible modal search, responsive layouts, and reduced-motion support.
+- Original logo, an editorial home page featuring actual bill records, visible keyboard focus, accessible modal search, responsive layouts, and loading skeletons.
 
 ## Translation design
 
@@ -42,8 +42,10 @@ npm run build
 
 Bill records are condensed summaries in `src/data/bills/`. Some need verification. The site is a selected collection, not a live legislative feed or legal advice; consult the official legislature before taking action.
 
-The local state map in `public/us-states.json` comes from [us-atlas v3](https://github.com/topojson/us-atlas), under the ISC license, using U.S. Census Bureau cartographic boundaries. It shows state boundaries, not legislative districts. Translation is provided by Google. Icons are from Lucide.
+The local state map in `public/us-states.json` comes from [us-atlas v3](https://github.com/topojson/us-atlas), under the ISC license, using U.S. Census Bureau cartographic boundaries. It shows state boundaries, not legislative districts. Translation is provided by Google.
 
 ## Team
 
 Shritan Pothini (Team Lead), Akshaj Mamidi, Arjun Harshe, Prady Mandalapu, and Alexander Mammar.
+
+Privacy and terms pages describe the current local-save, message-draft, and optional Google translation behavior. They do not make a blanket compliance guarantee.

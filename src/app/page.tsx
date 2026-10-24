@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
 import {
   allBills,
   billsByState,
@@ -11,7 +10,6 @@ import {
 import IssueFinder from "@/components/IssueFinder";
 import InteractiveMap from "@/components/InteractiveMap";
 import StatusChart from "@/components/StatusChart";
-import ScrollReveal from "@/components/ScrollReveal";
 import StatusBadge from "@/components/StatusBadge";
 
 const readingList = [
@@ -56,7 +54,7 @@ export default function Home() {
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link href="/bills" className="button-primary">
-                  Browse the bills <ArrowRight size={17} />
+                  Browse the bills
                 </Link>
                 <a href="#find-your-issue" className="button-secondary">
                   Choose an issue
@@ -67,8 +65,8 @@ export default function Home() {
                 language, save bills, and find your state representatives.
               </p>
             </div>
-            <ScrollReveal delay={0.1}>
-              <article className="bill-notebook relative border border-blue-200 bg-white">
+            <div>
+              <article className="bill-notebook relative border border-blue-200 bg-paper">
                 <div className="flex items-center justify-between border-b border-blue-100 px-6 py-4 text-xs">
                   <span className="font-medium text-blue-700">
                     Inside the collection
@@ -85,9 +83,9 @@ export default function Home() {
                     medical debt to credit bureaus. It also limits what
                     credit-reporting agencies can include.
                   </p>
-                  <div className="my-5 border-l-2 border-blue-600 pl-4">
+                  <div className="my-5 border-t border-slate-300 pt-4">
                     <span className="text-xs font-semibold text-navy-900">
-                      The distinction
+                      What this covers
                     </span>
                     <p className="mt-1 text-sm leading-6 text-slate-600">
                       The debt is not canceled. The rule changes how it can be
@@ -98,11 +96,11 @@ export default function Home() {
                     href={`/bills/${example.id}`}
                     className="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 underline decoration-blue-200 underline-offset-4"
                   >
-                    Read the summary and source <ArrowUpRight size={16} />
+                    Read the summary and source
                   </Link>
                 </div>
               </article>
-            </ScrollReveal>
+            </div>
           </div>
           <p className="mt-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-slate-200 pt-5 text-xs text-slate-500">
             <span>
@@ -136,7 +134,7 @@ export default function Home() {
         />
       </section>
 
-      <section className="border-y border-slate-200 bg-white">
+      <section className="border-y border-slate-200 bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
           <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
             <div>
@@ -173,7 +171,6 @@ export default function Home() {
                     </h3>
                   </div>
                   <p className="text-sm leading-7 text-slate-600">{note}</p>
-                  <ArrowUpRight size={18} className="text-blue-600" />
                 </Link>
               );
             })}
@@ -234,7 +231,7 @@ export default function Home() {
         />
       </section>
 
-      <section className="border-t border-blue-200 bg-blue-50">
+      <section className="border-t border-blue-200 bg-surface">
         <div className="mx-auto grid max-w-6xl items-center gap-6 px-5 py-12 sm:px-8 md:grid-cols-[1fr_auto]">
           <div>
             <h2 className="editorial-title text-3xl">
@@ -246,7 +243,7 @@ export default function Home() {
             </p>
           </div>
           <Link href="/take-action" className="button-primary w-fit">
-            Find your representatives <ArrowRight size={16} />
+            Find your representatives
           </Link>
         </div>
       </section>

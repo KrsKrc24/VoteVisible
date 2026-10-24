@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { useState } from "react";
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
-import { ArrowUpRight, MapPin } from "lucide-react";
 import { USState } from "@/data/bills/types";
 
 export default function InteractiveMap({
@@ -18,12 +17,12 @@ export default function InteractiveMap({
   const detail = billStats?.[selected];
   return (
     <div
-      className="notranslate grid overflow-hidden rounded-[2rem] border border-blue-100 bg-white lg:grid-cols-[1fr_300px]"
+      className="notranslate grid overflow-hidden rounded-none border border-blue-100 bg-paper lg:grid-cols-[1fr_300px]"
       translate="no"
     >
-      <div className="relative min-w-0 bg-[#f0f5ff] p-3 sm:p-6">
+      <div className="relative min-w-0 bg-surface p-3 sm:p-6">
         <div className="absolute left-6 top-6 z-10 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-widest text-blue-700">
-          <span className="h-2 w-2 rounded-full bg-blue-600" /> Collection
+          <span className="h-2 w-2 rounded-none bg-blue-600" /> Collection
           coverage
         </div>
         <ComposableMap
@@ -61,18 +60,18 @@ export default function InteractiveMap({
                     }}
                     fill={
                       name === selected
-                        ? "#143eab"
+                        ? "#1c3d67"
                         : hovered === name
-                          ? "#759fff"
+                          ? "#6c8199"
                           : tracked
-                            ? "#3b7cf9"
-                            : "#dce5f4"
+                            ? "#426a98"
+                            : "#cdd3cd"
                     }
-                    stroke="#f0f5ff"
+                    stroke="#e3e6e0"
                     strokeWidth={1.5}
                     className={
                       tracked
-                        ? "cursor-pointer transition-colors focus:stroke-blue-900 focus:stroke-[3]"
+                        ? "cursor-pointer  focus:stroke-blue-900 focus:stroke-[3]"
                         : ""
                     }
                   />
@@ -91,7 +90,6 @@ export default function InteractiveMap({
         </p>
       </div>
       <div className="flex flex-col p-6 sm:p-7">
-        <MapPin size={21} className="text-blue-600" />
         <p className="mt-5 text-[10px] font-semibold uppercase tracking-widest text-slate-500">
           YOUR SELECTED STATE
         </p>
@@ -120,7 +118,7 @@ export default function InteractiveMap({
           href={`/bills?state=${encodeURIComponent(selected)}`}
           className="button-primary mt-8 justify-center text-xs"
         >
-          Explore {selected} <ArrowUpRight size={16} />
+          Explore {selected}
         </Link>
         <p className="mt-4 text-[11px] leading-5 text-slate-400">
           A selected collection of healthcare bills. Coverage varies by state.
@@ -137,7 +135,7 @@ export default function InteractiveMap({
             type="button"
             aria-pressed={state === selected}
             onClick={() => setSelected(state)}
-            className={`rounded-full border px-3 py-2 text-xs transition-colors ${state === selected ? "border-blue-600 bg-blue-600 text-white" : "border-slate-200 text-slate-600 hover:border-blue-300"}`}
+            className={`rounded-none border px-3 py-2 text-xs  ${state === selected ? "border-blue-600 bg-blue-600 text-white" : "border-slate-200 text-slate-600 hover:border-blue-300"}`}
           >
             {state}
           </button>

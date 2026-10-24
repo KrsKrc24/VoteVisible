@@ -2,32 +2,21 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import {
-  ArrowRight,
-  Brain,
-  Pill,
-  HeartPulse,
-  ShieldCheck,
-  GraduationCap,
-  MapPin,
-} from "lucide-react";
 import { Bill, TOPIC_META } from "@/data/bills/types";
 import StatusBadge from "./StatusBadge";
 
 const interests = [
-  { id: "mental-health", icon: Brain, label: "Mental health" },
-  { id: "drug-pricing", icon: Pill, label: "Prescription costs" },
+  { id: "mental-health", label: "Mental health" },
+  { id: "drug-pricing", label: "Prescription costs" },
   {
     id: "insurance-coverage",
-    icon: ShieldCheck,
     label: "Insurance & coverage",
   },
   {
     id: "youth-school-health",
-    icon: GraduationCap,
     label: "School & youth health",
   },
-  { id: "maternal-health", icon: HeartPulse, label: "Maternal care" },
+  { id: "maternal-health", label: "Maternal care" },
 ];
 
 export default function IssueFinder({
@@ -71,21 +60,19 @@ export default function IssueFinder({
             role="group"
             aria-label="Choose a healthcare interest"
           >
-            {interests.map(({ id, icon: Icon, label }) => (
+            {interests.map(({ id, label }) => (
               <button
                 type="button"
                 key={id}
                 aria-pressed={topic === id}
                 onClick={() => setTopic(id)}
-                className={`inline-flex items-center gap-2 rounded-full border px-4 py-3 text-xs font-medium transition-colors ${topic === id ? "border-blue-600 bg-blue-600 text-white" : "border-slate-200 bg-white text-slate-600 hover:border-blue-300"}`}
+                className={`inline-flex items-center gap-2 rounded-none border px-4 py-3 text-xs font-medium  ${topic === id ? "border-blue-600 bg-blue-600 text-white" : "border-slate-200 bg-paper text-slate-600 hover:border-blue-300"}`}
               >
-                <Icon size={15} />
                 {label}
               </button>
             ))}
           </div>
-          <label className="mt-7 flex max-w-xs items-center gap-3 rounded-xl border border-slate-200 px-4 py-3 text-sm">
-            <MapPin size={17} className="shrink-0 text-blue-600" />
+          <label className="mt-7 flex max-w-xs items-center gap-3 rounded-none border border-slate-200 px-4 py-3 text-sm">
             <span className="sr-only">Choose your state</span>
             <select
               aria-label="Choose your state"
@@ -100,7 +87,7 @@ export default function IssueFinder({
             </select>
           </label>
         </div>
-        <div className="rounded-2xl bg-blue-50/70 p-5 sm:p-6">
+        <div className="rounded-none bg-surface p-5 sm:p-6">
           <div className="flex items-start justify-between gap-3 border-b border-blue-100 pb-4">
             <div>
               <p className="text-xs text-slate-500">Matching records</p>
@@ -108,7 +95,7 @@ export default function IssueFinder({
             </div>
             <span
               aria-live="polite"
-              className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-blue-700"
+              className="rounded-none bg-paper px-3 py-1.5 text-xs font-semibold text-blue-700"
             >
               {matches.length} bills
             </span>
@@ -118,7 +105,7 @@ export default function IssueFinder({
               <Link
                 key={b.id}
                 href={`/bills/${b.id}`}
-                className="group my-3 block rounded-xl border border-blue-100 bg-white p-4 transition-shadow hover:shadow-md"
+                className="group my-3 block rounded-none border border-blue-100 bg-paper p-4  "
               >
                 <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
                   <span className="text-[10px] font-semibold uppercase tracking-wider text-blue-600">
@@ -142,7 +129,7 @@ export default function IssueFinder({
             href={href}
             className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-blue-700"
           >
-            See all matching bills <ArrowRight size={16} />
+            See all matching bills
           </Link>
         </div>
       </div>

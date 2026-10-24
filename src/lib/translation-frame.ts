@@ -44,7 +44,7 @@ export function buildTranslationDocument(input: TranslationRequest): string {
     .replace(/\u2028/g, "\\u2028")
     .replace(/\u2029/g, "\\u2029");
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>
-  *{box-sizing:border-box}body{margin:0!important;top:0!important;background:#fff;color:#1e293b;font:17px/1.8 system-ui,sans-serif;overflow-wrap:anywhere}h2{margin:0 0 16px;color:#0a1328;font-size:24px;line-height:1.4}p{margin:0;white-space:pre-line}#widget,iframe.skiptranslate,#goog-gt-tt{display:none!important}.goog-text-highlight{background:transparent!important;box-shadow:none!important}article{padding:4px 2px 12px}
+  *{box-sizing:border-box}body{margin:0!important;top:0!important;background:#f8f9f5;color:#1e293b;font:17px/1.8 system-ui,sans-serif;overflow-wrap:anywhere}h2{margin:0 0 16px;color:#1c2c3d;font-size:24px;line-height:1.4}p{margin:0;white-space:pre-line}#widget,iframe.skiptranslate,#goog-gt-tt{display:none!important}.goog-text-highlight{background:transparent!important;box-shadow:none!important}article{padding:4px 2px 12px}
   </style></head><body><article id="content"><h2>${escapeHtml(input.title)}</h2><p id="summary">${escapeHtml(input.summary)}</p></article><div id="widget"></div>
   <script>
   (() => {

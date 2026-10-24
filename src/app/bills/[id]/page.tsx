@@ -1,3 +1,4 @@
+import LoadingPlaceholder from "@/components/LoadingPlaceholder";
 import { Suspense } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -78,7 +79,7 @@ async function BillDetailContent({
 
       <dl
         translate="no"
-        className="notranslate mt-8 grid gap-4 rounded-2xl border border-slate-200 bg-white p-6 sm:grid-cols-2"
+        className="notranslate mt-8 grid gap-4 rounded-none border border-slate-200 bg-paper p-6 sm:grid-cols-2"
       >
         <div>
           <dt className="text-xs font-semibold uppercase tracking-wide text-slate-500">
@@ -149,7 +150,7 @@ async function BillDetailContent({
             <Link
               key={topic}
               href={`/bills?topic=${topic}`}
-              className="rounded-full bg-blue-100 px-3 py-1.5 text-xs font-semibold text-blue-700 hover:bg-blue-200"
+              className="rounded-none bg-surface px-3 py-1.5 text-xs font-semibold text-blue-700 hover:bg-surface"
             >
               {TOPIC_META[topic]?.label ?? topic}
             </Link>
@@ -157,7 +158,7 @@ async function BillDetailContent({
         </div>
       </div>
 
-      <div className="mt-10 rounded-2xl bg-navy-900 p-6 text-center">
+      <div className="mt-10 rounded-none bg-navy-900 p-6 text-center">
         <h2 className="text-lg font-semibold text-white">
           Want to weigh in on this bill?
         </h2>
@@ -167,7 +168,7 @@ async function BillDetailContent({
         </p>
         <Link
           href="/take-action"
-          className="mt-4 inline-flex rounded-full bg-blue-500 px-5 py-2.5 text-sm font-semibold text-white hover:bg-blue-400"
+          className="mt-4 inline-flex rounded-none bg-blue-700 px-5 py-2.5 text-sm font-semibold text-white hover:bg-blue-400"
         >
           Contact your representatives
         </Link>
@@ -176,7 +177,7 @@ async function BillDetailContent({
       {related.length > 0 && (
         <div className="mt-12">
           <h2 className="text-lg font-semibold text-navy-900">Related bills</h2>
-          <div className="mt-4 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-4 space-y-4">
             {related.map((b) => (
               <BillCard key={b.id} bill={b} />
             ))}
@@ -195,8 +196,8 @@ export default function BillDetailPage({
   return (
     <Suspense
       fallback={
-        <div className="mx-auto max-w-4xl px-5 py-12" role="status">
-          Loading bill details...
+        <div className="mx-auto max-w-4xl px-5 py-12">
+          <LoadingPlaceholder kind="summary" label="Loading bill details" />
         </div>
       }
     >

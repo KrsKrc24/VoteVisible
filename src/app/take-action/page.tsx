@@ -100,7 +100,7 @@ export default function TakeActionPage() {
           {STATE_RESOURCES.map((resource) => (
             <div
               key={resource.state}
-              className="rounded-2xl border border-slate-200 bg-white p-5"
+              className="rounded-none border border-slate-200 bg-paper p-5"
             >
               <h3 className="font-semibold text-navy-900">{resource.state}</h3>
               <div className="mt-3 flex flex-col gap-2 text-sm">
@@ -162,7 +162,7 @@ export default function TakeActionPage() {
         />
       </div>
 
-      <div className="mt-12 rounded-2xl bg-navy-900 p-6 text-center">
+      <div className="mt-12 rounded-none bg-navy-900 p-6 text-center">
         <h2 className="text-lg font-semibold text-white">
           Not sure where to start?
         </h2>
@@ -172,7 +172,7 @@ export default function TakeActionPage() {
         </p>
         <Link
           href="/bills"
-          className="mt-4 inline-flex rounded-full bg-blue-500 px-5 py-2.5 text-sm font-semibold text-white hover:bg-blue-400"
+          className="mt-4 inline-flex rounded-none bg-blue-700 px-5 py-2.5 text-sm font-semibold text-white hover:bg-blue-400"
         >
           Explore bills
         </Link>

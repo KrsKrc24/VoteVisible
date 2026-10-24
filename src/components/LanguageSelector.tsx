@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useId, useMemo, useRef, useState } from "react";
-import { Globe, Check, ChevronDown, Loader2, Search } from "lucide-react";
 import { LANGUAGES, type LanguageCode } from "@/data/languages";
 
 // Selection belongs to the reader, never to Google's cookies or mutable DOM.
@@ -60,31 +59,24 @@ export default function LanguageSelector({
         ref={toggle}
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50 px-3 py-1.5 text-xs font-semibold text-blue-700 transition-colors hover:bg-blue-100 disabled:cursor-wait disabled:opacity-70"
+        className="flex items-center gap-1.5 rounded-none border border-blue-200 bg-surface px-3 py-1.5 text-xs font-semibold text-blue-700  hover:bg-surface disabled:cursor-wait disabled:opacity-70"
         aria-expanded={open}
         aria-controls={open ? menuId : undefined}
         aria-label="Choose reading language"
       >
-        {loading ? (
-          <Loader2 className="h-3.5 w-3.5 animate-spin" />
-        ) : (
-          <Globe className="h-3.5 w-3.5" />
-        )}
         <span>
           {loading
             ? `Loading ${currentOption.nativeLabel}…`
             : `Read in ${currentOption.nativeLabel}`}
         </span>
-        <ChevronDown className="h-3.5 w-3.5" />
       </button>
 
       {open && (
         <div
           id={menuId}
-          className="absolute left-0 right-auto z-20 mt-2 w-64 sm:left-auto sm:right-0 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xl"
+          className="absolute left-0 right-auto z-20 mt-2 w-64 sm:left-auto sm:right-0 overflow-hidden rounded-none border border-slate-200 bg-paper "
         >
           <div className="flex items-center gap-2 border-b border-slate-100 px-3 py-2">
-            <Search className="h-3.5 w-3.5 shrink-0 text-slate-400" />
             <input
               autoFocus
               value={query}
@@ -110,7 +102,7 @@ export default function LanguageSelector({
                   setQuery("");
                   toggle.current?.focus();
                 }}
-                className="flex w-full items-center justify-between px-3.5 py-2 text-left text-sm text-navy-900 hover:bg-blue-50 disabled:cursor-wait disabled:opacity-60"
+                className="flex w-full items-center justify-between px-3.5 py-2 text-left text-sm text-navy-900 hover:bg-surface disabled:cursor-wait disabled:opacity-60"
               >
                 <span>
                   {lang.nativeLabel}
@@ -121,7 +113,7 @@ export default function LanguageSelector({
                   )}
                 </span>
                 {lang.code === current && (
-                  <Check className="h-3.5 w-3.5 shrink-0 text-blue-600" />
+                  <span className="text-xs font-semibold">Selected</span>
                 )}
               </button>
             ))}

@@ -8,9 +8,9 @@ import {
   useRef,
   useState,
 } from "react";
+import LoadingPlaceholder from "./LoadingPlaceholder";
 import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
-import { Search, X } from "lucide-react";
 
 type BillData = Pick<typeof import("@/data/bills"), "allBills" | "filterBills">;
 
@@ -123,13 +123,12 @@ export default function CommandPalette() {
         aria-haspopup="dialog"
         aria-expanded={open}
         aria-controls={open ? dialogId : undefined}
-        className="inline-flex h-10 items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-3 text-sm text-slate-600 transition-colors hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600"
+        className="inline-flex h-10 items-center justify-center gap-2 rounded-none border border-slate-200 bg-paper px-3 text-sm text-slate-600  hover:border-blue-300 hover:bg-surface hover:text-blue-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600"
       >
-        <Search size={17} aria-hidden="true" />
-        <span className="hidden lg:inline">Search bills</span>
+        <span>Search</span>
         <kbd
           aria-hidden="true"
-          className="hidden rounded border border-slate-200 bg-slate-50 px-1.5 py-0.5 font-sans text-[10px] lg:inline"
+          className="hidden rounded-none border border-slate-200 bg-surface px-1.5 py-0.5 font-sans text-[10px] lg:inline"
         >
           ⌘ / Ctrl K
         </kbd>
@@ -142,7 +141,7 @@ export default function CommandPalette() {
             id={dialogId}
             aria-label="Search bills"
             aria-describedby={hintId}
-            className="notranslate fixed inset-x-0 top-[min(15vh,6rem)] m-0 mx-auto max-h-[75dvh] w-[calc(100%-2rem)] max-w-xl overflow-y-auto rounded-2xl border border-slate-200 bg-white p-0 text-slate-900 shadow-2xl backdrop:bg-slate-900/40 backdrop:backdrop-blur-sm"
+            className="notranslate fixed inset-x-0 top-[min(15vh,6rem)] m-0 mx-auto max-h-[75dvh] w-[calc(100%-2rem)] max-w-xl overflow-y-auto rounded-none border border-slate-200 bg-paper p-0 text-slate-900  backdrop:bg-slate-900/40 "
             translate="no"
             onCancel={(event) => {
               event.preventDefault();
@@ -162,11 +161,6 @@ export default function CommandPalette() {
             }}
           >
             <div className="flex items-center gap-3 border-b border-slate-200 px-4">
-              <Search
-                size={20}
-                className="shrink-0 text-blue-600"
-                aria-hidden="true"
-              />
               <input
                 ref={inputRef}
                 value={query}
@@ -213,9 +207,11 @@ export default function CommandPalette() {
                 type="button"
                 onClick={close}
                 aria-label="Close search"
-                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-blue-600"
+                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-none text-slate-500  hover:bg-surface hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-blue-600"
               >
-                <X size={18} aria-hidden="true" />
+                <span aria-hidden="true" className="text-xl">
+                  ×
+                </span>
               </button>
             </div>
             <div className="px-2 py-2">
@@ -239,10 +235,10 @@ export default function CommandPalette() {
                     tabIndex={-1}
                     onClick={() => go(bill.id)}
                     onMouseEnter={() => setActiveIndex(index)}
-                    className={`flex w-full flex-col items-start gap-1 rounded-lg px-3 py-3 text-left transition-colors ${
+                    className={`flex w-full flex-col items-start gap-1 rounded-none px-3 py-3 text-left  ${
                       index === selectedIndex
-                        ? "bg-blue-50 text-blue-950"
-                        : "text-slate-900 hover:bg-slate-50"
+                        ? "bg-surface text-blue-950"
+                        : "text-slate-900 hover:bg-surface"
                     }`}
                   >
                     <span className="text-xs font-semibold tracking-wide text-blue-700">
@@ -253,12 +249,7 @@ export default function CommandPalette() {
                 ))}
               </div>
               {!billData && !loadError && (
-                <p
-                  role="status"
-                  className="px-3 py-8 text-center text-sm text-slate-500"
-                >
-                  Loading bills…
-                </p>
+                <LoadingPlaceholder label="Loading searchable bills" />
               )}
               {loadError && (
                 <div className="px-3 py-8 text-center text-sm text-slate-500">
@@ -266,7 +257,7 @@ export default function CommandPalette() {
                   <button
                     type="button"
                     onClick={loadBills}
-                    className="mt-3 rounded-lg px-3 py-2 font-medium text-blue-700 hover:bg-blue-50 focus-visible:outline-2 focus-visible:outline-blue-600"
+                    className="mt-3 rounded-none px-3 py-2 font-medium text-blue-700 hover:bg-surface focus-visible:outline-2 focus-visible:outline-blue-600"
                   >
                     Try again
                   </button>
@@ -283,7 +274,7 @@ export default function CommandPalette() {
             </div>
             <p
               id={hintId}
-              className="border-t border-slate-200 bg-slate-50 px-5 py-3 text-xs text-slate-500"
+              className="border-t border-slate-200 bg-surface px-5 py-3 text-xs text-slate-500"
             >
               Use ↑ ↓ to browse, Enter to open, and Esc to close.
             </p>

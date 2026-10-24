@@ -1,21 +1,14 @@
-"use client";
-
 import Link from "next/link";
-import { motion, useReducedMotion } from "framer-motion";
 import { Bill, TOPIC_META } from "@/data/bills/types";
 import StatusBadge from "./StatusBadge";
 
 export default function BillCard({ bill }: { bill: Bill }) {
-  const reduceMotion = useReducedMotion();
   return (
-    <motion.div
-      whileHover={reduceMotion ? undefined : { y: -4, scale: 1.01 }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-    >
+    <div>
       <Link
         href={`/bills/${bill.id}`}
         prefetch={false}
-        className="group flex h-full flex-col rounded-md border border-slate-200 bg-white p-5 transition-colors hover:border-blue-300"
+        className="group flex h-full flex-col rounded-none border border-slate-200 bg-paper p-5  hover:border-blue-300"
       >
         <div className="flex items-start justify-between gap-3">
           <div>
@@ -29,7 +22,7 @@ export default function BillCard({ bill }: { bill: Bill }) {
           <StatusBadge status={bill.status} />
         </div>
 
-        <p className="mt-3 line-clamp-4 flex-1 text-sm leading-6 text-slate-600">
+        <p className="mt-3 line-clamp-4 max-w-3xl flex-1 text-sm leading-6 text-slate-600">
           {bill.summary}
         </p>
 
@@ -37,7 +30,7 @@ export default function BillCard({ bill }: { bill: Bill }) {
           {bill.topics.slice(0, 3).map((topic) => (
             <span
               key={topic}
-              className="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-600"
+              className="rounded-none bg-surface px-2.5 py-1 text-xs font-medium text-slate-600"
             >
               {TOPIC_META[topic]?.label ?? topic}
             </span>
@@ -47,6 +40,6 @@ export default function BillCard({ bill }: { bill: Bill }) {
           Read full summary &rarr;
         </span>
       </Link>
-    </motion.div>
+    </div>
   );
 }

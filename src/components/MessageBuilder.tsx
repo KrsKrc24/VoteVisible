@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import { Copy, Check, MessageSquare } from "lucide-react";
 
 type BillOption = {
   id: string;
@@ -22,7 +21,7 @@ export default function MessageBuilder({ bills }: { bills: BillOption[] }) {
     : "healthcare access in our community";
   const message = `Subject: A constituent's perspective on ${subject}\n\nDear Representative,\n\nMy name is ${name.trim() || "[Your name]"}, and I live in ${town.trim() || "[Your city or district]"}. I would like to ${position} ${subject}.\n\n${reason.trim() || "[Explain how this issue affects you or your community.]"}\n\nCould you share your position on this issue and what steps our state is taking? Thank you for your time and for representing our community.\n\nSincerely,\n${name.trim() || "[Your name]"}`;
   const control =
-    "mt-2 w-full min-w-0 rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm";
+    "mt-2 w-full min-w-0 rounded-none border border-slate-200 bg-paper px-3 py-3 text-sm";
   async function copy() {
     try {
       await navigator.clipboard.writeText(message);
@@ -36,11 +35,10 @@ export default function MessageBuilder({ bills }: { bills: BillOption[] }) {
   }
   return (
     <div
-      className="notranslate mt-6 grid gap-7 rounded-3xl border border-blue-100 bg-white p-5 sm:p-8 lg:grid-cols-2"
+      className="notranslate mt-6 grid gap-7 rounded-none border border-blue-100 bg-paper p-5 sm:p-8 lg:grid-cols-2"
       translate="no"
     >
       <div>
-        <MessageSquare size={25} className="mb-5 text-blue-600" />
         <h3 className="text-xl font-semibold">
           Draft a message to your representative.
         </h3>
@@ -120,13 +118,13 @@ export default function MessageBuilder({ bills }: { bills: BillOption[] }) {
           />
         </label>
       </div>
-      <div className="flex flex-col rounded-2xl bg-blue-50/60 p-5">
+      <div className="flex flex-col rounded-none bg-surface p-5">
         <span className="eyebrow">YOUR MESSAGE PREVIEW</span>
         <pre className="mt-5 flex-1 whitespace-pre-wrap font-sans text-sm leading-7 text-slate-600">
           {message}
         </pre>
         <button type="button" onClick={copy} className="button-primary mt-6">
-          {copied ? <Check size={16} /> : <Copy size={16} />}{" "}
+          {" "}
           {copied ? "Message copied" : "Copy my message"}
         </button>
         <p role="status" className="mt-3 text-xs leading-5 text-slate-500">

@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import { Check, Link2 } from "lucide-react";
 export default function ShareBillButton() {
   const [copied, setCopied] = useState(false);
   const [error, setError] = useState("");
@@ -18,9 +17,8 @@ export default function ShareBillButton() {
       <button
         type="button"
         onClick={share}
-        className="inline-flex min-h-10 items-center gap-2 rounded-full border border-slate-200 bg-white px-4 text-xs font-medium text-slate-600"
+        className="inline-flex min-h-10 items-center gap-2 rounded-none border border-slate-200 bg-paper px-4 text-xs font-medium text-slate-600"
       >
-        {copied ? <Check size={14} /> : <Link2 size={14} />}{" "}
         {copied ? "Link copied" : "Share this bill"}
       </button>
       <span role="status" className="mt-1 block text-xs text-slate-500">

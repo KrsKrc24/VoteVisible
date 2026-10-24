@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Globe2, Loader2, RotateCcw } from "lucide-react";
 import LanguageSelector from "./LanguageSelector";
+import LoadingPlaceholder from "./LoadingPlaceholder";
 import { LANGUAGES, type LanguageCode } from "@/data/languages";
 import {
   buildTranslationDocument,
@@ -106,10 +106,9 @@ export default function BillReader({
       <p className="mt-5 whitespace-pre-line text-lg leading-8 text-slate-700">
         {summary}
       </p>
-      <div className="mt-8 rounded-lg border border-blue-200 bg-blue-50/70 p-4 sm:p-6">
+      <div className="mt-8 rounded-none border border-blue-200 bg-surface p-4 sm:p-6">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <Globe2 className="h-6 w-6 text-blue-600" />
             <div>
               <h2 className="font-semibold text-navy-900">
                 Read this summary in another language.
@@ -138,19 +137,15 @@ export default function BillReader({
               </button>
             </div>
             {status === "loading" && (
-              <div
-                role="status"
-                className="flex items-center gap-3 rounded-xl border border-blue-100 bg-white p-6 text-sm text-slate-600"
-              >
-                <Loader2 className="h-5 w-5 animate-spin text-blue-600" />
-                Preparing {language.nativeLabel}. You can choose another
-                language at any time.
-              </div>
+              <LoadingPlaceholder
+                kind="summary"
+                label={`Preparing ${language.nativeLabel}. You can choose another language at any time.`}
+              />
             )}
             {status === "error" && (
               <div
                 role="alert"
-                className="rounded-xl border border-amber-200 bg-amber-50 p-5 text-sm leading-6 text-amber-900"
+                className="rounded-none border border-slate-400 bg-surface p-5 text-sm leading-6 text-slate-800"
               >
                 Google could not finish this translation. The original above is
                 unchanged.
@@ -159,7 +154,6 @@ export default function BillReader({
                   onClick={() => choose(selection.language)}
                   className="mt-3 flex items-center gap-2 font-semibold underline"
                 >
-                  <RotateCcw className="h-4 w-4" />
                   Retry translation
                 </button>
               </div>
@@ -175,7 +169,7 @@ export default function BillReader({
               referrerPolicy="no-referrer"
               className={
                 status === "ready"
-                  ? "block w-full rounded-xl border border-blue-100 bg-white p-4"
+                  ? "block w-full rounded-none border border-blue-100 bg-paper p-4"
                   : "pointer-events-none absolute left-0 top-0 h-80 w-full opacity-0"
               }
               style={

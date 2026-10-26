@@ -7,6 +7,7 @@ export type BillStatus =
   | "pending-verification";
 
 export type USState =
+  | "Alaska"
   | "Washington"
   | "Oregon"
   | "California"
@@ -18,7 +19,9 @@ export type USState =
   | "Nevada"
   | "Arizona"
   | "Georgia"
-  | "North Carolina";
+  | "North Carolina"
+  | "Ohio"
+  | "Michigan";
 
 export interface Bill {
   id: string;

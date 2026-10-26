@@ -1,3 +1,4 @@
+import { alaskaBills } from "./alaska";
 import { washingtonBills } from "./washington";
 import { oregonBills } from "./oregon";
 import { californiaBills } from "./california";
@@ -10,12 +11,15 @@ import { nevadaBills } from "./nevada";
 import { arizonaBills } from "./arizona";
 import { georgiaBills } from "./georgia";
 import { northCarolinaBills } from "./northCarolina";
+import { ohioBills } from "./ohio";
+import { michiganBills } from "./michigan";
 import { Bill, USState } from "./types";
 
 export * from "./types";
 export { filterBills, type BillFilters } from "./filters";
 
 export const allBills: Bill[] = [
+  ...alaskaBills,
   ...washingtonBills,
   ...oregonBills,
   ...californiaBills,
@@ -28,9 +32,12 @@ export const allBills: Bill[] = [
   ...arizonaBills,
   ...georgiaBills,
   ...northCarolinaBills,
+  ...ohioBills,
+  ...michiganBills,
 ];
 
 export const billsByState: Record<USState, Bill[]> = {
+  Alaska: alaskaBills,
   Washington: washingtonBills,
   Oregon: oregonBills,
   California: californiaBills,
@@ -43,6 +50,8 @@ export const billsByState: Record<USState, Bill[]> = {
   Arizona: arizonaBills,
   Georgia: georgiaBills,
   "North Carolina": northCarolinaBills,
+  Ohio: ohioBills,
+  Michigan: michiganBills,
 };
 
 export function getBillById(id: string): Bill | undefined {

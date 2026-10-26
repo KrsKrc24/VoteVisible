@@ -71,6 +71,21 @@ const STATE_RESOURCES = [
     legislature: "https://www.ncleg.gov/",
     findDistrict: "https://www.ncleg.gov/findyourlegislators",
   },
+  {
+    state: "Ohio",
+    legislature: "https://www.legislature.ohio.gov/",
+    findDistrict: "https://www.legislature.ohio.gov/legislators/find-my-legislators",
+  },
+  {
+    state: "Michigan",
+    legislature: "https://www.legislature.mi.gov/",
+    findDistrict: "https://www.senate.michigan.gov/fysl/findyourlegislator.html",
+  },
+  {
+    state: "Alaska",
+    legislature: "https://www.akleg.gov/",
+    findDistrict: "https://www.elections.alaska.gov/",
+  },
 ];
 
 export default function TakeActionPage() {

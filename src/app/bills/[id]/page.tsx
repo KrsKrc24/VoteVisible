@@ -2,7 +2,7 @@ import LoadingPlaceholder from "@/components/LoadingPlaceholder";
 import { Suspense } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { allBills, getBillById } from "@/data/bills";
+import { allBills, getBillById, isStateReleased } from "@/data/bills";
 import { TOPIC_META } from "@/data/bills/types";
 import StatusBadge from "@/components/StatusBadge";
 import BillCard from "@/components/BillCard";
@@ -10,8 +10,20 @@ import SaveBillButton from "@/components/SaveBillButton";
 import ShareBillButton from "@/components/ShareBillButton";
 import BillReader from "@/components/BillReader";
 
+// Frozen once at build time (module load), not re-read per request. This
+// keeps every bill page statically prerenderable — reading the real clock
+// inside the component itself would force all 548+ pages to render
+// per-request, which is too slow to ship. The trade-off: a newly released
+// state's bill pages go live on the next deploy, not the instant the date
+// turns. The homepage/bills/take-action listings don't have this limit —
+// they gate live by real-world date (see their `instant = false`) — so
+// this only affects someone guessing a not-yet-public bill's direct URL.
+const RELEASED_BILL_IDS = new Set(
+  allBills.filter((bill) => isStateReleased(bill.state)).map((bill) => bill.id),
+);
+
 export function generateStaticParams() {
-  return allBills.map((bill) => ({ id: bill.id }));
+  return [...RELEASED_BILL_IDS].map((id) => ({ id }));
 }
 
 export async function generateMetadata({
@@ -35,11 +47,14 @@ async function BillDetailContent({
 }) {
   const { id } = await params;
   const bill = getBillById(id);
-  if (!bill) notFound();
+  if (!bill || !RELEASED_BILL_IDS.has(bill.id)) notFound();
 
   const related = allBills
     .filter(
-      (b) => b.id !== bill.id && b.topics.some((t) => bill.topics.includes(t)),
+      (b) =>
+        b.id !== bill.id &&
+        RELEASED_BILL_IDS.has(b.id) &&
+        b.topics.some((t) => bill.topics.includes(t)),
     )
     .slice(0, 3);
 

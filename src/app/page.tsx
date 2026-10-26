@@ -1,9 +1,10 @@
 import Link from "next/link";
+import { connection } from "next/server";
 import {
-  allBills,
-  billsByState,
   getBillById,
-  getBillStats,
+  getReleasedBills,
+  getReleasedBillsByState,
+  getReleasedBillStats,
   STATUS_META,
   BillStatus,
 } from "@/data/bills";
@@ -30,9 +31,20 @@ const readingList = [
   },
 ];
 
-export default function Home() {
-  const stats = getBillStats();
-  const stateCount = Object.keys(billsByState).length;
+// This page reads the release schedule (real-world date) outside any
+// Suspense boundary, so render the whole route per-request instead of
+// trying to statically prerender or stream it.
+export const instant = false;
+
+export default async function Home() {
+  // Bill counts depend on the release schedule, which unlocks states by
+  // real-world date — opt out of static caching so a newly released state
+  // appears without a redeploy.
+  await connection();
+  const stats = getReleasedBillStats();
+  const releasedBillsByState = getReleasedBillsByState();
+  const releasedBills = getReleasedBills();
+  const stateCount = Object.keys(releasedBillsByState).length;
   const example = getBillById("or-sb-605")!;
   return (
     <div>
@@ -121,7 +133,7 @@ export default function Home() {
         className="mx-auto max-w-6xl scroll-mt-24 px-5 py-14 sm:px-8 sm:py-20"
       >
         <IssueFinder
-          bills={allBills.map(
+          bills={releasedBills.map(
             ({ id, state, billNumber, title, status, topics }) => ({
               id,
               state,
@@ -197,7 +209,7 @@ export default function Home() {
         <InteractiveMap
           billCounts={stats.byState}
           billStats={Object.fromEntries(
-            Object.entries(billsByState).map(([state, bills]) => [
+            Object.entries(releasedBillsByState).map(([state, bills]) => [
               state,
               {
                 enacted: bills.filter((b) => b.status === "enacted").length,
@@ -226,7 +238,7 @@ export default function Home() {
           total={stats.total}
           counts={(Object.keys(STATUS_META) as BillStatus[]).map((status) => ({
             status,
-            count: allBills.filter((b) => b.status === status).length,
+            count: releasedBills.filter((b) => b.status === status).length,
           }))}
         />
       </section>

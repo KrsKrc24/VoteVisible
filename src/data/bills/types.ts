@@ -21,7 +21,13 @@ export type USState =
   | "Georgia"
   | "North Carolina"
   | "Ohio"
-  | "Michigan";
+  | "Michigan"
+  | "Colorado"
+  | "Massachusetts"
+  | "Virginia"
+  | "Tennessee"
+  | "Wisconsin"
+  | "New Jersey";
 
 export interface Bill {
   id: string;

@@ -1,6 +1,13 @@
 import Link from "next/link";
+import { connection } from "next/server";
 import MessageBuilder from "@/components/MessageBuilder";
-import { allBills } from "@/data/bills";
+import { getReleasedBills, isStateReleased } from "@/data/bills";
+import { USState } from "@/data/bills/types";
+
+// This page reads the release schedule (real-world date) outside any
+// Suspense boundary, so render the whole route per-request instead of
+// trying to statically prerender or stream it.
+export const instant = false;
 
 export const metadata = {
   title: "Take Action | VoteVisible",
@@ -88,7 +95,11 @@ const STATE_RESOURCES = [
   },
 ];
 
-export default function TakeActionPage() {
+export default async function TakeActionPage() {
+  // Which states' resources show up depends on the release schedule, which
+  // unlocks by real-world date — opt out of static caching so a newly
+  // released state appears without a redeploy.
+  await connection();
   return (
     <div className="mx-auto max-w-4xl px-5 py-12 sm:px-8">
       <span className="text-xs font-semibold uppercase tracking-wide text-blue-600">
@@ -112,7 +123,9 @@ export default function TakeActionPage() {
           represents you based on your home address.
         </p>
         <div className="mt-5 grid gap-4 sm:grid-cols-2">
-          {STATE_RESOURCES.map((resource) => (
+          {STATE_RESOURCES.filter((resource) =>
+            isStateReleased(resource.state as USState),
+          ).map((resource) => (
             <div
               key={resource.state}
               className="rounded-none border border-slate-200 bg-paper p-5"
@@ -168,7 +181,7 @@ export default function TakeActionPage() {
           your representative’s contact form.
         </p>
         <MessageBuilder
-          bills={allBills.map(({ id, billNumber, state, title }) => ({
+          bills={getReleasedBills().map(({ id, billNumber, state, title }) => ({
             id,
             billNumber,
             state,
